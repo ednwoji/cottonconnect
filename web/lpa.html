@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>CottonConnect - ELearning Portal</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+<link rel="stylesheet"
+	href="font/simple-line-icons/css/simple-line-icons.css" />
+
+<link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+<link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+<link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+<link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+<link rel="stylesheet" href="css/main.css" />
+
+<link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet"
+	href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+
+<link rel="stylesheet" href="css/vendor/select2.min.css" />
+<link rel="stylesheet" href="css/vendor/select2-bootstrap.min.css" />
+</head>
+
+<body id="app-container" class="menu-sub-hidden show-spinner">
+	<div id="menu-header"></div>
+	<div id="menu-div"></div>
+	<main>
+		<div class="container-fluid">
+			<div class="row ">
+				<div class="col-12">
+					<div class="mb-2">
+						<h1>Local Partner</h1>
+						<nav
+							class="breadcrumb-container d-none d-sm-block d-lg-inline-block"
+							aria-label="breadcrumb">
+							<ol class="breadcrumb pt-0">
+								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item"><a href="lpalist.jsp">Local
+										Partner</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Add</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-12 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-3">
+									<div class="form-group">
+										<input type="hidden" id="id"> <input type="hidden"
+											name="redirectUrl" id="redirectUrl"> <label>Name<sup>*</sup></label>
+										<input type="text" class="form-control" required id="name">
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Address<sup>*</sup></label>
+										<textarea id="address" class="form-control"></textarea>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Country <sup>*</sup></label> <select id="country"
+											onchange="populateBrand()" class="form-control"></select>
+									</div>
+
+								</div>
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Brand</label> <select id="brand" class="form-control"
+											onchange="populateProgram()"></select>
+									</div>
+
+								</div>
+								<div class="col-md-3">
+
+									<div class="form-group">
+										<label>Program <sup>*</sup></label> <select id="program"
+											class="form-control select2-multiple" multiple=true></select>
+									</div>
+
+								</div>
+
+								<div class="col-md-3">
+									<div class="form-group">
+										<label>Status</label> <label> <input type="radio"
+											value="1" name="status" checked>Active
+										</label> <label> <input type="radio" value="0" name="status">In
+											Active
+										</label>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col-md-3">
+									<button onclick="submitForm()" class="btn btn-primary">Submit</button>
+
+									<a class="btn btn-outline-primary" href="lpalist.jsp">Cancel</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script src="js/vendor/bootstrap.bundle.min.js"></script>
+	<script src="js/vendor/perfect-scrollbar.min.js"></script>
+	<script src="js/vendor/datatables.min.js"></script>
+	<script src="js/dore.script.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/vendor/select2.full.js"></script>
+
+	<script type='text/javascript'>
+		$.urlParam = function(name) {
+			try {
+				var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+						.exec(window.location.href);
+				return results[1] || 0;
+			} catch (e) {
+			}
+		}
+
+		jQuery.fn.ForceNumericOnly = function() {
+			return this
+					.each(function() {
+						$(this)
+								.keydown(
+										function(e) {
+											var key = e.charCode || e.keyCode
+													|| 0;
+											// allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
+											// home, end, period, and numpad decimal
+											return (key == 8 || key == 9
+													|| key == 13 || key == 46
+													|| key == 110 || key == 190
+													|| (key >= 35 && key <= 40)
+													|| (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+										});
+					});
+		};
+
+		$(document).ready(function() {
+			$("#menu-div").load("menu.html");
+			$("#menu-header").load("nav.html");
+			$("#page-footer").load("footer.html");
+			$("#redirectUrl").val( getHomeUrl() +'/lpalist.jsp');
+			
+			loadCountries();
+		});
+		
+		function loadCountries(){
+			$.ajax({
+				url : getUrl() + '/location/country/getCountries',
+				success : function(result) {
+					$("#country").html('');
+					$("#country").append(
+							"<option value=''>Select</option>");
+					$(result).each(function(k, v) {
+						$("#country").append("<option value=" + v.id + ">"+ v.name+ "</option>");
+					});
+					
+					var id = $.urlParam('id');
+					if (id != null) {
+						edit(id);
+					}
+				}
+			});
+		}
+		
+		function edit(id){
+			$("body").addClass("show-spinner");
+			$.ajax({
+				url : getUrl() + '/master/partner/by-id/'+id,
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				success : function(result) {
+					$("#id").val(id);
+					$("#name").val(result.name);
+					$("#address").val(result.address);
+					$("#country").val(result.countryId);
+					listBrand(result.countryId, result.brandId);
+					listProgram(result.brandId, result.programId);
+					$('input:radio[name=status]').val([ result.statusz ]);
+					$("body").removeClass("show-spinner");
+					$("#mbtn").click();
+				}
+			});
+		}
+
+		function populateProgram() {
+			var brand = $("#brand").val();
+			$.ajax({
+				url : getUrl() + '/master/programme/by-brand?brandId=' + brand
+						+ '',
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				success : function(result) {
+					$("#program").html('');
+					$("#program").append("<option value=''>Select</option>");
+					$(result).each(
+							function(k, v) {
+								$("#program").append(
+										"<option value=" + v.id + ">" + v.name
+												+ "</option>");
+							});
+				}
+			});
+		}
+
+		function submitForm() {
+			if ($("#name").val() == "") {
+				alert("Please enter Name");
+				return;
+			} else if ($("#address").val() == "") {
+				alert("Please enter Address");
+				return;
+			} else if ($("#program").val() == "") {
+				alert("Please select Program");
+				return;
+			} else if ($("#country").val() == "") {
+				alert("Please select Country");
+				return;
+			}
+
+			var lpaData = {
+				"id" : $("#id").val(),
+				"name" : $("#name").val(),
+				"address" : $("#address").val(),
+				"countryId" : $("#country").val(),
+				"programId" : $("#program").val(),
+				"active" : $('input[name="status"]:checked').val(),
+				"brandId" : $("#brand").val()
+			};
+			$.ajax({
+				url : getUrl() + '/master/partner/save-local-partner',
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				type : 'post',
+				dataType : 'json',
+				contentType : 'application/json',
+				data : JSON.stringify(lpaData),
+				success : function(data) {
+					window.location.href = "lpalist.jsp";
+				},
+				error : function(err) {
+					window.location.href = "lpalist.jsp";
+				}
+			});
+		}
+		
+		function populateBrand(){
+			var country = $("#country").val();
+			$.ajax({
+				url : getUrl() + '/master/brand/country/'+country,
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				type : 'post',
+				dataType : 'json',
+				contentType : 'application/json',
+				success : function(result) {
+					$("#brand").html('');
+					$("#brand").append("<option value=''>Select</option>");
+					$(result).each(
+							function(k, v) {
+								$("#brand").append(
+										"<option value=" + v.id + ">" + v.name
+												+ "</option>");
+							});
+				},
+				error : function(err) {
+					console.log(err);
+				}
+			});
+		}
+		
+		function listBrand(countryId, brandId){
+			$.ajax({
+				url : getUrl() + '/master/brand/country/'+countryId,
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				type : 'post',
+				dataType : 'json',
+				contentType : 'application/json',
+				success : function(result) {
+					$("#brand").html('');
+					$("#brand").append("<option value=''>Select</option>");
+					$(result).each(
+							function(k, v) {
+								$("#brand").append(
+										"<option value=" + v.id + ">" + v.name
+												+ "</option>");
+							});
+					$("#brand").val(brandId);
+				},
+				error : function(err) {
+					console.log(err);
+				}
+			});
+		}
+		
+		function listProgram(brandId, programId){
+			$.ajax({
+				url : getUrl() + '/master/programme/by-brand?brandId=' + brandId
+						+ '',
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				success : function(result) {
+					$("#program").html('');
+					$("#program").append("<option value=''>Select</option>");
+					$(result).each(
+							function(k, v) {
+								$("#program").append(
+										"<option value=" + v.id + ">" + v.name
+												+ "</option>");
+							});
+					$("#program").val(programId);
+					$("#program").select2();
+				}
+			});
+		}
+	</script>
+</body>

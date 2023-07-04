@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CottonConnect - ELearning Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+    <link rel="stylesheet" href="font/simple-line-icons/css/simple-line-icons.css" />
+
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+    <link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+    <link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+</head>
+
+<body id="app-container" class="menu-sub-hidden show-spinner">
+    <div id="menu-header"></div>
+    <div id="menu-div"></div>
+    <main>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-12">
+                    <div class="mb-2">
+                        <h1>State</h1>
+                        <div class="top-right-button-container">
+                            <button type="button" class="btn btn-primary btn-lg top-right-button mr-1"
+                                data-toggle="modal" data-backdrop="static" data-target="#exampleModalRight" id="mbtn">ADD
+                                NEW</button>
+
+                            <div class="modal fade modal-right" id="exampleModalRight" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalRight" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Add State</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                            <input type="hidden" id="id">
+                                                <div class="form-group">
+                                                    <label>Country</label>
+                                                    <select id="country" class="form-control"></select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Code</label>
+                                                    <input type="text" class="form-control"  id="stateCode">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control"  id="stateName">
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-outline-primary"
+                                                        data-dismiss="modal">Cancel</button>
+                                                    <button onclick="submitForm()"
+                                                        class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col-12 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="data-table data-table-feature" id="country-table">
+                                <thead>
+                                    <tr>
+                                        <th>Country</th>
+                                        <th>Code</th>
+                                        <th>Name</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <footer class="page-footer">
+
+    </footer>
+
+    <script src="js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="js/vendor/perfect-scrollbar.min.js"></script>
+    <script src="js/vendor/datatables.min.js"></script>
+    <script src="js/dore.script.js"></script>
+    <script src="js/scripts.js?v=1.0"></script>
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $("#menu-div").load("menu.html");
+            $("#menu-header").load("nav.html");
+            $("#page-footer").load("footer.html");
+
+            $('#country-table').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": getUrl() + '/location/state/getAllStates',
+            });
+
+            $.ajax({
+                url: getUrl() + '/location/country/getCountries', success: function (result) {
+                    $("#country").html('');
+                    $("#country").append("<option value=''>Select</option>");
+                    $(result).each(function (k, v) {
+                        $("#country").append("<option value=" + v.id + ">" + v.name + "</option>");
+                    });
+                }
+            });
+
+        });
+
+        function submitForm() {
+            if ($("#country").val() == "") {
+                alert("Please Select Country");
+                return;
+            }
+            else if ($("#stateName").val() == "") {
+                alert("Please enter State name");
+                return;
+            }
+            var stateData = { "code": $("#stateCode").val(), "name": $("#stateName").val(), "countryId": $("#country").val(), "id" : $("#id").val() };
+            $.ajax({
+                url: getUrl() + '/location/state/saveState',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(stateData),
+                success: function (data) {
+                    window.location.href = "state.html";
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+        
+        function edit(id) {
+			$("body").addClass("show-spinner");
+			$.ajax({
+				url : getUrl() + '/location/state/by-id/'+id,
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				success : function(result) {
+					$("#id").val(id);
+					$("#stateCode").val(result.code);
+					$("#stateName").val(result.name);
+					$("#country").val(result.countryId);
+					$("body").removeClass("show-spinner");
+					$("#mbtn").click();
+				}
+			});
+		}
+		
+
+		function deletez(id){
+			$("body").addClass("show-spinner");
+
+			  var txt;
+			  if (confirm("Are you sure want to delete? Can't restore record once deleted")) {
+					$.ajax({
+						url : getUrl() + '/location/state/delete?id='+id,
+						beforeSend : function(request) {
+							request.setRequestHeader("user-id", getUserName());
+						},
+						success : function(result) {
+							$("body").removeClass("show-spinner");
+							window.location.href = "state.html";
+						}
+					});
+			  } else {
+				  $("body").removeClass("show-spinner");
+			  }
+			
+		}
+
+
+    </script>
+
+</body>
+
+</html>

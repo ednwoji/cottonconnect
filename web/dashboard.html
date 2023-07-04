@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>CottonConnect - ELearning Portal</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+<link rel="stylesheet"
+	href="font/simple-line-icons/css/simple-line-icons.css" />
+
+<link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+<link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+<link rel="stylesheet" href="css/vendor/fullcalendar.min.css" />
+<link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet"
+	href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+<link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+<link rel="stylesheet" href="css/vendor/bootstrap-stars.css" />
+<link rel="stylesheet" href="css/vendor/nouislider.min.css" />
+<link rel="stylesheet" href="css/vendor/bootstrap-datepicker3.min.css" />
+<link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+<link rel="stylesheet" href="css/main.css?v=1.0" />
+</head>
+
+<body id="app-container" class="menu-sub-hidden show-spinner">
+	<div id="menu-header"></div>
+	<div id="menu-div"></div>
+
+	<main>
+		<div class="container-fluid">
+			<div class="row  ">
+				<div class="col-12">
+					<h1>Dashboard Analytics</h1>
+					<nav
+						class="breadcrumb-container d-none d-sm-block d-lg-inline-block"
+						aria-label="breadcrumb">
+						<ol class="breadcrumb pt-0">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">Library</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Data</li>
+						</ol>
+					</nav>
+					<div class="separator mb-5"></div>
+
+					<div class="row">
+						<div class="col-lg-2">
+							<div class="card mb-3 progress-banner" id="faq_click" style="height: 135px;">
+								<div
+									class="card-body justify-content-between d-flex flex-row align-items-center">
+									<div>
+										<div>
+											<p class="lead text-white t-center">FAQ</p>
+											<p class="lead text-white t-center" id="queriesPending">0</p>
+											<p class="text-small text-white">Queries Pending</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div class="card mb-3 progress-banner" id="user_click" style="height: 135px;">
+								<div
+									class="card-body justify-content-between d-flex flex-row align-items-center">
+									<div>
+										<div>
+											<p class="lead text-white t-center">Users</p>
+											<p class="lead text-white t-center" id="userPending">0</p>
+											<p class="text-small text-white">Approval Process</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div class="card mb-3 progress-banner" style="height: 135px;">
+								<a href="#"
+									class="card-body justify-content-between d-flex flex-row align-items-center">
+									<div>
+										<div>
+											<p class="lead text-white t-center">Knowledge</p>
+											<p class="lead text-white t-center" id="knowledgeData">0</p>
+											<p class="text-small text-white">Data Published</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div class="card mb-3 progress-banner" id="video_click" style="height: 135px;">
+								<a href="#"
+									class="card-body justify-content-between d-flex flex-row align-items-center">
+									<div>
+										<div>
+											<p class="lead text-white t-center">Video</p>
+											<p class="lead text-white t-center" id="videoData">0 </p>
+											<p class="text-small text-white">Published</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div class="card mb-3 progress-banner" id="notification_click" style="height: 135px;">
+								<a href="#"
+									class="card-body justify-content-between d-flex flex-row align-items-center">
+									<div>
+										<div>
+											<p class="lead text-white t-center">Notification</p>
+											<p class="lead text-white t-center" id="notificationData">0</p>
+											<p class="text-small text-white t-center">Delivered</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div class="card mb-3 progress-banner">
+								<a href="#"
+									class="card-body justify-content-between d-flex flex-row align-items-center">
+									<div>
+										<div>
+											<p class="lead text-white t-center">FAQ</p>
+											<p class="lead text-white t-center">0 </p>
+											<p class="text-small text-white">Past Due Date</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="row sortable">
+						<div class="col-xl-6 col-lg-6" id="user-online"></div>
+						<div class="col-xl-6 col-lg-6" id="farmer-pie"></div>
+					</div>
+
+					<div class="row sortable" style="margin-top: 1%">
+						<div class="col-xl-12 col-lg-12 mb-4">
+							<div class="card">
+								<div class="card-header p-0 position-relative">
+									<div class="position-absolute handle card-icon">
+										<i class="simple-icon-shuffle"></i>
+									</div>
+								</div>
+
+								<div
+									class="card-body d-flex justify-content-between align-items-center">
+									<div class="col-xl-12 col-lg-12" id="container"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+	<footer class="page-footer">
+		<div class="footer-content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 col-sm-6">
+						<p class="mb-0 text-muted">CottonConnect 2020</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script src="js/vendor/bootstrap.bundle.min.js"></script>
+	<script src="js/vendor/Chart.bundle.min.js"></script>
+	<script src="js/vendor/chartjs-plugin-datalabels.js"></script>
+	<script src="js/vendor/moment.min.js"></script>
+	<script src="js/vendor/fullcalendar.min.js"></script>
+	<script src="js/vendor/datatables.min.js"></script>
+	<script src="js/vendor/perfect-scrollbar.min.js"></script>
+	<script src="js/vendor/progressbar.min.js"></script>
+	<script src="js/vendor/jquery.barrating.min.js"></script>
+	<script src="js/vendor/nouislider.min.js"></script>
+	<script src="js/vendor/bootstrap-datepicker.js"></script>
+	<script src="js/vendor/Sortable.js"></script>
+	<script src="js/vendor/mousetrap.min.js"></script>
+	<script src="js/dore.script.js"></script>
+	<script src="js/scripts.js?v=1.2"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+
+	<script type='text/javascript'>
+        $( document ).ready(function() {
+            $("#menu-div").load("menu.html");
+            $("#dashboard").addClass("active");
+            $("#menu-header").load("nav.html");
+            
+            $.ajax({ 
+            	url : getUrl() + '/dashboard/faq-queries',
+            	beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				type : 'post',
+				dataType : 'json',
+				contentType : 'application/json',
+				//data : JSON.stringify(brandData),
+				success : function(data) {
+					faqQueryChart(data);
+					console.log(data);
+				},
+				error : function(err) {
+					console.log(err);
+				}
+            });
+            
+            
+            var value = [];
+            $.ajax({ 
+            	url : getUrl() + '/dashboard/farmerCount',
+            	beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				type : 'post',
+				dataType : 'json',
+				contentType : 'application/json',
+				//data : JSON.stringify(brandData),
+				success : function(data) {
+					$(data).each(function(i,v){
+						value.push({
+							"name" : v.label,
+							"y" : parseInt(v.count)
+						});
+					});
+					console.log(value);
+					farmerPie(value);
+				},
+				error : function(err) {
+					console.log(err);
+				}
+            });
+            
+            
+            var onlineValue = [];
+            $.ajax({ 
+            	url : getUrl() + '/dashboard/user-stats',
+            	beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				type : 'post',
+				dataType : 'json',
+				contentType : 'application/json',
+				//data : JSON.stringify(brandData),
+				success : function(data) {
+					$(data).each(function(i,v){
+						onlineValue.push({
+							"name" : v.label,
+							"y" : parseInt(v.count)
+						});
+					});
+					userOnline(onlineValue);
+				},
+				error : function(err) {
+					console.log(err);
+				}
+            });
+            
+            stats();
+            click();
+            
+        });
+        
+        function click(){
+        	$("#faq_click").click(function(){
+        		window.location.href = "faqQueryList.jsp" ;
+        	});
+        	
+        	$("#user_click").click(function(){
+        		window.location.href = "unregisterList.jsp" ;
+        	});
+        	
+        	$("#video_click").click(function(){
+        		window.location.href = "videolist.jsp" ;
+        	});
+        	
+        	$("#notification_click").click(function(){
+        		window.location.href = "notificationList.jsp" ;
+        	});
+        	
+        	
+        }
+        
+        function stats(){
+        	$.ajax({ 
+            	url : getUrl() + '/dashboard/stats',
+            	beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				type : 'get',
+				dataType : 'json',
+				contentType : 'application/json',
+				//data : JSON.stringify(brandData),
+				success : function(data) {
+					console.log(data);
+					$("#queriesPending").text(data.queriesPending);
+					$("#userPending").text(data.approvalProcess);
+					$("#knowledgeData").text(data.knowledgeData);
+					$("#videoData").text(data.videoData);
+					$("#notificationData").text(data.notificationData);
+					//notificationData
+				},
+				error : function(err) {
+					console.log(err);
+				}
+            });
+        }
+        
+        function userOnline(value){
+        	Highcharts.chart('user-online', {
+        		colors: ['#FF9655', '#058DC7', '#DDDF00', '#FFF263','#64E572', '#24CBE5', '#6AF9C4', '#50B432', '#ED561B'],
+        	    chart: {
+        	        type: 'pie',
+        	        options3d: {
+        	            enabled: true,
+        	            alpha: 45,
+        	            beta: 0
+        	        }
+        	    },
+        	    title: {
+        	        text: 'Mobile Users Online Status'
+        	    },
+        	    accessibility: {
+        	        point: {
+        	            valueSuffix: ''
+        	        }
+        	    },
+        	    tooltip: {
+        	    	formatter: function() {
+                        return '<b>'+ Highcharts.numberFormat(this.y, 0) +'</b>';
+                    }
+        	    },
+        	    plotOptions: {
+        	        pie: {
+        	            allowPointSelect: true,
+        	            cursor: 'pointer',
+        	            depth: 35,
+        	            dataLabels: {
+        	                enabled: true,
+        	                format: '{point.name}'
+        	            }
+        	        }
+        	    },
+        	    series: [{
+        	        type: 'pie',
+        	        name: 'Users Status',
+        	        data: value
+        	    }]
+        	});
+        }
+        
+        function farmerPie(value){
+        	try{
+        	Highcharts.chart('farmer-pie', {
+        		colors: ['#DDDF00', '#FFF263','#64E572', '#24CBE5', '#6AF9C4','#FF9655', '#058DC7', '#50B432', '#ED561B'],
+        	    chart: {
+        	        type: 'pie',
+        	        options3d: {
+        	            enabled: true,
+        	            alpha: 45,
+        	            beta: 0
+        	        }
+        	    },
+        	    title: {
+        	        text: 'Farmers Count By Program'
+        	    },
+        	    accessibility: {
+        	        point: {
+        	            valueSuffix: '%'
+        	        }
+        	    },
+        	    tooltip: {
+        	    	formatter: function() {
+                        return '<b>'+ Highcharts.numberFormat(this.y, 0) +'</b>';
+                    }
+        	    },
+        	    plotOptions: {
+        	        pie: {
+        	            allowPointSelect: true,
+        	            cursor: 'pointer',
+        	            depth: 35,
+        	            dataLabels: {
+        	                enabled: true,
+        	                format: '{point.name}'
+        	            }
+        	        }
+        	    },
+        	    series: [{
+        	        type: 'pie',
+        	        name: 'Farmer Count',
+        	        data: value
+        	    }]
+        	});
+        	}catch(e){
+        		console.log(e);
+        	}
+        }
+        
+        function faqQueryChart(data){
+        	console.log(data.queriesReceived);
+        	Highcharts.chart('container', {
+        		colors: ['#64E572', '#24CBE5', '#6AF9C4','#FF9655', '#058DC7', '#50B432', '#ED561B', '#DDDF00', '#FFF263'],
+        	    chart: {
+        	        type: 'column'
+        	    },
+        	    title: {
+        	        text: 'FAQ Query & Responses'
+        	    },
+        	    subtitle: {
+        	        text: 'Last 15 days'
+        	    },
+        	    xAxis: {
+        	        categories: data.prevDates,
+        	        crosshair: true
+        	    },
+        	    yAxis: {
+        	        min: 0,
+        	        title: {
+        	            text: 'Queries'
+        	        }
+        	    },
+        	    tooltip: {
+        	    	formatter: function() {
+                        return '<b>'+ Highcharts.numberFormat(this.y, 0) +'</b>';
+                    }
+        	    },
+        	    plotOptions: {
+        	        column: {
+        	            pointPadding: 0.2,
+        	            borderWidth: 0
+        	        }
+        	    },
+        	    series: [
+        	    	{
+        	        name: 'Queries Received',
+        	        data: data.queriesReceived
+
+        	    }, {
+        	        name: 'Queries Responded',
+        	        data: data.queriesResponded
+
+        	    },
+        	  ]
+        	});
+        	
+        	
+        }
+    </script>
+
+</body>
+
+</html>

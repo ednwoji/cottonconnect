@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>CottonConnect - ELearning Portal</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+<link rel="stylesheet"
+	href="font/simple-line-icons/css/simple-line-icons.css" />
+
+<link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+<link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+<link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+<link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+<link rel="stylesheet" href="css/main.css" />
+
+<link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet"
+	href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+</head>
+
+<body id="app-container" class="menu-sub-hidden show-spinner">
+	<div id="menu-header"></div>
+	<div id="menu-div"></div>
+	<main>
+		<div class="container-fluid">
+			<div class="row ">
+				<div class="col-12">
+					<div class="mb-2">
+						<h1>Village</h1>
+						<div class="top-right-button-container">
+							<button type="button"
+								class="btn btn-primary btn-lg top-right-button mr-1"
+								data-toggle="modal" data-backdrop="static"
+								data-target="#exampleModalRight" id="mbtn">ADD NEW</button>
+
+							<div class="modal fade modal-right" id="exampleModalRight"
+								tabindex="-1" role="dialog" aria-labelledby="exampleModalRight"
+								aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header" id="modalHeader">
+											<h5 class="modal-title">Add Village</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<input type="hidden" id="id">
+											<div class="form-group">
+												<label>Country</label> <select id="country"
+													class="form-control" onchange="populateState()"></select>
+											</div>
+											<div class="form-group">
+												<label>State</label> <select id="state" class="form-control"
+													onchange="populateDistrict()">
+													<option>Select</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>district</label> <select id="district"
+													class="form-control" onchange="populateTaluk()">
+													<option>Select</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>Taluk</label> <select id="block" class="form-control">
+													<option>Select</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label>Code</label> <input type="text" class="form-control"
+													id="blockCode">
+											</div>
+
+											<div class="form-group">
+												<label>Name</label> <input type="text" class="form-control"
+													id="blockName">
+											</div>
+
+											<div class="modal-footer">
+												<button type="button" class="btn btn-outline-primary"
+													data-dismiss="modal">Cancel</button>
+												<button onclick="submitForm()" class="btn btn-primary">Submit</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mb-4">
+				<div class="col-12 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<table class="data-table data-table-feature" id="country-table">
+								<thead>
+									<tr>
+										<th>Country</th>
+										<th>State</th>
+										<th>District</th>
+										<th>Taluk</th>
+										<th>Code</th>
+										<th>Name</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+
+	<footer class="page-footer"> </footer>
+
+	<script src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script src="js/vendor/bootstrap.bundle.min.js"></script>
+	<script src="js/vendor/perfect-scrollbar.min.js"></script>
+	<script src="js/vendor/datatables.min.js"></script>
+	<script src="js/dore.script.js"></script>
+	<script src="js/scripts.js?v=1.0"></script>
+	<script src="js/location.js?v=1.0"></script>
+
+	<script type='text/javascript'>
+        $(document).ready(function () {
+            $("#menu-div").load("menu.html");
+            $("#menu-header").load("nav.html");
+            $("#page-footer").load("footer.html");
+
+            $('#country-table').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": getUrl() + '/location/village/getAllVillages',
+            });
+
+            $.ajax({
+                url: getUrl() + '/location/country/getCountries', success: function (result) {
+                    $("#country").html('');
+                    $("#country").append("<option value=''>Select</option>");
+                    $(result).each(function (k, v) {
+                        $("#country").append("<option value=" + v.id + ">" + v.name + "</option>");
+                    });
+                }
+            });
+
+        });
+
+        function populateState() {
+            var country = $("#country").val();
+            $.ajax({
+                url: getUrl() + '/location/state/getStatesByCountry?countryId=' + country + '', success: function (result) {
+                    $("#state").html('');
+                    $("#state").append("<option value=''>Select</option>");
+                    $(result).each(function (k, v) {
+                        $("#state").append("<option value=" + v.id + ">" + v.name + "</option>");
+                    });
+                }
+            });
+        }
+
+        function populateDistrict() {
+            var state = $("#state").val();
+            $.ajax({
+                url: getUrl() + '/location/district/getDistrictsByState?stateId=' + state + '', success: function (result) {
+                    $("#district").html('');
+                    $("#district").append("<option value=''>Select</option>");
+                    $(result).each(function (k, v) {
+                        $("#district").append("<option value=" + v.id + ">" + v.name + "</option>");
+                    });
+                }
+            });
+        }
+
+        function populateTaluk() {
+            var disitrict = $("#district").val();
+            $.ajax({
+                url: getUrl() + '/location/taluk/getTaluksByDistrict?districtId=' + disitrict + '', 
+				success: function (result) {
+                    $("#block").html('');
+                    $("#block").append("<option value=''>Select</option>");
+                    $(result).each(function (k, v) {
+                        $("#block").append("<option value=" + v.id + ">" + v.name + "</option>");
+                    });
+                }
+            });
+        }
+
+        function submitForm() {
+			console.log('id is '+$("#id").val());
+            if ($("#country").val() == "") {
+                alert("Please Select Country");
+                return;
+            }
+             if ($("#state").val() == "") {
+                alert("Please Select State");
+                return;
+            }
+             if ($("#district").val() == "") {
+                alert("Please Select District");
+                return;
+            } 
+             if ($("#block").val() == "") {
+                alert("Please Select Taluk");
+                return;
+            }
+             if ($("#blockName").val() == "") {
+                alert("Please enter name");
+                return;
+            }
+            var talukData = { "code": $("#blockCode").val(), "name": $("#blockName").val(), "talukId": $("#block").val(), "id" : $("#id").val() };
+            $.ajax({
+                url: getUrl() + '/location/village/saveVillage',
+				// url: 'http://localhost:5000/location/village/saveVillage',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(talukData),
+                success: function (data) {
+					console.log('Successful');
+                    window.location.href = "village.html";
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+					$('#modalHeader').append('<div class="alert alert-danger text-center border border-info">Villages and states should be unique</div>')
+					.find('.alert')
+					.fadeIn(300)
+					.delay(3000)
+					.fadeOut(300, function() {$(this).remove();});
+
+
+                }
+            });
+        }
+		
+        function edit(id) {
+			$("body").addClass("show-spinner");
+			$.ajax({
+				url : getUrl() + '/location/village/by-id/'+id,
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				success : function(result) {
+					$("#id").val(id);
+					$("#blockCode").val(result.code);
+					$("#blockName").val(result.name);
+					$("#district").val(result.selectedDistrict);
+					$("#state").val(result.selectedState);
+					$("#country").val(result.selectedCountryId);
+					listState(result.selectedCountryId, result.selectedState,result.selectedDistrict);
+					listDistrict(result.selectedState, result.selectedDistrict);
+					listBlock(result.selectedDistrict,result.talukId);
+					$("body").removeClass("show-spinner");
+					$("#mbtn").click();
+				}
+			});
+		}
+		
+		function deletez(id){
+			$("body").addClass("show-spinner");
+
+			  var txt;
+			  if (confirm("Are you sure want to delete? Can't restore record once deleted")) {
+					$.ajax({
+						url : getUrl() + '/location/village/delete?id='+id,
+						beforeSend : function(request) {
+							request.setRequestHeader("user-id", getUserName());
+						},
+						success : function(result) {
+							$("body").removeClass("show-spinner");
+							window.location.href = window.location.href;
+						}
+					});
+			  } else {
+				  $("body").removeClass("show-spinner");
+			  }
+			
+		}
+
+
+    </script>
+
+</body>
+
+</html>

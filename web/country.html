@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>CottonConnect - ELearning Portal</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+<link rel="stylesheet"
+	href="font/simple-line-icons/css/simple-line-icons.css" />
+
+<link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+<link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+<link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+<link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+<link rel="stylesheet" href="css/main.css" />
+
+<link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
+<link rel="stylesheet"
+	href="css/vendor/datatables.responsive.bootstrap4.min.css" />
+</head>
+
+<body id="app-container" class="menu-sub-hidden show-spinner">
+	<div id="menu-header"></div>
+	<div id="menu-div"></div>
+	<main>
+		<div class="container-fluid">
+			<div class="row ">
+				<div class="col-12">
+					<div class="mb-2">
+						<h1>Country</h1>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<div class="col-12 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<form
+								action=""
+								id="add-form"
+								method="post">
+								<input type="hidden" name="id" id="id"> <input
+									type="hidden" name="redirectUrl" id="redirectUrl">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>Code</label> <input type="text" class="form-control" 
+												required id="countryCode" name="code" maxlength="4">
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>Name</label> <input type="text" class="form-control"
+												required id="countryName" name="name" maxlength="15">
+										</div>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<a href="countrylist.jsp" class="btn btn-outline-primary">Cancel</a>
+									<button class="btn btn-primary">Submit</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+
+	<footer class="page-footer"> </footer>
+
+	<script src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script src="js/vendor/bootstrap.bundle.min.js"></script>
+	<script src="js/vendor/perfect-scrollbar.min.js"></script>
+	<script src="js/vendor/datatables.min.js"></script>
+	<script src="js/dore.script.js"></script>
+	<script src="js/scripts.js?v=1.1"></script>
+
+	<script type='text/javascript'>
+		$.urlParam = function(name) {
+			try {
+				var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+						.exec(window.location.href);
+				return results[1] || 0;
+			} catch (e) {
+			}
+		}
+
+	
+        $(document).ready(function () {
+            $("#menu-div").load("menu.html");
+            $("#menu-header").load("nav.html");
+            $("#page-footer").load("footer.html");
+			$("#add-form").attr("action", getUrl() + "/location/country/saveCountry");
+            var id = $.urlParam('id');
+			if (id != null) {
+				edit(id);
+			}
+            
+            console.log("document.URL : "+document.URL);
+            console.log("document.location.href : "+document.location.href);
+            console.log("document.location.origin : "+document.location.origin);
+            console.log("document.location.hostname : "+document.location.hostname);
+            console.log("document.location.host : "+document.location.host);
+            console.log("document.location.pathname : "+document.location.pathname);
+            
+        });
+
+        function submitForm() {
+            if ($("#countryCode").val() == "") {
+                alert("Please enter Country Code");
+                return;
+            }
+            else if ($("#countryName").val() == "") {
+                alert("Please enter Country name");
+                return;
+            }
+            var countryData = { "code": $("#countryCode").val(), "name": $("#countryName").val(), "id" : $("#id").val() };
+            $.ajax({
+                url: getUrl() + '/location/country/saveCountry',
+                type: 'post',
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(countryData),
+                success: function (data) {
+                	 table.ajax.reload();
+                	 $("#cbtn").click();
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+        
+		function edit(id) {
+			$("body").addClass("show-spinner");
+			$.ajax({
+				url : getUrl() + '/location/country/by-id/'+id,
+				beforeSend : function(request) {
+					request.setRequestHeader("user-id", getUserName());
+				},
+				success : function(result) {
+					$("#id").val(id);
+					$("#countryCode").val(result.code);
+					$("#countryName").val(result.name);
+					$("body").removeClass("show-spinner");
+					$("#mbtn").click();
+				}
+			});
+		}
+		
+
+		function deletez(id){
+			$("body").addClass("show-spinner");
+
+			  var txt;
+			  if (confirm("Are you sure want to delete? Can't restore record once deleted")) {
+					$.ajax({
+						url : getUrl() + '/location/country/delete?id='+id,
+						beforeSend : function(request) {
+							request.setRequestHeader("user-id", getUserName());
+						},
+						success : function(result) {
+							$("body").removeClass("show-spinner");
+							window.location.href = "country.html";
+						}
+					});
+			  } else {
+				  $("body").removeClass("show-spinner");
+			  }
+			
+		}
+
+    </script>
+
+</body>
+
+</html>

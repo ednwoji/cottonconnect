@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>CottonConnect</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="font/iconsmind-s/css/iconsminds.css" />
+<link rel="stylesheet"
+	href="font/simple-line-icons/css/simple-line-icons.css" />
+
+<link rel="stylesheet" href="css/vendor/bootstrap.min.css" />
+<link rel="stylesheet" href="css/vendor/bootstrap.rtl.only.min.css" />
+<link rel="stylesheet" href="css/vendor/perfect-scrollbar.css" />
+<link rel="stylesheet" href="css/vendor/select2.min.css" />
+<link rel="stylesheet" href="css/vendor/select2-bootstrap.min.css" />
+<link rel="stylesheet" href="css/vendor/jquery.contextMenu.min.css" />
+<link rel="stylesheet" href="css/vendor/component-custom-switch.min.css" />
+<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body id="app-container" class="menu-sub-hidden show-spinner right-menu">
+	<div id="menu-header"></div>
+	<div id="menu-div"></div>
+	<main>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12">
+					<div class="mb-2">
+						<h1>Knowledge Centre</h1>
+						<div class="top-right-button-container">
+							<button type="button"
+								class="btn btn-primary btn-lg top-right-button mr-1"
+								data-toggle="modal" data-backdrop="static"
+								data-target="#exampleModalRight">ADD NEW</button>
+
+							<div class="modal fade modal-right" id="exampleModalRight"
+								tabindex="-1" role="dialog" aria-labelledby="exampleModalRight"
+								aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Add Knowledge Centre</h5>
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<form
+												method="post" enctype="multipart/form-data">
+												<div class="form-group">
+													<label>Title</label> <input type="text"
+														class="form-control" required placeholder="" name="title">
+												</div>
+												<div class="form-group">
+													<label>Notes</label> <input type="text"
+														class="form-control" placeholder="" name="notes">
+												</div>
+												<div class="form-group">
+													<label>Description</label>
+													<textarea placeholder="" class="form-control" rows="2"
+														name="description"></textarea>
+												</div>
+
+												<div class="form-group">
+													<label>Category</label> <select class="form-control"
+														name="subCategory" id="subCategory">
+													</select>
+												</div>
+
+												<div class="form-group">
+													<label>Upload</label> <input type="file" name="file"
+														required class="form-control"> <input type="file"
+														name="file" required class="form-control"> <input
+														type="file" name="file" required class="form-control">
+													<input type="file" name="file" required
+														class="form-control">
+												</div>
+
+												<div class="modal-footer">
+													<button type="button" class="btn btn-outline-primary"
+														data-dismiss="modal">Cancel</button>
+													<button type="submit" class="btn btn-primary">Submit</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal fade modal-right" id="exampleModal"
+							tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Add New</h5>
+										<button type="button" class="close" data-dismiss="modal"
+											aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="form-group">
+												<label>Title</label> <input type="text" class="form-control"
+													placeholder="">
+											</div>
+											<div class="form-group">
+												<label>Details</label>
+												<textarea class="form-control" rows="2"></textarea>
+											</div>
+
+											<div class="form-group">
+												<label>Category</label> <select
+													class="form-control select2-single" data-width="100%">
+													<option label="&nbsp;">&nbsp;</option>
+													<option value="Flexbox">Flexbox</option>
+													<option value="Sass">Sass</option>
+													<option value="React">React</option>
+												</select>
+											</div>
+
+											<div class="form-group">
+												<label>Labels</label> <select
+													class="form-control select2-multiple" multiple="multiple"
+													data-width="100%">
+													<option value="New Framework">New Framework</option>
+													<option value="Education">Education</option>
+													<option value="Personal">Personal</option>
+												</select>
+											</div>
+
+
+											<div class="form-group">
+												<label>Status</label>
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input"
+														id="customCheck1"> <label
+														class="custom-control-label" for="customCheck1">Completed</label>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-outline-primary"
+											data-dismiss="modal">Cancel</button>
+										<button type="button" class="btn btn-primary">Submit</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mb-4">
+						<div class="col-12 mb-4">
+							<div class="card">
+								<div class="card-body">
+									<table class="data-table data-table-feature" id="kc-table">
+										<thead>
+											<tr>
+												<td>Title</td>
+												<td>Notes</td>
+												<td>Category</td>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="page-footer"></footer>
+
+	<script src="js/vendor/jquery-3.3.1.min.js"></script>
+	<script src="js/vendor/bootstrap.bundle.min.js"></script>
+	<script src="js/vendor/perfect-scrollbar.min.js"></script>
+	<script src="js/vendor/select2.full.js"></script>
+	<script src="js/vendor/mousetrap.min.js"></script>
+	<script src="js/vendor/jquery.contextMenu.min.js"></script>
+	<script src="js/vendor/datatables.min.js"></script>
+	<script src="js/dore.script.js"></script>
+	<script src="js/scripts.js?v=1.2.1"></script>
+
+	<script type='text/javascript'>
+	
+	$(function(){
+		  $('form').submit(function(){
+		    this.action = getUrl()+'/service/knowledge-center/save/';
+		    return true;
+		  });
+		});
+	
+        $(document).ready(function () {
+            $("#menu-div").load("menu.html");
+            $("#menu-header").load("nav.html");
+            $("#page-footer").load("footer.html");
+
+            $('#kc-table').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": getUrl()+'/service/knowledge-center/getAllRecords',
+            });
+
+            $.ajax({
+                url: getUrl() + '/master/sub-categories/list', success: function (result) {
+                    $("#subCategory").html('');
+                    $("#subCategory").append("<option value=''>Select</option>");
+                    $(result).each(function (k, v) {
+                        $("#subCategory").append("<option value=" + v.id + ">" + v.name + "</option>");
+                    });
+                    /
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

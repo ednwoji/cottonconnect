@@ -1,0 +1,106 @@
+2020-04-18 17:01:53,398 INFO org.springframework.boot.StartupInfoLogger [main] Starting ELearningApplicationTests on Dhinesh-PC with PID 23268 (started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-04-18 17:01:53,404 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-04-18 17:01:55,497 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-18 17:01:55,912 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 387ms. Found 11 JPA repository interfaces.
+2020-04-18 17:01:58,052 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-18 17:01:58,283 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-18 17:01:58,673 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-18 17:01:59,474 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-18 17:01:59,853 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-18 17:01:59,932 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-04-18 17:02:05,172 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-18 17:02:05,211 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:02:07,951 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-18 17:02:08,994 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-18 17:02:10,009 INFO org.springframework.boot.StartupInfoLogger [main] Started ELearningApplicationTests in 17.814 seconds (JVM running for 20.725)
+2020-04-18 17:02:10,349 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-18 17:02:10,358 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:02:10,364 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-04-18 17:02:10,376 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-04-18 17:26:18,377 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 6152 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-04-18 17:26:18,389 INFO org.springframework.boot.SpringApplication [restartedMain] The following profiles are active: dev
+2020-04-18 17:26:18,512 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-04-18 17:26:18,514 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-18 17:26:18,515 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-18 17:26:21,271 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-18 17:26:21,609 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 308ms. Found 11 JPA repository interfaces.
+2020-04-18 17:26:23,155 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8001 (http)
+2020-04-18 17:26:23,177 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8001"]
+2020-04-18 17:26:23,179 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-04-18 17:26:23,179 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-04-18 17:26:23,362 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-04-18 17:26:23,363 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4848 ms
+2020-04-18 17:26:23,741 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-18 17:26:24,121 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-18 17:26:24,546 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-18 17:26:24,898 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-04-18 17:26:25,201 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-04-18 17:26:25,277 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-04-18 17:26:29,659 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-18 17:26:29,683 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:26:29,798 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-04-18 17:26:31,778 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-18 17:26:32,700 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8001"]
+2020-04-18 17:26:32,780 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8001 (http) with context path ''
+2020-04-18 17:26:32,787 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 16.224 seconds (JVM running for 18.978)
+2020-04-18 17:26:44,123 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-18 17:26:44,125 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-04-18 17:26:44,150 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8001-exec-1] Completed initialization in 23 ms
+2020-04-18 17:26:44,440 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8001-exec-1] select knowledgec0_.id as id1_6_, knowledgec0_.created_date as created_2_6_, knowledgec0_.created_user as created_3_6_, knowledgec0_.is_active as is_activ4_6_, knowledgec0_.is_deleted as is_delet5_6_, knowledgec0_.updated_date as updated_6_6_, knowledgec0_.updated_user as updated_7_6_, knowledgec0_.description as descript8_6_, knowledgec0_.notes as notes9_6_, knowledgec0_.photo_url as photo_u10_6_, knowledgec0_.sub_category_id as sub_cat12_6_, knowledgec0_.title as title11_6_ from knowledge_center knowledgec0_ limit ?
+2020-04-18 17:26:44,565 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8001-exec-1] select subcategor0_.id as id1_15_0_, subcategor0_.category_id as category3_15_0_, subcategor0_.name as name2_15_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-04-18 17:26:44,590 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8001-exec-1] select subcategor0_.id as id1_15_0_, subcategor0_.category_id as category3_15_0_, subcategor0_.name as name2_15_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-04-18 17:27:00,770 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(8)-127.0.0.1] Application shutdown requested.
+2020-04-18 17:27:00,778 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(8)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:27:00,787 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(8)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-18 17:27:00,796 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(8)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-04-18 17:27:45,116 INFO org.springframework.boot.StartupInfoLogger [main] Starting ELearningApplicationTests on Dhinesh-PC with PID 29236 (started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-04-18 17:27:45,119 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-04-18 17:27:46,588 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-18 17:27:46,982 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 362ms. Found 11 JPA repository interfaces.
+2020-04-18 17:27:48,501 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-18 17:27:48,842 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-18 17:27:49,418 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-18 17:27:50,347 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-18 17:27:50,612 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-18 17:27:50,691 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-04-18 17:27:54,680 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-18 17:27:54,705 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:27:56,549 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-18 17:27:58,610 INFO org.springframework.boot.StartupInfoLogger [main] Started ELearningApplicationTests in 14.375 seconds (JVM running for 16.899)
+2020-04-18 17:27:58,920 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:27:58,926 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-04-18 17:27:58,939 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-04-18 17:53:15,306 INFO org.springframework.boot.StartupInfoLogger [main] Starting ELearningApplicationTests on Dhinesh-PC with PID 20036 (started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-04-18 17:53:15,311 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-04-18 17:53:17,303 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-18 17:53:17,753 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 416ms. Found 11 JPA repository interfaces.
+2020-04-18 17:53:20,001 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-18 17:53:20,246 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-18 17:53:20,713 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-18 17:53:21,670 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-18 17:53:22,036 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-18 17:53:22,126 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-04-18 17:53:26,583 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-18 17:53:26,608 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:53:28,842 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-18 17:53:31,255 INFO org.springframework.boot.StartupInfoLogger [main] Started ELearningApplicationTests in 17.134 seconds (JVM running for 20.09)
+2020-04-18 17:53:31,731 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 17:53:31,740 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-04-18 17:53:31,755 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-04-18 18:11:52,354 INFO org.springframework.boot.StartupInfoLogger [main] Starting ELearningApplicationTests on Dhinesh-PC with PID 29496 (started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-04-18 18:11:52,359 INFO org.springframework.boot.SpringApplication [main] The following profiles are active: dev
+2020-04-18 18:11:54,837 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-18 18:11:55,267 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 395ms. Found 11 JPA repository interfaces.
+2020-04-18 18:11:57,826 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-18 18:11:58,140 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-18 18:11:58,744 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-18 18:11:59,737 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2020-04-18 18:12:00,223 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-04-18 18:12:00,387 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-04-18 18:12:09,095 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-18 18:12:09,132 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 18:12:14,230 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-18 18:12:21,127 INFO org.springframework.boot.StartupInfoLogger [main] Started ELearningApplicationTests in 31.366 seconds (JVM running for 37.402)
+2020-04-18 18:12:21,788 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-18 18:12:21,805 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-04-18 18:12:21,866 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

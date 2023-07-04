@@ -1,0 +1,741 @@
+2020-05-17 11:21:15,683 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 8212 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 11:21:15,699 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 11:21:15,834 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 11:21:15,835 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 11:21:15,835 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 11:21:19,589 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 11:21:20,190 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 519ms. Found 25 JPA repository interfaces.
+2020-05-17 11:21:22,498 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 11:21:22,521 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 11:21:22,522 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 11:21:22,523 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 11:21:22,821 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 11:21:22,822 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6986 ms
+2020-05-17 11:21:23,277 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 11:21:23,496 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 11:21:23,909 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 11:21:24,183 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 11:21:24,502 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 11:21:24,574 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 11:21:28,704 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 11:21:28,724 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 11:21:28,761 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 11:21:32,940 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 11:21:35,682 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 11:21:35,756 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 11:21:35,762 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 21.442 seconds (JVM running for 22.913)
+2020-05-17 11:32:44,950 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-3] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 11:32:44,952 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-3] Initializing Servlet 'dispatcherServlet'
+2020-05-17 11:32:44,981 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-3] Completed initialization in 29 ms
+2020-05-17 11:32:45,340 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-3] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:32:48,403 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select knowledgec0_.id as id1_8_, knowledgec0_.created_date as created_2_8_, knowledgec0_.created_user as created_3_8_, knowledgec0_.is_active as is_activ4_8_, knowledgec0_.is_deleted as is_delet5_8_, knowledgec0_.updated_date as updated_6_8_, knowledgec0_.updated_user as updated_7_8_, knowledgec0_.description as descript8_8_, knowledgec0_.notes as notes9_8_, knowledgec0_.sub_category_id as sub_cat11_8_, knowledgec0_.title as title10_8_ from eknowledge_center knowledgec0_ limit ?
+2020-05-17 11:32:48,442 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-7] select subcategor0_.id as id1_20_, subcategor0_.category_id as category3_20_, subcategor0_.name as name2_20_ from sub_category subcategor0_ where subcategor0_.category_id=?
+2020-05-17 11:32:48,460 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [1] as [BIGINT] - [1]
+2020-05-17 11:32:48,473 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select count(knowledgec0_.id) as col_0_0_ from eknowledge_center knowledgec0_
+2020-05-17 11:32:48,489 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select subcategor0_.id as id1_20_0_, subcategor0_.category_id as category3_20_0_, subcategor0_.name as name2_20_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-05-17 11:32:48,491 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-4] binding parameter [1] as [BIGINT] - [52]
+2020-05-17 11:39:31,710 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-9] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:34,596 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-6] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:34,997 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-5] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:35,836 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-2] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:37,057 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:37,726 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-3] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:42,730 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:43,696 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-7] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:44,745 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-8] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:45,424 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-10] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:46,104 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-9] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:47,234 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-6] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:49,548 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-5] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:51,279 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-2] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:39:58,464 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select country0_.id as id1_5_, country0_.created_date as created_2_5_, country0_.created_user as created_3_5_, country0_.is_active as is_activ4_5_, country0_.is_deleted as is_delet5_5_, country0_.updated_date as updated_6_5_, country0_.updated_user as updated_7_5_, country0_.code as code8_5_, country0_.name as name9_5_ from country country0_ limit ?
+2020-05-17 11:45:19,627 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-7] select subcategor0_.id as id1_20_, subcategor0_.category_id as category3_20_, subcategor0_.name as name2_20_ from sub_category subcategor0_ where subcategor0_.category_id=?
+2020-05-17 11:45:19,632 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select knowledgec0_.id as id1_8_, knowledgec0_.created_date as created_2_8_, knowledgec0_.created_user as created_3_8_, knowledgec0_.is_active as is_activ4_8_, knowledgec0_.is_deleted as is_delet5_8_, knowledgec0_.updated_date as updated_6_8_, knowledgec0_.updated_user as updated_7_8_, knowledgec0_.description as descript8_8_, knowledgec0_.notes as notes9_8_, knowledgec0_.sub_category_id as sub_cat11_8_, knowledgec0_.title as title10_8_ from eknowledge_center knowledgec0_ limit ?
+2020-05-17 11:45:19,634 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [1] as [BIGINT] - [1]
+2020-05-17 11:45:19,641 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select count(knowledgec0_.id) as col_0_0_ from eknowledge_center knowledgec0_
+2020-05-17 11:45:19,644 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select subcategor0_.id as id1_20_0_, subcategor0_.category_id as category3_20_0_, subcategor0_.name as name2_20_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-05-17 11:45:19,647 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-4] binding parameter [1] as [BIGINT] - [52]
+2020-05-17 11:45:38,968 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-8] select nextval ('e_knowledge_seq')
+2020-05-17 11:45:39,037 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-8] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 11:45:39,041 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [1] as [TIMESTAMP] - [Sun May 17 11:45:38 IST 2020]
+2020-05-17 11:45:39,046 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 11:45:39,049 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 11:45:39,050 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 11:45:39,051 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [5] as [TIMESTAMP] - [Sun May 17 11:45:38 IST 2020]
+2020-05-17 11:45:39,052 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 11:45:39,053 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [7] as [VARCHAR] - [fghfgfgh]
+2020-05-17 11:45:39,054 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [8] as [VARCHAR] - [gh]
+2020-05-17 11:45:39,054 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 11:45:39,055 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [10] as [VARCHAR] - [g]
+2020-05-17 11:45:39,055 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-8] binding parameter [11] as [BIGINT] - [652]
+2020-05-17 11:45:39,081 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-8] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 11:45:39,086 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-8] Knowledge Center saved.
+2020-05-17 11:45:40,297 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [task-1] select knowledgec0_.id as id1_8_0_, knowledgec0_.created_date as created_2_8_0_, knowledgec0_.created_user as created_3_8_0_, knowledgec0_.is_active as is_activ4_8_0_, knowledgec0_.is_deleted as is_delet5_8_0_, knowledgec0_.updated_date as updated_6_8_0_, knowledgec0_.updated_user as updated_7_8_0_, knowledgec0_.description as descript8_8_0_, knowledgec0_.notes as notes9_8_0_, knowledgec0_.sub_category_id as sub_cat11_8_0_, knowledgec0_.title as title10_8_0_ from eknowledge_center knowledgec0_ where knowledgec0_.id=?
+2020-05-17 11:45:40,297 TRACE org.hibernate.type.descriptor.sql.BasicBinder [task-1] binding parameter [1] as [BIGINT] - [652]
+2020-05-17 11:47:53,818 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-6] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-17 11:47:53,829 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-6] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 11:47:53,837 INFO com.zaxxer.hikari.HikariDataSource [Thread-6] HikariPool-1 - Shutdown initiated...
+2020-05-17 11:47:53,847 INFO com.zaxxer.hikari.HikariDataSource [Thread-6] HikariPool-1 - Shutdown completed.
+2020-05-17 11:47:54,392 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 8212 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 11:47:54,393 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 11:47:55,568 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 11:47:55,834 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 264ms. Found 25 JPA repository interfaces.
+2020-05-17 11:47:56,362 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 11:47:56,363 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 11:47:56,363 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 11:47:56,363 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 11:47:56,394 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 11:47:56,394 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1991 ms
+2020-05-17 11:47:56,545 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 11:47:56,573 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2020-05-17 11:47:56,659 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2020-05-17 11:47:56,660 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 11:47:58,282 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 11:47:58,284 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 11:47:58,292 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:15:46,667 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 17544 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:15:46,676 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:15:46,857 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:15:46,858 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:15:46,859 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:15:48,352 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:15:48,673 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 296ms. Found 25 JPA repository interfaces.
+2020-05-17 12:15:50,634 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:15:50,656 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:15:50,658 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:15:50,658 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:15:50,900 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:15:50,901 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4042 ms
+2020-05-17 12:15:51,278 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:15:51,468 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:15:51,752 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:15:51,995 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:15:52,220 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:15:52,317 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:15:55,832 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:15:55,844 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:15:55,876 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:15:57,683 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'knowledgeCenterController': Unsatisfied dependency expressed through field 'knowleldgeCenterService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'knowleldgeCenterServiceImpl': Unsatisfied dependency expressed through field 'uploadService'; nested exception is org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'uploadServiceImpl' is expected to be of type 'com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl' but was actually of type 'com.sun.proxy.$Proxy132'
+2020-05-17 12:15:57,686 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:15:57,693 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:15:57,704 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2020-05-17 12:15:57,709 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
+2020-05-17 12:15:57,753 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-17 12:15:57,757 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'uploadServiceImpl' could not be injected as a 'com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl' because it is a JDK dynamic proxy that implements:
+	com.cottonconnect.elearning.ELearning.service.UploadService
+
+
+Action:
+
+Consider injecting the bean as one of its interfaces or forcing the use of CGLib-based proxies by setting proxyTargetClass=true on @EnableAsync and/or @EnableCaching.
+
+2020-05-17 12:16:52,991 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 22208 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:16:52,998 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:16:53,066 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:16:53,066 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:16:53,066 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:16:53,849 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:16:54,037 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 178ms. Found 25 JPA repository interfaces.
+2020-05-17 12:16:54,737 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:16:54,746 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:16:54,746 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:16:54,747 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:16:54,877 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:16:54,878 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1811 ms
+2020-05-17 12:16:55,058 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:16:55,238 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:16:55,371 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:16:55,488 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:16:55,715 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:16:55,742 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:16:57,577 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:16:57,585 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:16:57,651 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:16:58,523 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:16:58,942 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:16:58,974 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:16:58,978 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.569 seconds (JVM running for 7.859)
+2020-05-17 12:18:13,321 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 12:18:13,321 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 12:18:13,329 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 7 ms
+2020-05-17 12:18:13,591 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select nextval ('e_knowledge_seq')
+2020-05-17 12:18:13,630 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 12:18:13,633 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [1] as [TIMESTAMP] - [Sun May 17 12:18:13 IST 2020]
+2020-05-17 12:18:13,635 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 12:18:13,635 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 12:18:13,636 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 12:18:13,637 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [5] as [TIMESTAMP] - [Sun May 17 12:18:13 IST 2020]
+2020-05-17 12:18:13,638 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 12:18:13,638 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [7] as [VARCHAR] - [fghfgfgh]
+2020-05-17 12:18:13,638 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [8] as [VARCHAR] - [gh]
+2020-05-17 12:18:13,639 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 12:18:13,640 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [10] as [VARCHAR] - [g]
+2020-05-17 12:18:13,640 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [11] as [BIGINT] - [702]
+2020-05-17 12:18:13,665 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-1] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:18:13,668 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-1] Knowledge Center saved.
+2020-05-17 12:18:46,765 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
+2020-05-17 12:18:46,768 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(3)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:18:46,776 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:18:46,784 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:18:46,790 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-17 12:21:27,402 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 19196 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:21:27,453 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:21:27,529 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:21:27,530 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:21:27,530 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:21:28,523 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:21:28,821 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 202ms. Found 25 JPA repository interfaces.
+2020-05-17 12:21:29,461 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:21:29,469 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:21:29,470 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:21:29,470 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:21:29,608 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:21:29,608 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2077 ms
+2020-05-17 12:21:29,904 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:21:29,990 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:21:30,131 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:21:30,247 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:21:30,367 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:21:30,396 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:21:32,193 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:21:32,201 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:21:32,233 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:21:33,085 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:21:33,494 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:21:33,521 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:21:33,526 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.702 seconds (JVM running for 7.982)
+2020-05-17 12:21:46,482 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 12:21:46,482 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 12:21:46,490 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 7 ms
+2020-05-17 12:21:46,746 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select nextval ('e_knowledge_seq')
+2020-05-17 12:21:46,779 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 12:21:46,782 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [1] as [TIMESTAMP] - [Sun May 17 12:21:46 IST 2020]
+2020-05-17 12:21:46,784 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 12:21:46,786 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 12:21:46,786 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 12:21:46,786 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [5] as [TIMESTAMP] - [Sun May 17 12:21:46 IST 2020]
+2020-05-17 12:21:46,787 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 12:21:46,787 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [7] as [VARCHAR] - [fghfgfgh]
+2020-05-17 12:21:46,787 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [8] as [VARCHAR] - [gh]
+2020-05-17 12:21:46,789 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 12:21:46,789 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [10] as [VARCHAR] - [g]
+2020-05-17 12:21:46,790 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [11] as [BIGINT] - [752]
+2020-05-17 12:21:46,810 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-1] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:21:46,814 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-1] Knowledge Center saved.
+2020-05-17 12:22:16,343 ERROR org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler [task-1] Unexpected exception occurred invoking async method: public void com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl.save(org.springframework.web.multipart.MultipartFile[])
+java.lang.RuntimeException: Could not store the file. Error: C:\Users\vicky\AppData\Local\Temp\tomcat.1909855271536673003.5001\work\Tomcat\localhost\ROOT\upload_7153bc55_3ab0_4120_9116_f15018fa25fc_00000004.tmp (The system cannot find the file specified)
+	at com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl.save(UploadServiceImpl.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2020-05-17 12:24:15,528 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2020-05-17 12:24:15,530 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:24:15,539 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:24:15,546 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:24:15,549 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-17 12:24:21,444 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 26020 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:24:21,449 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:24:21,540 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:24:21,541 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:24:21,541 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:24:22,270 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:24:22,460 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 178ms. Found 25 JPA repository interfaces.
+2020-05-17 12:24:23,142 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:24:23,152 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:24:23,153 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:24:23,154 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:24:23,283 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:24:23,284 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1743 ms
+2020-05-17 12:24:23,618 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:24:23,720 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:24:23,866 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:24:23,976 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:24:24,099 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:24:24,128 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:24:26,055 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:24:26,064 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:24:26,094 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:24:26,917 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:24:27,324 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:24:27,352 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:24:27,356 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.437 seconds (JVM running for 7.629)
+2020-05-17 12:24:51,780 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-17 12:24:51,798 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:787)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.cottonconnect.elearning.ELearning.ELearningApplication.main(ELearningApplication.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.RuntimeException: Could not initialize folder for upload!
+	at com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl.init(UploadServiceImpl.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy126.init(Unknown Source)
+	at com.cottonconnect.elearning.ELearning.ELearningApplication.run(ELearningApplication.java:24)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:784)
+	... 10 common frames omitted
+2020-05-17 12:24:51,816 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:24:51,821 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:24:51,824 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2020-05-17 12:25:26,968 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 20688 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:25:26,973 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:25:27,025 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:25:27,026 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:25:27,026 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:25:27,987 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:25:28,246 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 247ms. Found 25 JPA repository interfaces.
+2020-05-17 12:25:29,008 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:25:29,017 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:25:29,018 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:25:29,018 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:25:29,195 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:25:29,195 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2168 ms
+2020-05-17 12:25:29,586 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:25:29,666 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:25:29,838 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:25:30,055 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:25:30,183 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:25:30,213 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:25:32,126 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:25:32,136 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:25:32,170 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:25:33,303 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:25:33,829 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:25:33,873 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:25:33,879 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 7.503 seconds (JVM running for 8.703)
+2020-05-17 12:25:44,874 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [restartedMain] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-17 12:25:44,887 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:787)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:768)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:322)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.cottonconnect.elearning.ELearning.ELearningApplication.main(ELearningApplication.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.RuntimeException: Could not initialize folder for upload!
+	at com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl.init(UploadServiceImpl.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:205)
+	at com.sun.proxy.$Proxy126.init(Unknown Source)
+	at com.cottonconnect.elearning.ELearning.ELearningApplication.run(ELearningApplication.java:24)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:784)
+	... 10 common frames omitted
+2020-05-17 12:25:44,896 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:25:44,901 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:25:44,905 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2020-05-17 12:26:43,476 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 6816 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:26:43,515 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:26:43,575 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:26:43,576 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:26:43,576 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:26:44,370 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:26:44,572 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 190ms. Found 25 JPA repository interfaces.
+2020-05-17 12:26:45,300 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:26:45,312 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:26:45,313 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:26:45,313 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:26:45,456 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:26:45,456 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1880 ms
+2020-05-17 12:26:45,746 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:26:45,823 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:26:45,946 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:26:46,088 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:26:46,315 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:26:46,341 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:26:48,082 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:26:48,091 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:26:48,122 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:26:48,941 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:26:49,363 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:26:49,391 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:26:49,394 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.459 seconds (JVM running for 7.66)
+2020-05-17 12:27:02,904 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 12:27:02,905 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 12:27:02,915 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 10 ms
+2020-05-17 12:27:03,132 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select nextval ('e_knowledge_seq')
+2020-05-17 12:27:03,166 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 12:27:03,169 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [1] as [TIMESTAMP] - [Sun May 17 12:27:03 IST 2020]
+2020-05-17 12:27:03,171 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 12:27:03,172 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 12:27:03,172 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 12:27:03,172 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [5] as [TIMESTAMP] - [Sun May 17 12:27:03 IST 2020]
+2020-05-17 12:27:03,173 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 12:27:03,173 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [7] as [VARCHAR] - [fghfgfgh]
+2020-05-17 12:27:03,174 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [8] as [VARCHAR] - [gh]
+2020-05-17 12:27:03,174 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 12:27:03,175 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [10] as [VARCHAR] - [g]
+2020-05-17 12:27:03,176 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [11] as [BIGINT] - [802]
+2020-05-17 12:27:03,194 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-1] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:27:03,197 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-1] Knowledge Center saved.
+2020-05-17 12:27:36,498 ERROR org.springframework.aop.interceptor.SimpleAsyncUncaughtExceptionHandler [task-1] Unexpected exception occurred invoking async method: public void com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl.save(org.springframework.web.multipart.MultipartFile[])
+java.lang.RuntimeException: Could not store the file. Error: C:\Users\vicky\AppData\Local\Temp\tomcat.4293556095964779779.5001\work\Tomcat\localhost\ROOT\upload_736f3be1_688c_4e93_9faa_7e85f62d3786_00000004.tmp (The system cannot find the file specified)
+	at com.cottonconnect.elearning.ELearning.repo.page.UploadServiceImpl.save(UploadServiceImpl.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor.lambda$invoke$0(AsyncExecutionInterceptor.java:115)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+2020-05-17 12:30:27,601 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-7] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:30:27,607 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-7] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:30:27,613 INFO com.zaxxer.hikari.HikariDataSource [Thread-7] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:30:27,616 INFO com.zaxxer.hikari.HikariDataSource [Thread-7] HikariPool-1 - Shutdown completed.
+2020-05-17 12:30:28,123 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 6816 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:30:28,123 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:30:28,432 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:30:28,608 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 174ms. Found 25 JPA repository interfaces.
+2020-05-17 12:30:28,900 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:30:28,901 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:30:28,901 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:30:28,901 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:30:28,925 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:30:28,926 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 798 ms
+2020-05-17 12:30:28,987 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:30:28,995 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2020-05-17 12:30:29,031 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2020-05-17 12:30:29,031 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:30:29,997 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:30:29,998 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:30:30,014 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:30:30,395 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:30:30,567 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:30:30,572 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:30:30,574 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 2.495 seconds (JVM running for 228.839)
+2020-05-17 12:30:35,490 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2020-05-17 12:30:35,502 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:30:35,504 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-2 - Shutdown initiated...
+2020-05-17 12:30:35,511 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-2 - Shutdown completed.
+2020-05-17 12:32:32,118 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 26092 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:32:32,123 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:32:32,178 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:32:32,179 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:32:32,179 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:32:32,903 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:32:33,093 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 179ms. Found 25 JPA repository interfaces.
+2020-05-17 12:32:33,741 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:32:33,750 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:32:33,751 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:32:33,751 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:32:33,884 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:32:33,884 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1705 ms
+2020-05-17 12:32:34,179 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:32:34,260 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:32:34,403 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:32:34,514 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:32:34,631 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:32:34,662 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:32:36,503 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:32:36,513 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:32:36,544 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:32:37,386 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:32:37,811 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:32:37,839 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:32:37,844 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.255 seconds (JVM running for 7.426)
+2020-05-17 12:33:04,984 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 12:33:04,985 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 12:33:04,995 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 10 ms
+2020-05-17 12:33:05,316 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select nextval ('e_knowledge_seq')
+2020-05-17 12:33:05,361 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 12:33:05,378 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [1] as [TIMESTAMP] - [Sun May 17 12:33:05 IST 2020]
+2020-05-17 12:33:05,381 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 12:33:05,383 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 12:33:05,383 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 12:33:05,384 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [5] as [TIMESTAMP] - [Sun May 17 12:33:05 IST 2020]
+2020-05-17 12:33:05,385 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 12:33:05,386 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [7] as [VARCHAR] - [fghfgfgh]
+2020-05-17 12:33:05,387 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [8] as [VARCHAR] - [gh]
+2020-05-17 12:33:05,390 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 12:33:05,391 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [10] as [VARCHAR] - [g]
+2020-05-17 12:33:05,392 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [11] as [BIGINT] - [852]
+2020-05-17 12:33:05,418 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-1] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:33:05,425 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-1] Knowledge Center saved.
+2020-05-17 12:33:21,538 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2020-05-17 12:33:21,540 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(4)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:33:21,546 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:33:21,550 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:33:21,553 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-17 12:34:03,659 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 13972 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:34:03,698 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:34:03,751 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:34:03,751 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:34:03,752 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:34:04,515 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:34:04,702 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 176ms. Found 25 JPA repository interfaces.
+2020-05-17 12:34:05,412 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:34:05,421 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:34:05,422 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:34:05,423 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:34:05,546 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:34:05,547 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1795 ms
+2020-05-17 12:34:05,733 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:34:05,905 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:34:06,068 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:34:06,191 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:34:06,306 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:34:06,337 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:34:08,145 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:34:08,154 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:34:08,185 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:34:09,013 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:34:09,429 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:34:09,458 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:34:09,463 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.3 seconds (JVM running for 7.486)
+2020-05-17 12:34:23,424 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 12:34:23,424 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 12:34:23,432 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 8 ms
+2020-05-17 12:34:23,780 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select nextval ('e_knowledge_seq')
+2020-05-17 12:34:23,829 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 12:34:23,834 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [1] as [TIMESTAMP] - [Sun May 17 12:34:23 IST 2020]
+2020-05-17 12:34:23,837 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 12:34:23,839 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 12:34:23,840 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 12:34:23,841 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [5] as [TIMESTAMP] - [Sun May 17 12:34:23 IST 2020]
+2020-05-17 12:34:23,843 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 12:34:23,843 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [7] as [VARCHAR] - [fghfgfgh]
+2020-05-17 12:34:23,844 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [8] as [VARCHAR] - [gh]
+2020-05-17 12:34:23,845 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 12:34:23,846 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [10] as [VARCHAR] - [g]
+2020-05-17 12:34:23,846 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [11] as [BIGINT] - [902]
+2020-05-17 12:34:23,866 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-1] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:34:23,870 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-1] Knowledge Center saved.
+2020-05-17 12:36:14,615 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 20856 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:36:14,621 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:36:14,671 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:36:14,671 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:36:14,671 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:36:15,414 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:36:15,623 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 197ms. Found 25 JPA repository interfaces.
+2020-05-17 12:36:16,324 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:36:16,333 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:36:16,333 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:36:16,334 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:36:16,468 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:36:16,469 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1796 ms
+2020-05-17 12:36:16,689 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:36:16,888 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:36:17,024 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:36:17,143 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:36:17,267 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:36:17,303 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:36:19,139 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:36:19,148 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:36:19,182 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:36:20,022 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:36:20,475 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:36:20,502 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:36:20,506 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.435 seconds (JVM running for 7.663)
+2020-05-17 12:36:27,864 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
+2020-05-17 12:36:27,876 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:36:27,881 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:36:27,883 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-17 12:45:07,586 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 23764 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:45:07,634 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:45:07,709 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:45:07,709 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:45:07,710 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:45:08,534 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:45:08,765 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 219ms. Found 25 JPA repository interfaces.
+2020-05-17 12:45:09,542 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:45:09,554 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:45:09,554 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:45:09,555 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:45:09,726 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:45:09,727 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2017 ms
+2020-05-17 12:45:10,085 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:45:10,161 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:45:10,293 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:45:10,402 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:45:10,615 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:45:10,642 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:45:12,513 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:45:12,521 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:45:12,553 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:45:13,470 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:45:13,895 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:45:13,923 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:45:13,927 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 6.864 seconds (JVM running for 8.173)
+2020-05-17 12:45:28,945 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 12:45:28,945 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 12:45:28,956 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 11 ms
+2020-05-17 12:47:24,032 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2020-05-17 12:47:24,039 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:47:24,045 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-17 12:47:24,053 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-17 12:58:43,996 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 5464 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 12:58:44,006 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 12:58:44,070 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 12:58:44,071 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 12:58:44,071 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 12:58:44,904 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 12:58:45,122 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 196ms. Found 25 JPA repository interfaces.
+2020-05-17 12:58:45,892 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 12:58:45,903 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:58:45,903 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 12:58:45,904 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 12:58:46,063 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 12:58:46,063 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1991 ms
+2020-05-17 12:58:46,380 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 12:58:46,530 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 12:58:46,686 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 12:58:46,808 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 12:58:46,961 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 12:58:46,992 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 12:58:49,072 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 12:58:49,080 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 12:58:49,113 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 12:58:50,015 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 12:58:50,449 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 12:58:50,475 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 12:58:50,479 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 7.052 seconds (JVM running for 8.24)
+2020-05-17 12:59:03,092 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 12:59:03,092 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 12:59:03,100 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 8 ms
+2020-05-17 12:59:26,679 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select nextval ('e_knowledge_seq')
+2020-05-17 12:59:26,724 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 12:59:26,729 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [1] as [TIMESTAMP] - [Sun May 17 12:59:26 IST 2020]
+2020-05-17 12:59:26,731 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 12:59:26,732 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 12:59:26,732 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 12:59:26,732 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [5] as [TIMESTAMP] - [Sun May 17 12:59:26 IST 2020]
+2020-05-17 12:59:26,733 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 12:59:26,733 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [7] as [VARCHAR] - [fghfgfgh]
+2020-05-17 12:59:26,733 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [8] as [VARCHAR] - [gh]
+2020-05-17 12:59:26,734 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 12:59:26,735 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [10] as [VARCHAR] - [g]
+2020-05-17 12:59:26,736 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [11] as [BIGINT] - [952]
+2020-05-17 12:59:26,778 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-1] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 12:59:26,782 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-1] Knowledge Center saved.
+2020-05-17 13:00:14,995 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [task-1] select knowledgec0_.id as id1_8_0_, knowledgec0_.created_date as created_2_8_0_, knowledgec0_.created_user as created_3_8_0_, knowledgec0_.is_active as is_activ4_8_0_, knowledgec0_.is_deleted as is_delet5_8_0_, knowledgec0_.updated_date as updated_6_8_0_, knowledgec0_.updated_user as updated_7_8_0_, knowledgec0_.description as descript8_8_0_, knowledgec0_.notes as notes9_8_0_, knowledgec0_.sub_category_id as sub_cat11_8_0_, knowledgec0_.title as title10_8_0_ from eknowledge_center knowledgec0_ where knowledgec0_.id=?
+2020-05-17 13:00:14,996 TRACE org.hibernate.type.descriptor.sql.BasicBinder [task-1] binding parameter [1] as [BIGINT] - [952]
+2020-05-17 13:03:36,502 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
+2020-05-17 13:03:36,506 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(3)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-17 13:03:36,516 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 13:03:36,523 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-05-17 13:03:36,529 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2020-05-17 13:05:37,632 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 5740 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 13:05:37,640 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 13:16:22,158 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ELearningApplication on Dhinesh-PC with PID 24512 (C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning\target\classes started by vicky in C:\Users\vicky\Projects\CottonConnect\web\Server\E-Learning)
+2020-05-17 13:16:22,167 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-05-17 13:16:22,329 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in C:\Users\vicky\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/vicky/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-05-17 13:16:22,330 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-17 13:16:22,330 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-17 13:16:24,431 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-17 13:16:24,726 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 273ms. Found 25 JPA repository interfaces.
+2020-05-17 13:16:26,436 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 5001 (http)
+2020-05-17 13:16:26,457 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-5001"]
+2020-05-17 13:16:26,458 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-05-17 13:16:26,459 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-17 13:16:26,681 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-05-17 13:16:26,682 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 4352 ms
+2020-05-17 13:16:27,072 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-17 13:16:27,265 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-17 13:16:27,635 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-17 13:16:28,469 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-05-17 13:16:29,012 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-05-17 13:16:29,067 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2020-05-17 13:16:31,566 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-17 13:16:31,576 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-17 13:16:31,591 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-05-17 13:16:33,434 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-17 13:16:34,269 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-5001"]
+2020-05-17 13:16:34,333 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 5001 (http) with context path ''
+2020-05-17 13:16:34,339 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ELearningApplication in 13.234 seconds (JVM running for 14.474)
+2020-05-17 13:16:47,828 INFO org.apache.juli.logging.DirectJDKLog [http-nio-5001-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-17 13:16:47,829 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-05-17 13:16:47,847 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-5001-exec-1] Completed initialization in 18 ms
+2020-05-17 13:16:48,048 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select knowledgec0_.id as id1_8_, knowledgec0_.created_date as created_2_8_, knowledgec0_.created_user as created_3_8_, knowledgec0_.is_active as is_activ4_8_, knowledgec0_.is_deleted as is_delet5_8_, knowledgec0_.updated_date as updated_6_8_, knowledgec0_.updated_user as updated_7_8_, knowledgec0_.description as descript8_8_, knowledgec0_.notes as notes9_8_, knowledgec0_.sub_category_id as sub_cat11_8_, knowledgec0_.title as title10_8_ from eknowledge_center knowledgec0_ limit ?
+2020-05-17 13:16:48,048 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-2] select subcategor0_.id as id1_20_, subcategor0_.category_id as category3_20_, subcategor0_.name as name2_20_ from sub_category subcategor0_ where subcategor0_.category_id=?
+2020-05-17 13:16:48,065 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-2] binding parameter [1] as [BIGINT] - [1]
+2020-05-17 13:16:48,173 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select count(knowledgec0_.id) as col_0_0_ from eknowledge_center knowledgec0_
+2020-05-17 13:16:48,199 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-1] select subcategor0_.id as id1_20_0_, subcategor0_.category_id as category3_20_0_, subcategor0_.name as name2_20_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-05-17 13:16:48,200 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-1] binding parameter [1] as [BIGINT] - [52]
+2020-05-17 13:18:07,129 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-6] select subcategor0_.id as id1_20_, subcategor0_.category_id as category3_20_, subcategor0_.name as name2_20_ from sub_category subcategor0_ where subcategor0_.category_id=?
+2020-05-17 13:18:07,130 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-5] select knowledgec0_.id as id1_8_, knowledgec0_.created_date as created_2_8_, knowledgec0_.created_user as created_3_8_, knowledgec0_.is_active as is_activ4_8_, knowledgec0_.is_deleted as is_delet5_8_, knowledgec0_.updated_date as updated_6_8_, knowledgec0_.updated_user as updated_7_8_, knowledgec0_.description as descript8_8_, knowledgec0_.notes as notes9_8_, knowledgec0_.sub_category_id as sub_cat11_8_, knowledgec0_.title as title10_8_ from eknowledge_center knowledgec0_ limit ?
+2020-05-17 13:18:07,132 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-6] binding parameter [1] as [BIGINT] - [1]
+2020-05-17 13:18:07,137 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-5] select count(knowledgec0_.id) as col_0_0_ from eknowledge_center knowledgec0_
+2020-05-17 13:18:07,141 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-5] select subcategor0_.id as id1_20_0_, subcategor0_.category_id as category3_20_0_, subcategor0_.name as name2_20_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-05-17 13:18:07,142 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-5] binding parameter [1] as [BIGINT] - [52]
+2020-05-17 13:18:35,443 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-9] select subcategor0_.id as id1_20_, subcategor0_.category_id as category3_20_, subcategor0_.name as name2_20_ from sub_category subcategor0_ where subcategor0_.category_id=?
+2020-05-17 13:18:35,444 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-10] select knowledgec0_.id as id1_8_, knowledgec0_.created_date as created_2_8_, knowledgec0_.created_user as created_3_8_, knowledgec0_.is_active as is_activ4_8_, knowledgec0_.is_deleted as is_delet5_8_, knowledgec0_.updated_date as updated_6_8_, knowledgec0_.updated_user as updated_7_8_, knowledgec0_.description as descript8_8_, knowledgec0_.notes as notes9_8_, knowledgec0_.sub_category_id as sub_cat11_8_, knowledgec0_.title as title10_8_ from eknowledge_center knowledgec0_ limit ?
+2020-05-17 13:18:35,445 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-9] binding parameter [1] as [BIGINT] - [1]
+2020-05-17 13:18:35,450 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-10] select count(knowledgec0_.id) as col_0_0_ from eknowledge_center knowledgec0_
+2020-05-17 13:18:35,453 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-10] select subcategor0_.id as id1_20_0_, subcategor0_.category_id as category3_20_0_, subcategor0_.name as name2_20_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-05-17 13:18:35,453 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-10] binding parameter [1] as [BIGINT] - [52]
+2020-05-17 13:20:12,080 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-3] select subcategor0_.id as id1_20_, subcategor0_.category_id as category3_20_, subcategor0_.name as name2_20_ from sub_category subcategor0_ where subcategor0_.category_id=?
+2020-05-17 13:20:12,080 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select knowledgec0_.id as id1_8_, knowledgec0_.created_date as created_2_8_, knowledgec0_.created_user as created_3_8_, knowledgec0_.is_active as is_activ4_8_, knowledgec0_.is_deleted as is_delet5_8_, knowledgec0_.updated_date as updated_6_8_, knowledgec0_.updated_user as updated_7_8_, knowledgec0_.description as descript8_8_, knowledgec0_.notes as notes9_8_, knowledgec0_.sub_category_id as sub_cat11_8_, knowledgec0_.title as title10_8_ from eknowledge_center knowledgec0_ limit ?
+2020-05-17 13:20:12,082 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-3] binding parameter [1] as [BIGINT] - [1]
+2020-05-17 13:20:12,086 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select count(knowledgec0_.id) as col_0_0_ from eknowledge_center knowledgec0_
+2020-05-17 13:20:12,087 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-4] select subcategor0_.id as id1_20_0_, subcategor0_.category_id as category3_20_0_, subcategor0_.name as name2_20_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-05-17 13:20:12,089 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-4] binding parameter [1] as [BIGINT] - [52]
+2020-05-17 13:20:46,684 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-5] select subcategor0_.id as id1_20_, subcategor0_.category_id as category3_20_, subcategor0_.name as name2_20_ from sub_category subcategor0_ where subcategor0_.category_id=?
+2020-05-17 13:20:46,688 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-5] binding parameter [1] as [BIGINT] - [1]
+2020-05-17 13:20:46,688 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-6] select knowledgec0_.id as id1_8_, knowledgec0_.created_date as created_2_8_, knowledgec0_.created_user as created_3_8_, knowledgec0_.is_active as is_activ4_8_, knowledgec0_.is_deleted as is_delet5_8_, knowledgec0_.updated_date as updated_6_8_, knowledgec0_.updated_user as updated_7_8_, knowledgec0_.description as descript8_8_, knowledgec0_.notes as notes9_8_, knowledgec0_.sub_category_id as sub_cat11_8_, knowledgec0_.title as title10_8_ from eknowledge_center knowledgec0_ limit ?
+2020-05-17 13:20:46,695 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-6] select count(knowledgec0_.id) as col_0_0_ from eknowledge_center knowledgec0_
+2020-05-17 13:20:46,697 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-6] select subcategor0_.id as id1_20_0_, subcategor0_.category_id as category3_20_0_, subcategor0_.name as name2_20_0_ from sub_category subcategor0_ where subcategor0_.id=?
+2020-05-17 13:20:46,698 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-6] binding parameter [1] as [BIGINT] - [52]
+2020-05-17 13:21:07,701 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-7] select nextval ('e_knowledge_seq')
+2020-05-17 13:21:07,734 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-5001-exec-7] insert into eknowledge_center (created_date, created_user, is_active, is_deleted, updated_date, updated_user, description, notes, sub_category_id, title, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2020-05-17 13:21:07,735 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [1] as [TIMESTAMP] - [Sun May 17 13:21:07 IST 2020]
+2020-05-17 13:21:07,737 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [2] as [VARCHAR] - [null]
+2020-05-17 13:21:07,738 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [3] as [BOOLEAN] - [true]
+2020-05-17 13:21:07,739 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [4] as [BOOLEAN] - [false]
+2020-05-17 13:21:07,740 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [5] as [TIMESTAMP] - [Sun May 17 13:21:07 IST 2020]
+2020-05-17 13:21:07,740 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [6] as [VARCHAR] - [null]
+2020-05-17 13:21:07,741 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [7] as [VARCHAR] - [asxasxasasxs]
+2020-05-17 13:21:07,741 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [8] as [VARCHAR] - [asxasxassax]
+2020-05-17 13:21:07,741 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [9] as [BIGINT] - [52]
+2020-05-17 13:21:07,742 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [10] as [VARCHAR] - [assaxasx]
+2020-05-17 13:21:07,742 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-5001-exec-7] binding parameter [11] as [BIGINT] - [1002]
+2020-05-17 13:21:07,760 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [http-nio-5001-exec-7] Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-17 13:21:07,764 INFO com.cottonconnect.elearning.ELearning.controller.KnowledgeCenterController [http-nio-5001-exec-7] Knowledge Center saved.
+2020-05-17 13:21:10,449 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [task-1] select knowledgec0_.id as id1_8_0_, knowledgec0_.created_date as created_2_8_0_, knowledgec0_.created_user as created_3_8_0_, knowledgec0_.is_active as is_activ4_8_0_, knowledgec0_.is_deleted as is_delet5_8_0_, knowledgec0_.updated_date as updated_6_8_0_, knowledgec0_.updated_user as updated_7_8_0_, knowledgec0_.description as descript8_8_0_, knowledgec0_.notes as notes9_8_0_, knowledgec0_.sub_category_id as sub_cat11_8_0_, knowledgec0_.title as title10_8_0_ from eknowledge_center knowledgec0_ where knowledgec0_.id=?
+2020-05-17 13:21:10,450 TRACE org.hibernate.type.descriptor.sql.BasicBinder [task-1] binding parameter [1] as [BIGINT] - [1002]
