@@ -20,7 +20,6 @@
 <link rel="stylesheet" href="css/vendor/dataTables.bootstrap4.min.css" />
 <link rel="stylesheet"
 	href="css/vendor/datatables.responsive.bootstrap4.min.css" />
-
 </head>
 
 <body id="app-container" class="menu-sub-hidden show-spinner">
@@ -55,14 +54,14 @@
 							<table class="data-table data-table-feature" id="country-table">
 								<thead>
 									<tr>
-										<th data-sortable="true">Name</th>
-										<th data-sortable="true">Country</th>
-										<th data-sortable="true">Type</th>
-										<th data-sortable="true">Brand</th>
-										<th data-sortable="true">Program</th>
-										<th data-sortable="true">Farmer Group</th>
-										<th data-sortable="true">Status</th>
-										<th data-sortable="true">Action</th>
+										<th>Name</th>
+										<th>Country</th>
+										<th>Type</th>
+										<th>Brand</th>
+										<th>Program</th>
+										<th>Farmer Group</th>
+										<th>Status</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 							</table>
@@ -114,33 +113,11 @@
 					{
 						"processing" : true,
 						"serverSide" : true,
-						"ajax" : getUrl() + '/service/knowledge-center/getAllRecords/'+ id + '?type=1',
-						// "ajax" : 'http://localhost:5000/app/service/knowledge-center/getAllRecords/'+ id + '?type=1',
-						"ordering": true,
-						"searching": true
+						"ajax" : getUrl()
+								+ '/service/knowledge-center/getAllRecords/'
+								+ id + '?type=1',
 					});
 		}
-
-
-// 		$('#table-full').dataTable({
-//     "paging": true, // enable pagination
-//     "pageLength": 10, // number of rows to show per page
-//     "lengthChange": true, // hide the option to change the page length
-//     "searching": true, // hide the search box
-//     "ordering": false , //enable sorting
-//     "info": true, // hide the "Showing X to Y of Z entries" info
-//     "language": {
-//       "paginate": {
-//         "first": "<<",
-//         "last": ">>",
-//         "next": ">",
-//         "previous": "<"
-//       }
-//     } // customize the pagination button labels
-//   });
-
-
-
 
  		function edit(id) {
 			$("body").addClass("show-spinner");

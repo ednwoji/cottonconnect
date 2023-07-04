@@ -8,26 +8,24 @@
 
 <div class="col-md-4">
 	<div class="form-group">
-		<label>Country <sup>*</sup></label> <select id="country" name="country"
-			onchange="populateBrand(); populateState();" class="form-control" required></select>
+		<label>Country <sup>*</sup></label> <select id="country"
+			=""  name="country"
+			onchange="populateBrand()" class="form-control"></select>
 	</div>
 </div>
 
 <div class="col-md-4">
 	<div class="form-group">
-		<label>Brand</label> 
-		<select id="brand" class="form-control select2" name="brand"  onchange="populateProgram()" required>
-		<option>Select</option>
-		</select>
+		<label>Brand</label> <select id="brand"
+			class="form-control select2" 
+			name="brand"  onchange="populateProgram()"></select>
 	</div>
 </div>
 <div class="col-md-4">
 	<div class="form-group">
 		<label>Program <sup>*</sup></label> <select id="program"
 			name="program"  class="form-control"
-			 onchange="populatePartners()" required>
-			 <option>Select</option>
-			</select>
+			 onchange="populatePartners()"></select>
 	</div>
 </div>
 
@@ -35,9 +33,7 @@
 	<div class="form-group">
 		<label>Local Partner <sup>*</sup></label> <select id="partner"
 			onchange="populateFarmGroup()" name="localPartner" 
-			 class="form-control select2-multiple" required>
-			 <option>Select</option>
-			</select>
+			 class="form-control select2-multiple"></select>
 	</div>
 </div>
 
@@ -45,9 +41,7 @@
 	<div class="form-group">
 		<label>Farm Group <sup>*</sup></label> <select id="farmGroup"
 			 onchange="populateLearners()" name="farmGroup"
-			 class="form-control select2-multiple">
-			 <option>Select</option>
-			</select>
+			 class="form-control select2-multiple"></select>
 	</div>
 </div>
 
@@ -55,74 +49,11 @@
 	<div class="form-group">
 		<label>Learner Group <sup>*</sup></label> <select id="learners"
 			 name="learnerGroup" 
-			class="form-control select2-multiple">
-		</select>
+			class="form-control select2-multiple"></select>
 	</div>
 </div>
 
 <script type='text/javascript'>
-
-
-
-function populateState() {
-				var country = $("#country").val();
-				$.ajax({
-					url: getUrl() + '/location/state/getStatesByCountry?countryId=' + country + '', success: function (result) {
-						$("#state").html('');
-						$("#state").append("<option value=''>Select</option>");
-						$(result).each(function (k, v) {
-							$("#state").append("<option value=" + v.id + ">" + v.name + "</option>");
-						});
-					}
-				});
-			}
-
-
-			function populateDistrict() {
-				var state = $("#state").val();
-				$.ajax({
-					url: getUrl() + '/location/district/getDistrictsByState?stateId=' + state + '', success: function (result) {
-						$("#district").html('');
-						$("#district").append("<option value=''>Select</option>");
-						$(result).each(function (k, v) {
-							$("#district").append("<option value=" + v.id + ">" + v.name + "</option>");
-						});
-					}
-				});
-			}
-
-			function populateTaluk() {
-				var disitrict = $("#district").val();
-				$.ajax({
-					url: getUrl() + '/location/taluk/getTaluksByDistrict?districtId=' + disitrict + '',
-					success: function (result) {
-						$("#block").html('');
-						$("#block").append("<option value=''>Select</option>");
-						$(result).each(function (k, v) {
-							$("#block").append("<option value=" + v.id + ">" + v.name + "</option>");
-						});
-					}
-				});
-			}
-
-
-			function populateVillage() {
-				var taluk = $("#block").val();
-				$.ajax({
-					url: getUrl() + '/location/village/getVillageByTaluk?talukId=' + taluk + '',
-					success: function (result) {
-						$("#village").html('');
-						$("#village").append("<option value=''>Select</option>");
-						$(result).each(function (k, v) {
-							$("#village").append("<option value=" + v.id + ">" + v.name + "</option>");
-						});
-					}
-				});
-			}
-
-
-
-
 	$(document).ready(
 			function() {
 				$.ajax({
@@ -179,7 +110,7 @@ function populateState() {
 			},
 			success : function(result) {
 				$("#program").html('');
-				// $("#program").append("<option value=''>Select</option>");
+				$("#program").append("<option value=''>Select</option>");
 				$(result).each(
 						function(k, v) {
 							$("#program").append(
@@ -200,7 +131,7 @@ function populateState() {
 			},
 			success : function(result) {
 				$("#partner").html('');
-				// $("#partner").append("<option value=''>Select</option>");
+				$("#partner").append("<option value=''>Select</option>");
 				$(result).each(
 						function(k, v) {
 							$("#partner").append(
@@ -221,7 +152,7 @@ function populateState() {
 			},
 			success : function(result) {
 				$("#farmGroup").html('');
-				// $("#farmGroup").append("<option value=''>Select</option>");
+				$("#farmGroup").append("<option value=''>Select</option>");
 				$(result).each(
 						function(k, v) {
 							$("#farmGroup").append(
@@ -241,7 +172,7 @@ function populateState() {
 			},
 			success : function(result) {
 				$("#learners").html('');
-				// $("#learners").append("<option value=''>Select</option>");
+				$("#learners").append("<option value=''>Select</option>");
 				$(result).each(
 						function(k, v) {
 							$("#learners").append(

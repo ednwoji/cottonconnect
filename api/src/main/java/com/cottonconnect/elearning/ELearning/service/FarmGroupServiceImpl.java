@@ -75,13 +75,13 @@ public class FarmGroupServiceImpl implements FarmGroupService {
 	}
 
 	@Override
-	public TableResponse getAllFarmGroups(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllFarmGroups(Integer draw, Integer pageNo, Integer pageSize,String search) {
 		String[] types = { "", "Farm Group", "PU", "Organic Farm Group" };
 		TableResponse response = null;
 		List<List<Object>> farmGroupDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<FarmGroup> programPaged = farmGroupPagedRepository.findByIsDeletedFalse(paging);
+		Page<FarmGroup> programPaged = farmGroupPagedRepository.findAllWithPage(search.toLowerCase(),paging);
 		if (programPaged.hasContent()) {
 			List<FarmGroup> farmGroupList = programPaged.getContent();
 			farmGroupDtoList = farmGroupList.stream().map(farmGroup -> {

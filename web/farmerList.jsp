@@ -252,7 +252,7 @@
 						},
 						success : function(result) {
 							$("body").removeClass("show-spinner");
-							window.location.href = "farmer.jsp";
+							window.location.href = "farmerList.jsp";
 						}
 					});
 			  } else {

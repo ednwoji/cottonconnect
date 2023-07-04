@@ -69,18 +69,20 @@ public class FAQController {
 
 	@RequestMapping(value = "/query/list")
 	public ResponseEntity<TableResponse> getAllQueries(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,
+			@RequestParam(name = "search[value]") String search
+		) {
 
-		TableResponse faqQueryList = faqService.getAllFaqQueries(draw, start, length);
+		TableResponse faqQueryList = faqService.getAllFaqQueries(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(faqQueryList, HttpStatus.OK);
 		return response;
 	}
 
 	@RequestMapping(value = "/question/list")
 	public ResponseEntity<TableResponse> getAllFAQ(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse faqQueryList = faqService.getAllQuestion(draw, start, length);
+		TableResponse faqQueryList = faqService.getAllQuestion(draw, start, length, search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(faqQueryList, HttpStatus.OK);
 		return response;
 	}

@@ -171,9 +171,8 @@ public class DashboardServiceImpl implements DashboardService {
 		cal.setTime(currentDate);
 		cal.add(Calendar.MINUTE, -2);
 		Date twoMinsBack = cal.getTime();
-//		Long onlineUsers = userOnlineRepository.getOnlineUsers(twoMinsBack, currentDate);
-		Long onlineUsers = 2L;
-
+		Long onlineUsers = userOnlineRepository.getOnlineUsers(twoMinsBack, currentDate);
+		
 		Long farmerCount = farmerRepository.count();
 		Long approvedUsers = registerRepository.getApprovedUsersCount();
 		Long usersCount = farmerCount + approvedUsers;

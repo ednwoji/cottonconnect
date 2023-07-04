@@ -116,7 +116,6 @@
 						"ajax" : getUrl()
 								+ '/service/knowledge-center/getAllRecords/'
 								+ id + "?type=1",
-						"ordering" : true,
 					});
 		}
 

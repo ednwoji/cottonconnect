@@ -33,20 +33,20 @@ function loadStyle(href, callback) {
 }
 
 function getUrl() {
+	//return "http://localhost:5000";
 	//return "http://stage-api.cottonconnectelearning.com";
-	// return "http://localhost:5000/app";
-	return "http://cottonconnectelearning.in:10000/app";
+	return "http://server.cottonconnectelearning.com";
 }
 
 function getVideoUploadUrl() {
 	//return "http://upload-stage.cottonconnectelearning.com";
-	return "http://cottonconnectelearning.in:10000/upload";
+	return "http://upload.cottonconnectelearning.com";
 }
 
 function getHomeUrl() {
 	//return "http://localhost:8080";
 	//return "http://stage.cottonconnectelearning.com";
-	return "http://cottonconnectelearning.in:10000";
+	return "http://cottonconnectelearning.com";
   }
 
 function getUserName() {

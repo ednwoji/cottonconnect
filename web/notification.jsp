@@ -43,14 +43,6 @@
 												name="description" id="description"></textarea>
 										</div>
 									</div>
-
-									<!-- <div class="col-md-4">
-										<div class="form-group">
-											<label>User</label>
-											<textarea maxlength="250" class="form-control" required
-												name="user" id="user"></textarea>
-										</div>
-									</div> -->
 								</div>
 
 
@@ -131,7 +123,6 @@
 														getUserName());
 											},
 											success : function(result) {
-												console.log(result);
 												$("#id").val(id);
 												$("#country").val(result.country);
 												$("#brand").val(result.brand);
@@ -144,7 +135,6 @@
 												$("#msg").val(result.msg);
 												$("#description").val(
 														result.description);
-												
 
 												setUpdate(result);
 												listLearnerGroup(result.farmGroup, result.learnerGroup);

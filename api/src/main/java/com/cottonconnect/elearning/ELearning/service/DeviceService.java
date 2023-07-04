@@ -7,9 +7,9 @@ import com.cottonconnect.elearning.ELearning.model.Device;
 public interface DeviceService {
 	public Device saveDevice(Device device, String userId);
 
-	public TableResponse getTableDevices(Integer draw, Integer start, Integer length);
+	public TableResponse getTableDevices(Integer draw, Integer start, Integer length,String search);
 
-	public TableResponse getAllUnRegister(Integer draw, Integer start, Integer length);
+	public TableResponse getAllUnRegister(Integer draw, Integer start, Integer length,String search);
 
 	public void approve(RegisterDTO masterDTO);
 

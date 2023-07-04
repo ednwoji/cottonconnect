@@ -65,12 +65,12 @@ public class DeviceServiceImpl implements DeviceService {
 	}
 
 	@Override
-	public TableResponse getTableDevices(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getTableDevices(Integer draw, Integer pageNo, Integer pageSize,String search) {
 		TableResponse response = null;
 		List<List<Object>> roleDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<Device> devicePaged = devicePagedRepository.findAll(paging);
+		Page<Device> devicePaged = devicePagedRepository.findAllWithPage(search.toLowerCase(),paging);
 		if (devicePaged.hasContent()) {
 			List<Device> deviceList = devicePaged.getContent();
 			roleDtoList = deviceList.stream().map(device -> {
@@ -106,13 +106,13 @@ public class DeviceServiceImpl implements DeviceService {
 	}
 
 	@Override
-	public TableResponse getAllUnRegister(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllUnRegister(Integer draw, Integer pageNo, Integer pageSize,String search) {
 
 		TableResponse response = null;
 		List<List<Object>> registerDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<Register> registerPaged = registerRepo.findAll(paging);
+		Page<Register> registerPaged = registerRepo.findAllWithPage(search.toLowerCase(),paging);
 		if (registerPaged.hasContent()) {
 			List<Register> registerList = registerPaged.getContent();
 			registerDtoList = registerList.stream().map(device -> {

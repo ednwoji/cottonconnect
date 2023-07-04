@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.cottonconnect.elearning.ELearning.model.Response;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +24,6 @@ import com.utility.WebUtils;
 
 @RestController
 @RequestMapping(value = "/service/user")
-@Slf4j
 public class UserController {
 	@Autowired
 	UserService userService;
@@ -53,12 +50,9 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/saveUser")
-	public ResponseEntity<Response> save(@RequestBody UserDTO userDTO, Response response) {
-		log.info("userDTO");
-		response = userService.saveUser(userDTO);
-		return response.getCode().equals("00") ? new ResponseEntity<>(response, HttpStatus.OK) : new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
-
-//		return new ResponseEntity<Response>(response, HttpStatus.OK);
+	public ResponseEntity<UserDTO> save(@RequestBody UserDTO userDTO) {
+		userService.saveUser(userDTO);
+		return new ResponseEntity<UserDTO>(userDTO, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/register")
@@ -69,9 +63,9 @@ public class UserController {
 
 	@RequestMapping(value = "/getAllRecords")
 	public ResponseEntity<TableResponse> getAllRecords(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse stateList = userService.getAllRecords(draw, start, length);
+		TableResponse stateList = userService.getAllRecords(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(stateList, HttpStatus.OK);
 		return response;
 	}

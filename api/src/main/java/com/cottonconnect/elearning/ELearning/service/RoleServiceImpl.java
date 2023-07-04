@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -29,7 +28,6 @@ import com.cottonconnect.elearning.ELearning.repo.page.RolePagedRepository;
 import com.utility.Mapper;
 
 @Service
-@Slf4j
 public class RoleServiceImpl implements RoleService {
 	@Autowired
 	private RoleRepository roleRepository;
@@ -44,18 +42,8 @@ public class RoleServiceImpl implements RoleService {
 	public RoleDTO addRole(RoleDTO roleDto) {
 		Role role = Mapper.map(roleDto, Role.class);
 		Mapper.setAuditable(role, "");
-		Role checkName = roleRepository.findByName(role.getName());
-		log.info("Record is "+checkName);
-		if(checkName==null) {
-			log.info("Role does not have a duplicate");
-			roleRepository.save(role);
-			return roleDto;
-		}
-		else {
-			log.info("Role already exists");
-			return null;
-		}
-
+		roleRepository.save(role);
+		return roleDto;
 	}
 
 	@Override
@@ -99,12 +87,12 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 	@Override
-	public TableResponse getTableRoles(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getTableRoles(Integer draw, Integer pageNo, Integer pageSize,String search) {
 		TableResponse response = null;
 		List<List<Object>> roleDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<Role> rolePaged = rolePagedRepo.findAll(paging);
+		Page<Role> rolePaged = rolePagedRepo.findAllWithPage(search.toLowerCase(),paging);
 		if (rolePaged.hasContent()) {
 			List<Role> roleList = rolePaged.getContent();
 			roleDtoList = roleList.stream().map(role -> {
@@ -168,13 +156,13 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 	@Override
-	public TableResponse getTableRoleMenu(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getTableRoleMenu(Integer draw, Integer pageNo, Integer pageSize,String search) {
 
 		TableResponse response = null;
 		List<List<Object>> roleDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<Role> rolePaged = rolePagedRepo.findAll(paging);
+		Page<Role> rolePaged = rolePagedRepo.findAllWithPage(search.toLowerCase(),paging);
 		if (rolePaged.hasContent()) {
 			List<Role> roleList = rolePaged.getContent();
 			roleDtoList = roleList.stream().map(role -> {

@@ -93,6 +93,24 @@ public class WeatherBroadcastServiceImpl implements WeatherBroadcastService {
 			}
 		}
 
+		if (weatherBroadcastDTO.getId() != null) {
+			weatherBroadcast.setId(weatherBroadcastDTO.getId());
+			Optional<WeatherBroadcast> foundWeatherBroadcast = weatherBroadcastRepository.findById(weatherBroadcastDTO.getId());
+			if (foundWeatherBroadcast.isPresent()) {
+				weatherBroadcast.setIsActive(foundWeatherBroadcast.get().getIsActive());
+				weatherBroadcast.setCreateAt(foundWeatherBroadcast.get().getCreateAt());
+				weatherBroadcast.setIsDeleted(foundWeatherBroadcast.get().getIsDeleted());
+				weatherBroadcast.setVideoUrl(foundWeatherBroadcast.get().getVideoUrl());
+				weatherBroadcast.setAudioUrl(foundWeatherBroadcast.get().getAudioUrl());
+				weatherBroadcast.setDocumentUrl(foundWeatherBroadcast.get().getDocumentUrl());
+			}
+		} else {
+			weatherBroadcast.setIsActive(true);
+			weatherBroadcast.setCreateAt(new Date());
+			weatherBroadcast.setIsDeleted(false);
+		}
+
+
 		if (videoUrl != null) {
 			weatherBroadcast.setVideoUrl(videoUrl);
 		}
@@ -137,7 +155,7 @@ public class WeatherBroadcastServiceImpl implements WeatherBroadcastService {
 					.add("<a class='detail' target='_blank' href='" + broadcast.getDocumentUrl() + "'> View </a>");
 
 			weatherBroadcastObjList
-					.add("</button> <button class='btn btn-danger btn-sm simple-icon-trash' onclick=deletez('"
+					.add("<button class='btn btn-success btn-sm simple-icon-pencil'onclick=editz("+ broadcast.getId() + ")></button> <button class='btn btn-danger btn-sm simple-icon-trash' onclick=deletez('"
 							+ broadcast.getId() + "')></button>");
 			return weatherBroadcastObjList;
 		}).collect(Collectors.toList());
@@ -156,5 +174,23 @@ public class WeatherBroadcastServiceImpl implements WeatherBroadcastService {
 		if (weatherBroadcast.isPresent()) {
 			weatherBroadcastRepository.delete(weatherBroadcast.get());
 		}
+	}
+
+	@Override
+	public WeatherBroadcastDTO findById(Long id) {
+		WeatherBroadcastDTO weatherBroadcast = new WeatherBroadcastDTO();
+		Optional<WeatherBroadcast> weatherBroadcastOpt = weatherBroadcastRepository.findById(id);
+		if (weatherBroadcastOpt.isPresent()) {
+			weatherBroadcast.setCountry(weatherBroadcastOpt.get().getCountry().getId());
+			weatherBroadcast.setState(weatherBroadcastOpt.get().getState().getId());
+			weatherBroadcast.setDistrict(weatherBroadcastOpt.get().getDistrict().getId());
+			weatherBroadcast.setTaluk(weatherBroadcastOpt.get().getTaluk().getId());
+			weatherBroadcast.setVillage(weatherBroadcastOpt.get().getVillage().getId());
+			weatherBroadcast.setVideoUrl(weatherBroadcastOpt.get().getVideoUrl());
+			weatherBroadcast.setAudioUrl(weatherBroadcastOpt.get().getAudioUrl());
+			weatherBroadcast.setDocumentUrl(weatherBroadcastOpt.get().getDocumentUrl());
+		}
+
+		return weatherBroadcast;
 	}
 }

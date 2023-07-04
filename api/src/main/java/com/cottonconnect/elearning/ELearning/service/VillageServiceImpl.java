@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,7 +19,6 @@ import com.cottonconnect.elearning.ELearning.model.Village;
 import com.cottonconnect.elearning.ELearning.repo.VillageRepository;
 
 @Service
-@Slf4j
 public class VillageServiceImpl implements VillageService {
 
 	@Autowired
@@ -31,15 +29,6 @@ public class VillageServiceImpl implements VillageService {
 
 	@Override
 	public VillageDTO saveVillage(VillageDTO villageDto) {
-
-		List<Village> villageList = villageRepository.findByName(villageDto.getName());
-		if(!villageList.isEmpty() && villageList.get(0).getCode().equals(villageDto.getCode()))
-		{
-			log.info("There's already a similar record for the village");
-			return null;
-		}
-
-
 		Village village = new Village();
 		if (villageDto.getId() != null) {
 			Optional<Village> villageOpt = villageRepository.findById(villageDto.getId());
@@ -47,7 +36,6 @@ public class VillageServiceImpl implements VillageService {
 				village.setId(villageOpt.get().getId());
 			}
 		}
-
 		village.setCode(villageDto.getCode());
 		village.setName(villageDto.getName());
 		village.setActive(true);
@@ -69,13 +57,13 @@ public class VillageServiceImpl implements VillageService {
 	}
 
 	@Override
-	public TableResponse getAllVillages(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllVillages(Integer draw, Integer pageNo, Integer pageSize, String search) {
 
 		TableResponse response = null;
 		List<List<Object>> districtDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<Village> villagePaged = villageRepository.findAll(paging);
+		Page<Village> villagePaged = villageRepository.findAllWithPage(search.toLowerCase(), paging);
 		if (villagePaged.hasContent()) {
 			List<Village> villageList = villagePaged.getContent();
 			districtDtoList = villageList.stream().map(district -> {
@@ -129,18 +117,10 @@ public class VillageServiceImpl implements VillageService {
 	}
 
 	@Override
-	public void delete(Long id) {
-		villageRepository.deleteById(id);
-	}
-
-	@Override
 	public List<VillageDTO> getVillageByTaluk(Long talukId) {
 
-		log.info("Returnong the values::::::::");
 		List<VillageDTO> villageList = new ArrayList<VillageDTO>();
-
-			villageRepository.findByTaluk(talukId).forEach(village -> {
-			log.info(String.valueOf(village));
+		villageRepository.findByTaluk(talukId).forEach(village -> {
 			VillageDTO villageDto = new VillageDTO();
 			villageDto.setCode(village.getCode());
 			villageDto.setId(village.getId());
@@ -149,6 +129,11 @@ public class VillageServiceImpl implements VillageService {
 		});
 		return villageList;
 
+	}
+
+	@Override
+	public void delete(Long id) {
+		villageRepository.deleteById(id);
 	}
 
 }

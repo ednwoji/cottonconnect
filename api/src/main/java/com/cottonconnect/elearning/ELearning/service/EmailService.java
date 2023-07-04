@@ -8,7 +8,7 @@ public interface EmailService {
 
 	Email save(EmailDTO email);
 
-	TableResponse getEmails(Integer draw, Integer start, Integer length);
+	TableResponse getEmails(Integer draw, Integer start, Integer length,String search);
 
 	EmailDTO findById(Long valueOf);
 

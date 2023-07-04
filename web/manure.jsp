@@ -41,7 +41,7 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Name of Manure</label> <input type="text" class="form-control"
-												required id="name" name="name" oninput="validateInput('name')" required>
+												required id="name" name="name" required>
 										</div>
 									</div>
 									<div class="col-md-4">
@@ -56,7 +56,7 @@
 										<div class="form-group">
 											<label>How to prepare at home?</label>
 											<textarea maxlength="500" class="form-control" required
-												name="identification" id="identification" oninput="validateInput('identification')"></textarea>
+												name="identification" id="identification"></textarea>
 											(Max. 500 chars)
 										</div>
 									</div>
@@ -67,21 +67,21 @@
 										<div class="form-group">
 											<label>How it helps in farming?</label>
 											<textarea maxlength="500" class="form-control" required name="notes"
-												id="notes" oninput="validateInput('notes')"></textarea>
+												id="notes"></textarea>
 											(Max. 500 chars)
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Upload<b style="color: red">[.jpg, .png]</b> [Max size : Upto to
-												1MB]</label> <input type="file" name="file"accept="image/jpeg, image/png" class="form-control"> <input
+												1MB]</label> <input type="file" name="file" class="form-control"> <input
 												type="file" name="file" class="form-control">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Upload<b style="color: red">[.jpg, .png]</b> [Max size : Upto to
-												1MB]</label> <input type="file" name="file" accept="image/jpeg, image/png" class="form-control"> <input
+												1MB]</label> <input type="file" name="file" class="form-control"> <input
 												type="file" name="file" class="form-control">
 										</div>
 									</div>
@@ -93,14 +93,14 @@
 										<div class="form-group">
 											<label>Upload<b style="color: red">[.pdf,
 													.xls,.pptx, .doc]</b> [Max size : Upto to 1MB]</label> <input
-												type="file" accept=".pdf, .xls, .xlsx, .pptx, .doc, .docx" name="file" class="form-control">
+												type="file" name="file" class="form-control">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Upload<b style="color: red">[.pdf,
 													.xls,.pptx, .doc]</b> [Max size : Upto to 1MB]</label> <input
-												type="file" accept=".pdf, .xls, .xlsx, .pptx, .doc, .docx" name="file" class="form-control">
+												type="file" name="file" class="form-control">
 										</div>
 									</div>
 								</div>
@@ -133,22 +133,6 @@
 	<script src="js/vendor/select2.full.js"></script>
 
 	<script type='text/javascript'>
-
-
-function validateInput(idTag) {
-  var textarea = document.getElementById(idTag);
-  var input = textarea.value;
-  var regex = /^[A-Za-z0-9\s]+$/;;
-  
-  if (!regex.test(input)) {
-    textarea.setCustomValidity("Only alphabets and numbers are allowed");
-  } else {
-    textarea.setCustomValidity("");
-  }
-}
-
-
-
 		$.urlParam = function (name) {
 			try {
 				var results = new RegExp('[\?&]' + name + '=([^&#]*)')
@@ -158,35 +142,13 @@ function validateInput(idTag) {
 			}
 		};
 
-		$(document).ready(function () {
-
-
-			var currentUrl = window.location.href;
- 	 	console.log(currentUrl);
-
-		  if (currentUrl.indexOf('failed') !== -1) {
-			$('#add-form').prepend('<div class="alert alert-danger text-center border border-info">Uploaded Failed. Try again later</div>')
-				.find('.alert')
-				.fadeIn(300)
-				.delay(3000)
-				.fadeOut(300, function() {$(this).remove();});
-  			}
-
-			else if (currentUrl.indexOf('success') !== -1){
-
-				$('#add-form').prepend('<div class="alert alert-info text-center border border-info">Uploaded Successfully</div>')
-				.find('.alert')
-				.fadeIn(300)
-				.delay(3000)
-				.fadeOut(300, function() {$(this).remove();});
-  			}
-
-
-
+		$(document)
+			.ready(
+				function () {
 					$("#menu-div").load("menu.html");
 					$("#menu-header").load("nav.html");
 					$("#page-footer").load("footer.html");
-					$("#redirectUrl").val(getHomeUrl() + "/manure.jsp");
+					$("#redirectUrl").val(getHomeUrl() + "/manureList.jsp");
 					$("#add-form").attr("action", getUrl() + "/service/knowledge-center/save/");
 					$("#img-div").hide();
 

@@ -31,9 +31,9 @@ public class DistrictController {
 
 	@RequestMapping(value = "/getAllDistricts")
 	public ResponseEntity<TableResponse> getAllCountries(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse stateList = districtService.getAllDistricts(draw, start, length);
+		TableResponse stateList = districtService.getAllDistricts(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(stateList, HttpStatus.OK);
 		return response;
 	}

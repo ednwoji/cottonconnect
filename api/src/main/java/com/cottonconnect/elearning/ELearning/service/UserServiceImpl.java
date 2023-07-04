@@ -7,8 +7,6 @@ import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
-import com.cottonconnect.elearning.ELearning.model.Response;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,7 +26,6 @@ import com.cottonconnect.elearning.ELearning.repo.UserRepository;
 import com.utility.Mapper;
 
 @Service
-@Slf4j
 public class UserServiceImpl implements UserService {
 
 	@Autowired
@@ -53,56 +50,22 @@ public class UserServiceImpl implements UserService {
 
 	@Transactional
 	@Override
-	public Response saveUser(UserDTO userDto) {
-		Response response = new Response();
+	public UserDTO saveUser(UserDTO userDto) {
 		User user = Mapper.map(userDto, User.class);
-
-		List<User> userEmailList = userRepository.findUserEmail(userDto.getEmailId());
-		List<User> userMobileList = userRepository.findUserMobile(userDto.getMobileNo());
-		List<User> userId = userRepository.findUserId(userDto.getUserId());
-
-		if (userId.isEmpty()) {
-
-			if (userEmailList.isEmpty() && userMobileList.isEmpty()) {
-
-				log.info("List is empty");
-				Mapper.setAuditable(user, "");
-				Role role = roleRepository.getOne(userDto.getRoleId());
-				user.setRole(role);
-				try {
-					userRepository.save(user);
-					response.setMessage("User saved successfully");
-					response.setCode("00");
-
-				} catch (Exception e) {
-					response.setMessage("Duplicate Users");
-					response.setCode("94");
-
-				}
-				return response;
-			} else {
-				log.info("Contains duplicates");
-				response.setCode("96");
-				response.setMessage("Email and Mobile Number should be distinct");
-				return response;
-			}
-
-		} else {
-			log.info("Contains duplicates");
-			response.setCode("96");
-			response.setMessage("User ID must be distinct");
-			return response;
-		}
-
+		Mapper.setAuditable(user, "");
+		Role role = roleRepository.getOne(userDto.getRoleId());
+		user.setRole(role);
+		userRepository.save(user);
+		return userDto;
 	}
 
 	@Override
-	public TableResponse getAllRecords(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllRecords(Integer draw, Integer pageNo, Integer pageSize, String search) {
 		TableResponse response = null;
 		List<List<Object>> kcDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<User> kcPaged = userPaginatedRepo.findAll(paging);
+		Page<User> kcPaged = userPaginatedRepo.findAllWithPage(search.toLowerCase(), paging);
 		if (kcPaged.hasContent()) {
 			List<User> kcList = kcPaged.getContent();
 			kcDtoList = kcList.stream().map(kc -> {
@@ -157,7 +120,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserDTO findById(Long id) {
 		Optional<User> userOpt = userRepository.findById(id);
-		if(userOpt.isPresent()) {
+		if (userOpt.isPresent()) {
 			User user = userOpt.get();
 			UserDTO userDto = new UserDTO();
 			userDto.setId(user.getId());
@@ -181,11 +144,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void delete(Long id) {
 		Optional<User> userOpt = userRepository.findById(id);
-		if(userOpt.isPresent()) {
+		if (userOpt.isPresent()) {
 			User user = userOpt.get();
 			user.setDeleted(true);
 			userRepository.save(user);
 		}
 	}
+
 
 }

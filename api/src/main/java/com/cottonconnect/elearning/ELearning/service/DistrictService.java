@@ -10,7 +10,7 @@ public interface DistrictService {
 	
 	DistrictDTO findById(Long id);
 	
-	TableResponse getAllDistricts(Integer draw, Integer pageNo, Integer pageSize);
+	TableResponse getAllDistricts(Integer draw, Integer pageNo, Integer pageSize,String search);
 
 	List<DistrictDTO> getDistricts(Long stateId);
 

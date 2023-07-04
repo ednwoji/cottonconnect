@@ -8,7 +8,7 @@ import com.cottonconnect.elearning.ELearning.dto.TableResponse;
 public interface LearnerGroupService {
 	public LearnerGroupDTO saveLearnerGroup(LearnerGroupDTO learnerGroupDto, String userId);
 
-	public TableResponse getAllLearners(Integer draw, Integer start, Integer length);
+	public TableResponse getAllLearners(Integer draw, Integer start, Integer length,String search);
 
 	public List<LearnerGroupDTO> getLearnerGroupByFG(Long fg);
 

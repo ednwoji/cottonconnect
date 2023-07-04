@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,33 +41,24 @@ public class KnowledgeCenterController {
 	@Autowired
 	private KnowleldgeCenterService knowleldgeCenterService;
 
-//	@Value(value = "${image.storage.path}")
-//	private String filePath;
-
-	@Value("${documents_upload_path}")
-	private String documents_upload_path;
+	@Value(value = "${image.storage.path}")
+	private String filePath;
 
 	private final Path root = Paths.get("uploads");
 
 	@RequestMapping(value = "/save")
 	public ResponseEntity<KnowledgeCenterDTO> save(KnowledgeCenterDTO knowledgeCenterDTO,
-												   @RequestParam("file") MultipartFile[] files, HttpServletResponse res) throws IOException {
-
-		List<File> imageFiles = new ArrayList<>();
+			@RequestParam("file") MultipartFile[] files, HttpServletResponse res) throws IOException {
+		List<File> imageFiles = new ArrayList<File>();
 		try {
 			for (MultipartFile file : files) {
 				String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-				if (!StringUtils.isEmpty(fileName) && !file.isEmpty()) {
-
+				if (!StringUtils.isEmpty(fileName)) {
 					if (fileName.contains("..")) {
-						throw new FileStorageException("Sorry! Filename contains invalid path sequence " +
-								System.nanoTime() + "_" + fileName);
+						throw new FileStorageException(
+								"Sorry! Filename contains invalid path sequence " + System.nanoTime() + "_" + fileName);
 					}
-
-					String filename = System.nanoTime() + "_" + fileName;
-					Path targetLocation = Paths.get(documents_upload_path, filename);
-					LOGGER.info("This is the path: " + targetLocation.toString());
-
+					Path targetLocation = this.root.resolve(System.nanoTime() + "_" + fileName);
 					Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
 					File imageFile = new File(targetLocation.toUri());
 					if (imageFile.exists()) {
@@ -77,24 +67,32 @@ public class KnowledgeCenterController {
 				}
 			}
 		} catch (Exception e) {
-			LOGGER.info("Knowledge Center Error and could not store path.");
 			throw new RuntimeException("Could not store the file. Error: " + e.getMessage());
 		}
 
 		KnowledgeCenterDTO respDTO = knowleldgeCenterService.saveKnowledgeCenter(knowledgeCenterDTO, imageFiles);
-		ResponseEntity<KnowledgeCenterDTO> response = new ResponseEntity<>(respDTO, HttpStatus.OK);
+		ResponseEntity<KnowledgeCenterDTO> response = new ResponseEntity<KnowledgeCenterDTO>(respDTO, HttpStatus.OK);
 		LOGGER.info("Knowledge Center saved.");
-		res.sendRedirect(knowledgeCenterDTO.getRedirectUrl() + "?status=success");
+		res.sendRedirect(knowledgeCenterDTO.getRedirectUrl());
 		return response;
 	}
 
-
 	@RequestMapping(value = "/getAllRecords/{catId}")
-	public ResponseEntity<TableResponse> getAllRecords(@PathVariable("catId") Long catId,
-			@RequestParam(name = "draw") Integer draw, @RequestParam(defaultValue = "0") Integer start,
-			@RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]", required = false) String searchValue, HttpServletRequest request) {
+	public ResponseEntity<TableResponse> getAllRecords(
+			@PathVariable("catId") Long catId,
+			@RequestParam(name = "draw") Integer draw,
+			@RequestParam(name = "type") Long type,
+			@RequestParam(defaultValue = "0") Integer start,
+			@RequestParam(defaultValue = "10") Integer length,
+			@RequestParam(name = "search[value]") String search) {
 
-		TableResponse stateList = knowleldgeCenterService.getAllRecords(draw, start, length, catId, searchValue, request);
+		TableResponse stateList = knowleldgeCenterService.getAllRecords(
+				draw,
+				start,
+				length,
+				catId,
+				type,
+				search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(stateList, HttpStatus.OK);
 		return response;
 	}
@@ -107,11 +105,12 @@ public class KnowledgeCenterController {
 				knowledgeCentreList, HttpStatus.OK);
 		return response;
 	}
-	
+
 	@RequestMapping(value = "/by-category-mobile")
-	public ResponseEntity<List<KnowledgeCenterDTO>> getKCByCategoryMobile(@RequestParam("category") String category,@RequestParam("mobile") String mobile) {
+	public ResponseEntity<List<KnowledgeCenterDTO>> getKCByCategoryMobile(@RequestParam("category") String category,
+			@RequestParam("mobile") String mobile) {
 		List<KnowledgeCenterDTO> knowledgeCentreList = knowleldgeCenterService
-				.findAllBySubCategory(Long.valueOf(category),mobile);
+				.findAllBySubCategory(Long.valueOf(category), mobile);
 		ResponseEntity<List<KnowledgeCenterDTO>> response = new ResponseEntity<List<KnowledgeCenterDTO>>(
 				knowledgeCentreList, HttpStatus.OK);
 		return response;
@@ -138,7 +137,7 @@ public class KnowledgeCenterController {
 		ResponseEntity<KnowledgeCenterDTO> response = new ResponseEntity<KnowledgeCenterDTO>(HttpStatus.OK);
 		return response;
 	}
-	
+
 	@RequestMapping(value = "/deleteImage")
 	public ResponseEntity<KnowledgeCenterDTO> deleteByImageId(@RequestParam(name = "id") Long id) {
 		knowleldgeCenterService.deleteByImageId(id);

@@ -15,4 +15,6 @@ public interface WeatherBroadcastService {
 
 	void delete(Long id);
 
+	WeatherBroadcastDTO findById(Long id);
+
 }

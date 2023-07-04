@@ -3,7 +3,6 @@ package com.cottonconnect.elearning.ELearning.controller;
 import java.util.List;
 import java.util.Map;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +21,6 @@ import com.cottonconnect.elearning.ELearning.service.RoleService;
 
 @RestController
 @RequestMapping("/role")
-@Slf4j
 public class RoleController {
 
 	@Autowired
@@ -31,23 +29,26 @@ public class RoleController {
 	@RequestMapping("/save")
 	public ResponseEntity<RoleDTO> save(@RequestBody RoleDTO roleDTO) {
 		RoleDTO responseDTO = roleService.addRole(roleDTO);
-		return (responseDTO == null) ? new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR) : new ResponseEntity<RoleDTO>(responseDTO, HttpStatus.OK);
+		if (responseDTO == null) {
+			return new ResponseEntity<RoleDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		return new ResponseEntity<RoleDTO>(responseDTO, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/getAllRoles")
 	public ResponseEntity<TableResponse> getAllCountries(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse countryList = roleService.getTableRoles(draw, start, length);
+		TableResponse countryList = roleService.getTableRoles(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(countryList, HttpStatus.OK);
 		return response;
 	}
 	
 	@RequestMapping(value = "/getAllRoleMenus")
 	public ResponseEntity<TableResponse> getAllRoleMenus(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse countryList = roleService.getTableRoleMenu(draw, start, length);
+		TableResponse countryList = roleService.getTableRoleMenu(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(countryList, HttpStatus.OK);
 		return response;
 	}
@@ -89,14 +90,8 @@ public class RoleController {
 	
 	@RequestMapping("/save-role-entitlement")
 	public ResponseEntity<MessageDTO> saveRoleEnt(@RequestBody RoleEntitlementDTO roleEntitlement){
-		try {
-			MessageDTO messageDTO = roleService.saveRoleEntitlement(roleEntitlement);
-			return new ResponseEntity<MessageDTO>(messageDTO, HttpStatus.OK);
-		}
-
-		catch (Exception e) {
-			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+		MessageDTO messageDTO = roleService.saveRoleEntitlement(roleEntitlement);
+		return new ResponseEntity<MessageDTO>(messageDTO, HttpStatus.OK);
 	}
 	
 	@RequestMapping("/entitlements/by-menu")

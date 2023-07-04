@@ -55,8 +55,9 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Name of Nutrient</label> <input type="text"
-												class="form-control" required id="name" name="name">
+											<label>Name of Nutrient</label> <!--  input type="text"
+												class="form-control" required id="name" name="name"> -->
+											    <div id="name_nutrient"></div>	
 										</div>
 									</div>
 									<div class="col-md-12">
@@ -70,8 +71,9 @@
 									<div class="col-md-12">
 										<div class="form-group">
 											<label>Uses</label>
-											<textarea maxlength="250" class="form-control" required
-												name="identification" id="identification"></textarea>
+								<!-- 			<textarea maxlength="250" class="form-control" required
+												name="identification" id="identification"></textarea>  -->
+												<div id="identification_nutrient"></div>
 										</div>
 									</div>
 								</div>
@@ -79,9 +81,11 @@
 								<div class="row">
 									<div class="col-md-12">
 										<div class="form-group">
-											<label>Difficiency symptoms</label>
-											<textarea maxlength="350" class="form-control" required
-												name="description" id="description"></textarea>
+									<!-- 	<label>Difficiency symptoms</label>   -->
+											<label>Deficiency symptoms</label>
+									<!-- 	<textarea maxlength="350" class="form-control" required
+												name="description" id="description"></textarea>  -->
+										    <div id="description_nutrient"></div>
 										</div>
 									</div>
 								</div>
@@ -93,8 +97,8 @@
 							</form>
 						</div>
 						<div class="modal-footer">
-							<a class="btn btn-primary" id="edit">Edit</a> <a
-								href="nutrientList.jsp" class="btn btn-outline-primary">Cancel</a>
+						<!--  	<a class="btn btn-primary" id="edit">Edit</a>  -->
+						 		<a href="nutrientList.jsp" class="btn btn-outline-primary">Cancel</a>
 						</div>
 					</div>
 				</div>
@@ -146,12 +150,16 @@
 											},
 											success : function(result) {
 												$("#id").val(id);
-												$("#name").val(result.name);
-												$("#identification").val(
-														result.identification);
-												$("#notes").val(result.notes);
-												$("#description").val(
-														result.description);
+					//							$("#name").val(result.name);
+												$("#name_nutrient").html(result.name);
+					//							$("#identification").val(
+					//									result.identification);
+												$("#identification_nutrient").html(result.identification);
+					//							$("#notes").val(result.notes);
+												$("#notes_nutrient").html(result.notes);
+					//							$("#description").val(
+					//									result.description);
+												$("#description_nutrient").html(result.description);
 												$('input:radio[name=status]')
 														.val([ result.typez ]);
 

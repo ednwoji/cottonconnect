@@ -20,8 +20,10 @@
 				<div class="card-body">
 					<div class="row mb-4">
 						<div class="col-12 mb-4">
-							<form id="add-form" method="post" enctype="multipart/form-data">
+							<form id="add-form" method="post" enctype="multipart/form-data" onsubmit=" 
+							return validateForm('add-form')" onchange="validateForm('add-form')">
 								<input type="hidden" name="redirectUrl" id="redirectUrl">
+								<input type="hidden" name="id" id="id">
 								<div class="row">
 									<script src="js/vendor/jquery-3.3.1.min.js"></script>
 									<script src="js/vendor/bootstrap.bundle.min.js"></script>
@@ -33,37 +35,35 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Country <sup>*</sup></label> <select id="country" name="country"
-												onchange="handleCountryOnChange()" required
-												class="form-control"></select>
+												onchange="handleCountryOnChange()" class="form-control req"></select>
 										</div>
 									</div>
 
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>State <sup>*</sup></label> <select id="state" name="state"
-												class="form-control" onchange="handleStateOnChange()" required></select>
+												class="form-control req" onchange="handleStateOnChange()"></select>
 										</div>
 									</div>
 
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>District <sup>*</sup></label> <select id="district" name="district"
-												class="form-control" onchange="handleDistrictOnChange()"
-												required></select>
+												class="form-control req" onchange="handleDistrictOnChange()"></select>
 										</div>
 									</div>
 
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Taluk </label> <select id="taluk" name="taluk"
-												class="form-control" onchange="handleTalukOnChange()"></select>
+											<label>Taluk <sup>*</sup></label> <select id="taluk" name="taluk"
+												class="form-control req" onchange="handleTalukOnChange()"></select>
 										</div>
 									</div>
 
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Village</label> <select id="village" name="village"
-												class="form-control"></select>
+											<label>Village <sup>*</sup></label> <select id="village" name="village"
+												class="form-control req"></select>
 										</div>
 									</div>
 								</div>
@@ -71,23 +71,29 @@
 
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload<b style="color: red">[.mp4]</b> [Max size : Upto to
+											<label>Upload Video [Max size : Upto to
 												100MB]</label>
-											<input type="file" class="form-control" name="video" accept=".mp4" required>
+											<input type="file" class="form-control req req-file" name="video"
+												accept=".mp4" id="video-file" style="margin-bottom: 10px;">
+											<a class='detail' target='_blank' id="video-file-view" style="margin-left: 10px;">View </a>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload<b style="color: red">[.mp3]</b> [Max size : Upto to
+											<label>Upload Audio [Max size : Upto to
 												6MB]</label>
-											<input type="file" class="form-control" name="audio" accept=".mp3" required>
+											<input type="file" class="form-control req req-file" name="audio"
+												accept=".mp3" id="audio-file" style="margin-bottom: 10px;">
+											<a class='detail' style="margin-left: 10px;" target='_blank' id="audio-file-view">View </a>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload<b style="color: red">[.pdf]</b> [Max size : Upto to
+											<label>Upload PDF [Max size : Upto to
 												7MB]</label>
-											<input type="file" class="form-control" name="document" accept=".pdf" required>
+											<input type="file" class="form-control  req req-file" name="document"
+												accept=".pdf" id="doc-file" style="margin-bottom: 10px;">
+											<a class='detail' target='_blank' id="doc-file-view" style="margin-left: 10px;">View </a>
 										</div>
 									</div>
 								</div>
@@ -130,6 +136,9 @@
 					$("#menu-div").load("menu.html");
 					$("#menu-header").load("nav.html");
 					$("#page-footer").load("footer.html");
+					$("#video-file-view").hide();
+					$("#audio-file-view").hide();
+					$("#doc-file-view").hide();
 					$("#redirectUrl").val(getHomeUrl() + "/weatherBroadcast.jsp");
 					$("#add-form").attr("action", getUrl() + "/weatherBroadcast/save/");
 					$.ajax({
@@ -148,322 +157,161 @@
 						}
 					});
 
+					const urlParams = new URLSearchParams(window.location.search);
+					const id = urlParams.get('id');
+					if (id) {
+						edit(id);
+					}
+
 
 				});
 
 
 
-		function handleCountryOnChange () {
-			var country = $("#country").val();
-			$.ajax({
-				url: getUrl() + '/location/state/getStatesByCountry?countryId=' + country,
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				type: 'post',
-				dataType: 'json',
-				contentType: 'application/json',
-				success: function (result) {
+
+		const edit = async (id) => {
+			try {
+				if (id) {
+					$("#id").val(id);
+					$("#video-file").removeClass("req req-file");
+					$("#audio-file").removeClass("req req-file");
+					$("#doc-file").removeClass("req req-file");
+					const res = await fetch(
+						getUrl() + '/weatherBroadcast/get?id=' + id, {
+						headers: {
+							"user-id": getUserName()
+						},
+					});
+					const broadcast = await res.json();
+
+					$("#country").val(broadcast.country);
+					await handleCountryOnChange();
+					$("#state").val(broadcast.state);
+					await handleStateOnChange();
+					$("#district").val(broadcast.district);
+					await handleDistrictOnChange();
+					$("#taluk").val(broadcast.taluk);
+					await handleTalukOnChange();
+					$("#village").val(broadcast.village);
+					$("#video-file-view").show();
+					$("#video-file-view").attr('href', broadcast.videoUrl);
+					$("#audio-file-view").show();
+					$("#audio-file-view").attr('href', broadcast.audioUrl);
+					$("#doc-file-view").show();
+					$("#doc-file-view").attr('href', broadcast.documentUrl);
+
+				}
+			} catch (error) {
+				console.log(error);
+			}
+
+		};
+
+
+
+		async function handleCountryOnChange () {
+			try {
+				const country = $("#country").val();
+				if (country) {
+					const res = await fetch(
+						getUrl() + '/location/state/getStatesByCountry?countryId=' + country, {
+						headers: {
+							"user-id": getUserName()
+						},
+					});
+					const stateList = await res.json();
 					$("#state").html('');
 					$("#state").append("<option value=''>Select</option>");
-					$(result).each(
+					$(stateList).each((k, v) => {
+						$("#state").append(
+							"<option value=" + v.id + ">" + v.name
+							+ "</option>");
+					});
+				}
+
+			} catch (error) {
+				console.log(error);
+			}
+		}
+
+		async function handleStateOnChange () {
+			try {
+				const state = $("#state").val();
+				if (state) {
+					const res = await fetch(
+						getUrl() + '/location/district/getDistrictsByState?stateId=' + state, {
+						headers: {
+							"user-id": getUserName()
+						},
+					});
+					const districtList = await res.json();
+					$("#district").html('');
+					$("#district").append("<option value=''>Select</option>");
+					$(districtList).each(
 						function (k, v) {
-							$("#state").append(
+							$("#district").append(
 								"<option value=" + v.id + ">" + v.name
 								+ "</option>");
 						});
-				},
-				error: function (err) {
-					console.log(err);
 				}
-			});
+			} catch (error) {
+				console.log(error);
+			}
+		}
+
+		async function handleDistrictOnChange () {
+			try {
+				const district = $("#district").val();
+				if (district) {
+					const res = await fetch(
+						getUrl() + '/location/taluk/getTaluksByDistrict?districtId=' + district, {
+						headers: {
+							"user-id": getUserName()
+						},
+					});
+					const talukList = await res.json();
+					$("#taluk").html('');
+					$("#taluk").append("<option value=''>Select</option>");
+					$(talukList).each(
+						function (k, v) {
+							$("#taluk").append(
+								"<option value=" + v.id + ">" + v.name
+								+ "</option>");
+						});
+				}
+			} catch (error) {
+				console.log(error);
+			}
+
 
 		}
 
-		function handleStateOnChange () {
-			let state = $("#state").val();
-			if (state) {
-				$.ajax({
-					url: getUrl() + '/location/district/getDistrictsByState?stateId=' + state,
-					beforeSend: function (request) {
-						request.setRequestHeader("user-id", getUserName());
-					},
-					type: 'post',
-					dataType: 'json',
-					contentType: 'application/json',
-					success: function (result) {
-						$("#district").html('');
-						$("#district").append("<option value=''>Select</option>");
-						$(result).each(
-							function (k, v) {
-								$("#district").append(
-									"<option value=" + v.id + ">" + v.name
-									+ "</option>");
-							});
-					},
-					error: function (err) {
-						console.log(err);
-					}
-				});
+		async function handleTalukOnChange () {
+			try {
+				const taluk = $("#taluk").val();
+				if (taluk) {
+					const res = await fetch(
+						getUrl() + '/location/village/getVillageByTaluk?talukId=' + taluk, {
+						headers: {
+							"user-id": getUserName()
+						},
+					});
+					const villageList = await res.json();
+					$("#village").html('');
+					$("#village").append("<option value=''>Select</option>");
+					$(villageList).each(
+						function (k, v) {
+							$("#village").append(
+								"<option value=" + v.id + ">" + v.name
+								+ "</option>");
+						});
+				}
+
+			} catch (error) {
+				console.log(error);
 			}
 
 		}
-
-		function handleDistrictOnChange () {
-			let district = $("#district").val();
-			if (district) {
-				$.ajax({
-					url: getUrl() + '/location/taluk/getTaluksByDistrict?districtId=' + district,
-					beforeSend: function (request) {
-						request.setRequestHeader("user-id", getUserName());
-					},
-					type: 'post',
-					dataType: 'json',
-					contentType: 'application/json',
-					success: function (result) {
-						$("#taluk").html('');
-						$("#taluk").append("<option value=''>Select</option>");
-						$(result).each(
-							function (k, v) {
-								$("#taluk").append(
-									"<option value=" + v.id + ">" + v.name
-									+ "</option>");
-							});
-					},
-					error: function (err) {
-						console.log(err);
-					}
-				});
-			}
-
-		}
-
-		function handleTalukOnChange () {
-			let taluk = $("#taluk").val();
-			if (taluk) {
-				$.ajax({
-					url: getUrl() + '/location/village/getVillageByTaluk?talukId=' + taluk,
-					beforeSend: function (request) {
-						request.setRequestHeader("user-id", getUserName());
-					},
-					type: 'post',
-					dataType: 'json',
-					contentType: 'application/json',
-					success: function (result) {
-						$("#village").html('');
-						$("#village").append("<option value=''>Select</option>");
-						$(result).each(
-							function (k, v) {
-								$("#village").append(
-									"<option value=" + v.id + ">" + v.name
-									+ "</option>");
-							});
-					},
-					error: function (err) {
-						console.log(err);
-					}
-				});
-			}
-
-		}
-
-		function populateProgram () {
-			var brand = $("#brand").val();
-			$.ajax({
-				url: getUrl() + '/master/programme/by-brands?brandId=' + brand
-					+ '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#program").html('');
-					$("#program").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#program").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-				}
-			});
-		}
-
-		function populatePartners () {
-			var program = $("#program").val();
-			$.ajax({
-				url: getUrl() + '/master/partner/by-programs?program=' + program
-					+ '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#partner").html('');
-					$("#partner").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#partner").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-				}
-			});
-		}
-
-		function populateFarmGroup () {
-			var partner = $("#partner").val();
-			$.ajax({
-				url: getUrl() + '/master/farm-group/partners?partners=' + partner
-					+ '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#farmGroup").html('');
-					$("#farmGroup").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#farmGroup").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-				}
-			});
-		}
-
-		function populateLearners () {
-			var farmGroups = $("#farmGroup").val();
-			$.ajax({
-				url: getUrl() + '/master/learner/by-fgs?fg=' + farmGroups + '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#learners").html('');
-					$("#learners").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#learners").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-				}
-			});
-		}
-
-		function listBrand (countrId, brandId) {
-			$.ajax({
-				url: getUrl() + '/master/brand/countries?id=' + countrId,
-				success: function (result) {
-					$("#brand").html('');
-					$("#brand").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#brand").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-					$("#brand").val(brandId);
-					$("#country").val(countrId);
-				}
-			});
-		}
-
-		function listProgram (brandId, program) {
-			$.ajax({
-				url: getUrl() + '/master/programme/by-brands?brandId=' + brandId
-					+ '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#program").html('');
-					$("#program").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#program").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-					$("#program").val(program);
-				}
-			});
-		}
-
-		function listPartner (program, partner) {
-			$.ajax({
-				url: getUrl() + '/master/partner/by-programs?program=' + program
-					+ '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#partner").html('');
-					$("#partner").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#partner").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-					$("#partner").val(partner);
-				}
-			});
-		}
-
-		function listFarmGroup (partner, fg) {
-			$.ajax({
-				url: getUrl() + '/master/farm-group/partners?partners=' + partner
-					+ '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#farmGroup").html('');
-					$("#farmGroup").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#farmGroup").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-					$("#farmGroup").val(fg);
-				}
-			});
-		}
-
-		function listLearnerGroup (fg, lg) {
-			$.ajax({
-				url: getUrl() + '/master/learner/by-fgs?fg=' + fg + '',
-				beforeSend: function (request) {
-					request.setRequestHeader("user-id", getUserName());
-				},
-				success: function (result) {
-					$("#learners").html('');
-					$("#learners").append("<option value=''>Select</option>");
-					$(result).each(
-						function (k, v) {
-							$("#learners").append(
-								"<option value=" + v.id + ">" + v.name
-								+ "</option>");
-						});
-					$("#learners").val(lg);
-				}
-			});
-		}
-
-		function listCountry (countries) {
-			$("#country").val(countries);
-		}
-
-		function setUpdate (result) {
-			listCountry(result.countries);
-			listBrand(result.countries, result.brands);
-			listProgram(result.brands, result.programs);
-			listPartner(result.programs, result.localPartners);
-			listFarmGroup(result.localPartners, result.farmGroups);
-			listLearnerGroup(result.farmGroups, result.learners);
-		}
-
 	</script>
 </body>
 

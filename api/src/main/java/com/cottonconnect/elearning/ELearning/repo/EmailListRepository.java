@@ -9,6 +9,6 @@ import com.cottonconnect.elearning.ELearning.model.EmailList;
 
 @Repository
 public interface EmailListRepository extends JpaRepository<EmailList, Long>{
-	List<EmailList> findByEmailId(Long id);
+	List<EmailList> findByEmailIdId(Long id);
 	
 }

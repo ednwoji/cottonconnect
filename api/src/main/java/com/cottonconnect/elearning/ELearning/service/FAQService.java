@@ -12,11 +12,11 @@ public interface FAQService {
 
 	FaqQueryDTO saveFaqQuery(FaqQueryDTO faqQueryDTO);
 
-	TableResponse getAllFaqQueries(Integer draw, Integer start, Integer length);
+	TableResponse getAllFaqQueries(Integer draw, Integer start, Integer length,String search);
 
 	FaqQueryDTO findById(Long id);
 
-	TableResponse getAllQuestion(Integer draw, Integer start, Integer length);
+	TableResponse getAllQuestion(Integer draw, Integer start, Integer length,String search);
 
 	List<EntryDTO> getFaqEntries();
 

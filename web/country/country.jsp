@@ -30,7 +30,8 @@
 					<div class="card">
 						<div class="card-body">
 							<form
-								action="https://server.cottonconnectelearning.com/service/knowledge-center/save/"
+								action=""
+								id="add-form"
 								method="post" enctype="multipart/form-data">
 								<input type="hidden" name="id" id="id"> <input
 									type="hidden" name="redirectUrl" id="redirectUrl"> <input
@@ -84,6 +85,7 @@
 			$("#menu-header").load("../common/nav.html");
 			$("#page-footer").load("../common/footer.html");
 			$("body").removeClass("show-spinner");
+			$("#add-form").attr("action", getUrl() + "/service/knowledge-center/save/");
 
 			var table = $('#country-table').DataTable({
 				"processing" : true,

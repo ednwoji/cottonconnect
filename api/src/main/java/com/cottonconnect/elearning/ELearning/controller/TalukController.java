@@ -32,9 +32,9 @@ public class TalukController {
 
 	@RequestMapping(value = "/getAllTaluks")
 	public ResponseEntity<TableResponse> getAllTaluks(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse stateList = talukService.getAllTaluks(draw, start, length);
+		TableResponse stateList = talukService.getAllTaluks(draw, start, length, search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(stateList, HttpStatus.OK);
 		return response;
 	}

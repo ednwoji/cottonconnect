@@ -69,12 +69,12 @@ public class DistrictServiceImpl implements DistrictService {
 	}
 
 	@Override
-	public TableResponse getAllDistricts(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllDistricts(Integer draw, Integer pageNo, Integer pageSize,String search) {
 		TableResponse response = null;
 		List<List<Object>> districtDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<District> districtPaged = districtRepository.findAll(paging);
+		Page<District> districtPaged = districtRepository.findAllWithPage(search.toLowerCase(),paging);
 		if (districtPaged.hasContent()) {
 			List<District> districtList = districtPaged.getContent();
 			districtDtoList = districtList.stream().map(district -> {

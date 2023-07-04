@@ -31,10 +31,13 @@ public class StateController {
 	}
 
 	@RequestMapping(value = "/getAllStates")
-	public ResponseEntity<TableResponse> getAllCountries(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+	public ResponseEntity<TableResponse> getAllCountries(
+			@RequestParam(name = "draw") Integer draw,
+			@RequestParam(defaultValue = "0") Integer start,
+			@RequestParam(defaultValue = "10") Integer length,
+			@RequestParam(name = "search[value]") String search) {
 
-		TableResponse stateList = stateService.getAllStates(draw, start, length);
+		TableResponse stateList = stateService.getAllStates(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(stateList, HttpStatus.OK);
 		return response;
 	}
@@ -45,19 +48,18 @@ public class StateController {
 		ResponseEntity<List<StateDTO>> response = new ResponseEntity<List<StateDTO>>(stateList, HttpStatus.OK);
 		return response;
 	}
-	
-	
+
 	@RequestMapping(value = "/by-id/{id}")
 	public ResponseEntity<StateDTO> byId(@PathVariable("id") Long id) {
 		StateDTO resp = stateService.getById(id);
 		ResponseEntity<StateDTO> stateResp = new ResponseEntity<StateDTO>(resp, HttpStatus.CREATED);
 		return stateResp;
 	}
-	
+
 	@RequestMapping(value = "/delete")
-	public ResponseEntity<CountryDTO> deleteById(@RequestParam(name = "id") Long id){
+	public ResponseEntity<CountryDTO> deleteById(@RequestParam(name = "id") Long id) {
 		stateService.delete(id);
-		ResponseEntity<CountryDTO> response = new ResponseEntity<CountryDTO>( HttpStatus.OK);
+		ResponseEntity<CountryDTO> response = new ResponseEntity<CountryDTO>(HttpStatus.OK);
 		return response;
 	}
 }

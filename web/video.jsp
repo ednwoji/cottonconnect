@@ -31,20 +31,21 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Video Title</label> 
-											<input type="text" pattern="^[a-zA-Z0-9]*$" class="form-control" required id="name" name="name">
+											<label>Video Title</label> <input type="text" class="form-control" required
+												id="name" name="name">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Description</label>
-											<textarea maxlength="250" class="form-control" required name="description" id="description" oninput="validateInput('description')"></textarea>
+											<textarea maxlength="250" class="form-control" required name="description"
+												id="description"></textarea>
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload(Video Format)</label> 
-											<input type="file" class="form-control" name="file" accept="video/mp4" id="file" required>
+											<label>Upload</label> <input type="file" class="form-control" name="file"
+												id="file">
 											<div>
 												<a href="" target="_blank" id="file-view">View Video</a>
 											</div>
@@ -55,8 +56,8 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Link</label> 
-											<input type="url" class="form-control" id="link" name="link">
+											<label>Link</label> <input type="text" class="form-control" id="link"
+												name="link">
 										</div>
 									</div>
 									<!-- <div class="col-md-4">
@@ -101,19 +102,6 @@
 			} catch (e) {
 			}
 		};
-
-		function validateInput(idTag) {
-  var textarea = document.getElementById(idTag);
-  var input = textarea.value;
-  var regex = /^[A-Za-z0-9\s]+$/;;
-  
-  if (!regex.test(input)) {
-    textarea.setCustomValidity("Only alphabets and numbers are allowed");
-  } else {
-    textarea.setCustomValidity("");
-  }
-}
-
 
 		$(document).ready(function () {
 			$("#img-div").hide();

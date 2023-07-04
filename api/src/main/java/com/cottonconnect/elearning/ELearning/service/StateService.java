@@ -10,7 +10,7 @@ public interface StateService {
 
 	StateDTO findById(Long id);
 
-	TableResponse getAllStates(Integer draw, Integer pageNo, Integer pageSize);
+	TableResponse getAllStates(Integer draw, Integer pageNo, Integer pageSize,String search);
 
 	List<StateDTO> getStates(Long countryId);
 

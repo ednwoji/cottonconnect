@@ -29,7 +29,7 @@
 		<div class="container-fluid">
 			<div class="row ">
 				<div class="col-12">
-					<div class="mb-2" id="formInput">
+					<div class="mb-2">
 						<h1>Role</h1>
 						<div class="top-right-button-container">
 							<button type="button"
@@ -50,12 +50,11 @@
 											</button>
 										</div>
 										<div class="modal-body">
-											<form id="role-form">
+											<form>
 											<input type="hidden" id="id">
 												<div class="form-group">
-													<label>Name</label> <br>
-													<span id="name-error" style="background-color: red;"></span>
-													<input type="text" pattern="[A-Za-z0-9]+" class="form-control" required id="roleName">
+													<label>Name</label> <input type="text" class="form-control"
+														required id="roleName">
 												</div>
 
 												<div class="modal-footer">
@@ -117,41 +116,26 @@
             });
         });
 
-        $("#role-form").submit(function(event) {
-		  event.preventDefault();
+        function submitForm() {
           if ($("#roleName").val() == "") {
                 alert("Please enter Role name");
                 return;
             }
-
-			var roleNameInput = document.getElementById('roleName');
-    			if (!roleNameInput.checkValidity()) {
-
-			  $('#name-error').html('Invalid input. Please enter only alphabets and numbers.');
-      			return false; // Prevent form submission
-    		}
-    		// return true; // Allow form submission
-
             var RoleData = {"id":$("#id").val(), "name": $("#roleName").val() };
             $.ajax({
                 url: getUrl() + '/role/save',
-				// url: 'http://localhost:5000/app/role/save',
                 type: 'post',
                 dataType: 'json',
                 contentType: 'application/json',
                 data: JSON.stringify(RoleData),
-
                 success: function (data) {
-					alert('Role created successfully');
-                    window.location.href = "role.jsp";
-
+                    window.location.href = "role.html";
                 },
-                error: function (jqXHR, textStatus, errorThrown) {
-					console.log('I got an error');
-					alert('Duplicate Roles. Please create a unique role');
+                error: function (err) {
+                    console.log(err);
                 }
             });
-        });
+        }
 
         function edit(id) {
         	$("body").addClass("show-spinner");

@@ -79,13 +79,13 @@ public class FAQServiceImpl implements FAQService {
 	}
 
 	@Override
-	public TableResponse getAllFaqQueries(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllFaqQueries(Integer draw, Integer pageNo, Integer pageSize,String search) {
 		DateFormat df = new SimpleDateFormat("YYYY/MMM/dd");
 		TableResponse response = null;
 		List<List<Object>> countryDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<FaqQuery> faqQueryPaged = faqPagedRepo.findAll(paging);
+		Page<FaqQuery> faqQueryPaged = faqPagedRepo.findAllWithPage(search.toLowerCase(),paging);
 		if (faqQueryPaged.hasContent()) {
 			List<FaqQuery> faqQueryList = faqQueryPaged.getContent();
 			countryDtoList = faqQueryList.stream().map(faqQuery -> {
@@ -169,14 +169,14 @@ public class FAQServiceImpl implements FAQService {
 	}
 
 	@Override
-	public TableResponse getAllQuestion(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllQuestion(Integer draw, Integer pageNo, Integer pageSize,String search) {
 
 		DateFormat df = new SimpleDateFormat("YYYY/MMM/dd");
 		TableResponse response = null;
 		List<List<Object>> countryDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<FAQ> faqQueryPaged = faqQuestionPagedRepo.findAll(paging);
+		Page<FAQ> faqQueryPaged = faqQuestionPagedRepo.findAllWithPage(search.toLowerCase(),paging);
 		if (faqQueryPaged.hasContent()) {
 			List<FAQ> faqQueryList = faqQueryPaged.getContent();
 			countryDtoList = faqQueryList.stream().map(faqQuery -> {

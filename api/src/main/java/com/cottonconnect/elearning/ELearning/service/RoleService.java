@@ -21,13 +21,13 @@ public interface RoleService {
 	
 	List<MenuDTO> getAllMenus();
 	
-	TableResponse getTableRoles(Integer draw,Integer pageNo, Integer pageSize);
+	TableResponse getTableRoles(Integer draw,Integer pageNo, Integer pageSize,String search);
 	
 	RoleDTO getRoleById(Long id);
 
 	RoleMenuDTO saveRoleMenu(RoleMenuDTO menuDTO);
 
-	TableResponse getTableRoleMenu(Integer draw, Integer start, Integer length);
+	TableResponse getTableRoleMenu(Integer draw, Integer start, Integer length,String search);
 
 	List<MenuDTO> findByRole(Long role);
 

@@ -68,13 +68,13 @@ public class TalukServiceImpl implements TalukService {
 	}
 
 	@Override
-	public TableResponse getAllTaluks(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllTaluks(Integer draw, Integer pageNo, Integer pageSize,String search) {
 
 		TableResponse response = null;
 		List<List<Object>> talukDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<Taluk> talukPaged = talukRepository.findAll(paging);
+		Page<Taluk> talukPaged = talukRepository.findAllWithPage(search.toLowerCase(),paging);
 		if (talukPaged.hasContent()) {
 			List<Taluk> talukList = talukPaged.getContent();
 			talukDtoList = talukList.stream().map(taluk -> {

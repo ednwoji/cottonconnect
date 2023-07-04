@@ -9,21 +9,25 @@ import com.cottonconnect.elearning.ELearning.dto.TableResponse;
 import com.cottonconnect.elearning.ELearning.model.Category;
 import com.cottonconnect.elearning.ELearning.model.SubCategory;
 
-import javax.servlet.http.HttpServletRequest;
-
 public interface KnowleldgeCenterService {
 	KnowledgeCenterDTO saveKnowledgeCenter(KnowledgeCenterDTO knowledgeCenterDTO, List<File> imageFiles);
 
 	List<KnowledgeCenterDTO> findAllBySubCategory(Long category);
-	
+
 	FileInputStream getPhoto(String fileName);
-	
+
 	KnowledgeCenterDTO findById(Long id);
 
-	TableResponse getAllRecords(Integer draw, Integer start, Integer length, Long catId, String search, HttpServletRequest request);
-	
+	TableResponse getAllRecords(
+			Integer draw,
+			Integer start,
+			Integer length,
+			Long catId,
+			Long type,
+			String search);
+
 	public void saveSubCategory(List<SubCategory> subCategories);
-	
+
 	public void saveCategory(List<Category> categories);
 
 	List<SubCategory> getSubCategoryList();

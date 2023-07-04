@@ -18,6 +18,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -27,6 +28,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@EnableJpaAuditing
 @Table(name = "eknowledge_center")
 public class KnowledgeCenter extends AuditableBase {
 	@Id
@@ -86,5 +88,7 @@ public class KnowledgeCenter extends AuditableBase {
 	@JoinTable(name = "eknowledge_learner_group_map", joinColumns = @JoinColumn(name = "eknowledge_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "learner_group_id", referencedColumnName = "id"))
 	@JsonIgnore
 	private List<LearnerGroup> learnerGroups;
+
+	private Long type;
 
 }

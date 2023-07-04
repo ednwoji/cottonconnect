@@ -78,13 +78,13 @@ public class LearnerGroupServiceImpl implements LearnerGroupService {
 	}
 
 	@Override
-	public TableResponse getAllLearners(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllLearners(Integer draw, Integer pageNo, Integer pageSize,String search) {
 
 		TableResponse response = null;
 		List<List<Object>> farmGroupDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<LearnerGroup> programPaged = learnerGroupPagedRepository.findAll(paging);
+		Page<LearnerGroup> programPaged = learnerGroupPagedRepository.findAllWithPage(search.toLowerCase(),paging);
 		if (programPaged.hasContent()) {
 			List<LearnerGroup> farmGroupList = programPaged.getContent();
 			farmGroupDtoList = farmGroupList.stream().map(farmGroup -> {

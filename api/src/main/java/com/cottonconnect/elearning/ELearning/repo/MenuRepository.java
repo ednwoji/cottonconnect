@@ -12,7 +12,7 @@ public interface MenuRepository extends JpaRepository<Menu, Long> {
 
 	List<Menu> findByNameIn(List<String> menus);
 
-	@Query(value = "SELECT menu.ID, menu.NAME, menu.disp_name, menu.identification FROM users u INNER JOIN role r ON r.ID = u.role_id INNER JOIN cc_role_menu_map rm ON rm.role_id = r.ID INNER JOIN cc_menu menu ON menu.ID = rm.menu_id WHERE u.user_id = :userName", nativeQuery = true)
+	@Query(value = "SELECT menu.ID, menu.NAME, menu.disp_name, menu.identification FROM users u INNER JOIN ROLE r ON r.ID = u.role_id INNER JOIN cc_role_menu_map rm ON rm.role_id = r.ID INNER JOIN cc_menu menu ON menu.ID = rm.menu_id WHERE u.user_id = :userName", nativeQuery = true)
 	List<Object[]> getMenuByUser(String userName);
 
 	@Query(value = "SELECT ent.name, menu.disp_name, menu.identification from cc_entitlements ent inner join cc_menu menu on menu.id = ent.menu WHERE menu.id in :menus", nativeQuery = true)

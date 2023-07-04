@@ -67,6 +67,7 @@
 									<div class="col-md-4">
 										<p>External Link</p>
 										<a id="link" target="_blank"><p id="linkVal"></p></a>
+										<a id="exlink" target="_blank"><p id="exlinkVal"></p></a>
 									</div>
 								</div>
 
@@ -124,6 +125,8 @@
 						$("#id").val(id);
 						$("#name").html(result.name);
 						$("#desc").html(result.description);
+						$("#exlink").attr("href", result.link);
+						$("#exlinkVal").html(result.link);
 						console.log(result.sourceUrl);
 						if(result.sourceUrl!=''){
 							$("#link").attr("href", result.sourceUrl);

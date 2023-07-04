@@ -15,4 +15,6 @@ public interface CICRBroadcastService {
 
 	void delete(Long id);
 
+	CICRBroadcastDTO findById(Long id);
+
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 @Setter
 public class CICRBroadcastDTO {
        
+    
 	private String redirectUrl;
     
 	private Long country;
@@ -19,5 +20,11 @@ public class CICRBroadcastDTO {
 
     private Long village;
 
+    private String videoUrl;
 
+    private String audioUrl;
+
+    private String documentUrl;
+
+    private Long id;
 }

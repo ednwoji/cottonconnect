@@ -16,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.cottonconnect.elearning.ELearning.dto.WeatherBroadcastDTO;
 import com.cottonconnect.elearning.ELearning.dto.TableResponse;
+import com.cottonconnect.elearning.ELearning.dto.VideoDTO;
 import com.cottonconnect.elearning.ELearning.exception.CustomException;
 import com.cottonconnect.elearning.ELearning.service.UploadService;
 import com.cottonconnect.elearning.ELearning.service.WeatherBroadcastService;
@@ -34,33 +35,29 @@ public class WeatherBroadcastController {
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public ResponseEntity<WeatherBroadcastDTO> save(
+			WeatherBroadcastDTO broadcastReq,
 			@RequestParam("video") MultipartFile video,
 			@RequestParam("audio") MultipartFile audio,
 			@RequestParam("document") MultipartFile document,
-			@RequestParam("country") Long country,
-			@RequestParam("state") Long state,
-			@RequestParam("district") Long district,
-			@RequestParam(value = "taluk", required = false) Long taluk,
-			@RequestParam(value = "village", required = false) Long village,
-			@RequestParam("redirectUrl") String redirectUrl,
-			WeatherBroadcastDTO broadcastReq,
 			HttpServletResponse res) throws IOException, CustomException {
 
-//		File videoFile = uploadService.getFile(video);
-//		File audioFile = uploadService.getFile(audio);
-//		File documentFile = uploadService.getFile(document);
+		String videoUrl = null;
+		String audioUrl = null;
+		String documentUrl = null;
 
-		broadcastReq.setCountry(country);
-		broadcastReq.setVillage(village);
-		broadcastReq.setDistrict(district);
-		broadcastReq.setTaluk(taluk);
-		broadcastReq.setState(state);
-		broadcastReq.setRedirectUrl(redirectUrl);
+		if (!video.getOriginalFilename().isEmpty()) {
+			File videoFile = uploadService.getFile(video);
+			videoUrl = uploadService.saveFileToS3(videoFile, s3Folder);
+		}
 
-
-		String videoUrl = uploadService.saveFileToCpanel(video);
-		String audioUrl = uploadService.saveFileToCpanel(audio);
-		String documentUrl = uploadService.saveFileToCpanel(document);
+		if (!audio.getOriginalFilename().isEmpty()) {
+			File audioFile = uploadService.getFile(audio);
+			audioUrl = uploadService.saveFileToS3(audioFile, s3Folder);
+		}
+		if (!document.getOriginalFilename().isEmpty()) {
+			File documentFile = uploadService.getFile(document);
+			documentUrl = uploadService.saveFileToS3(documentFile, s3Folder);
+		}
 
 		weatherBroadcastService.saveWeather(
 				broadcastReq,
@@ -86,6 +83,13 @@ public class WeatherBroadcastController {
 		weatherBroadcastService.delete(id);
 		ResponseEntity<WeatherBroadcastDTO> response = new ResponseEntity<WeatherBroadcastDTO>(HttpStatus.OK);
 		return response;
+	}
+
+	@RequestMapping(value = "/get", method = RequestMethod.GET)
+	public ResponseEntity<WeatherBroadcastDTO> getRecord(
+			@RequestParam(name = "id") Long id) {
+		WeatherBroadcastDTO list = weatherBroadcastService.findById(id);
+		return new ResponseEntity<WeatherBroadcastDTO>(list, HttpStatus.OK);
 	}
 
 }

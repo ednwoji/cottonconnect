@@ -11,9 +11,7 @@
 				<div class="col-12">
 					<div class="mb-2">
 						<h1>Role Entitlements</h1>
-						<nav
-							class="breadcrumb-container d-none d-sm-block d-lg-inline-block"
-							aria-label="breadcrumb">
+						<nav class="breadcrumb-container d-none d-sm-block d-lg-inline-block" aria-label="breadcrumb">
 							<ol class="breadcrumb pt-0">
 								<li class="breadcrumb-item"><a href="#">Settings</a></li>
 								<li class="breadcrumb-item"><a href="#">Role</a></li>
@@ -30,14 +28,13 @@
 						<div class="card-body">
 							<div class="row">
 								<div class="col">
-									<label> Role </label> <select class="form-control" id="role"
-										onchange="loadMenu()">
+									<label> Role </label> <select class="form-control" id="role" onchange="loadMenu()">
 									</select>
 								</div>
 
 								<div class="col">
-									<label> Role Menu </label> <select class="form-control"
-										id="parent_menu" onchange="loadEntitlements()">
+									<label> Role Menu </label> <select class="form-control" id="parent_menu"
+										onchange="loadEntitlements()">
 									</select>
 								</div>
 							</div>
@@ -47,11 +44,11 @@
 					<div class="card" style="margin-top: 2%">
 						<div class="card-body">
 							<div class="float-right">
-								<button class="btn btn-info" onclick="selectAll()"
-									style="margin-bottom: 4%">Select All</button>
-									
-									<button class="btn btn-info" onclick="removeAll()"
-									style="margin-bottom: 4%">Remove All</button>
+								<button class="btn btn-info" onclick="selectAll()" style="margin-bottom: 4%">Select
+									All</button>
+
+								<button class="btn btn-info" onclick="removeAll()" style="margin-bottom: 4%">Remove
+									All</button>
 							</div>
 							<div class="table-responsive">
 								<table class="table table-bordered table-hover">
@@ -64,7 +61,7 @@
 											<th>Delete</th>
 										</tr>
 									</thead>
-									<tbody id="tbody-ent" style="text-align: center;"></tbody>
+									<tbody id="tbody-ent"></tbody>
 								</table>
 							</div>
 
@@ -90,176 +87,172 @@
 	<script src="js/vendor/select2.full.js"></script>
 
 	<script type='text/javascript'>
-		$.urlParam = function(name) {
+		$.urlParam = function (name) {
 			try {
 				var results = new RegExp('[\?&]' + name + '=([^&#]*)')
-						.exec(window.location.href);
+					.exec(window.location.href);
 				return results[1] || 0;
 			} catch (e) {
 			}
-		}
+		};
 
-		$(document).ready(function() {
+		$(document)
+			.ready(
+				function () {
 
-							$("#img-div").hide();
-							$("#menu-div").load("menu.html");
-							$("#menu-header").load("nav.html");
-							$("#page-footer").load("footer.html");
-							$("#redirectUrl").val("https://cottonconnectelearning.com/emailManagementList.jsp");
+					$("#img-div").hide();
+					$("#menu-div").load("menu.html");
+					$("#menu-header").load("nav.html");
+					$("#page-footer").load("footer.html");
+					$("#redirectUrl").val(getHomeUrl() + "/emailManagementList.jsp");
 
-							var id = $.urlParam('id');
-							if (id != null) {
-								$("body").addClass("show-spinner");
-								$.ajax({
-									url : getUrl() + '/email/by-id?id=' + id,
-									beforeSend : function(request) {
-										request.setRequestHeader("user-id",
-												getUserName());
-									},
-									success : function(result) {
-										$("#id").val(id);
-										$("#country").val(result.country);
-										setUpdate(result);
-										$(result.emails).each(function(i, v) {
-											$("#e" + i).val(v);
-										});
-									}
+					var id = $.urlParam('id');
+					if (id != null) {
+						$("body").addClass("show-spinner");
+						$.ajax({
+							url: getUrl() + '/email/by-id?id=' + id,
+							beforeSend: function (request) {
+								request.setRequestHeader("user-id",
+									getUserName());
+							},
+							success: function (result) {
+								$("#id").val(id);
+								$("#country").val(result.country);
+								setUpdate(result);
+								$(result.emails).each(function (i, v) {
+									$("#e" + i).val(v);
 								});
 							}
+						});
+					}
 
-							$
-									.ajax({
-										url : getUrl() + '/role/getRoles',
-										success : function(result) {
-											$("#role").html('');
+					$
+						.ajax({
+							url: getUrl() + '/role/getRoles',
+							success: function (result) {
+								$("#role").html('');
+								$("#role")
+									.append(
+										"<option value=''>Select</option>");
+								$(result)
+									.each(
+										function (k, v) {
 											$("#role")
-													.append(
-															"<option value=''>Select</option>");
-											$(result)
-													.each(
-															function(k, v) {
-																$("#role")
-																		.append(
-																				"<option value=" + v.id + ">"
-																						+ v.name
-																						+ "</option>");
-															});
+												.append(
+													"<option value=" + v.id + ">"
+													+ v.name
+													+ "</option>");
+										});
 
-										}
-									});
-
+							}
 						});
 
-		function loadMenu() {
+				});
+
+		function loadMenu () {
 			$.ajax({
-				url : getUrl() + '/role/menu/by-role?role=' + $("#role").val(),
-				success : function(result) {
+				url: getUrl() + '/role/menu/by-role?role=' + $("#role").val(),
+				success: function (result) {
 					$("#parent_menu").html('');
 					$("#parent_menu")
-							.append("<option value=''>Select</option>");
+						.append("<option value=''>Select</option>");
 					$(result).each(
-							function(k, v) {
-								$("#parent_menu").append(
-										"<option value=" + v.id + ">" + v.name
-												+ "</option>");
-							});
+						function (k, v) {
+							$("#parent_menu").append(
+								"<option value=" + v.id + ">" + v.name
+								+ "</option>");
+						});
 
 				}
 			});
 		}
 
-		function loadEntitlements() {
+		function loadEntitlements () {
 			$
-					.ajax({
-						url : getUrl() + '/role/entitlements/by-menu?menus='
-								+ $("#parent_menu").val(),
-						success : function(result) {
-							$("#tbody-ent").html("");
-							$(result)
-									.each(
-											function(i, v) {
-												Object
-														.keys(v)
-														.forEach(
-																function(key) {
-																	var tr = $("<tr/>");
-																	var value = v[key];
-																	var menuTd = $(
-																			"<td/>")
-																			.text(
-																					key);
-																	tr
-																			.append(menuTd);
-																	for (idx = 0; idx < value.length; idx++) {
-																		var chk = $(
-																				"<td/>")
-																				.html(
-																						"<input type='checkbox' name='ents' class='rowchk' value="+value[idx][0]+">");
-																		tr
-																				.append(chk);
-																	}
-																	$(
-																			"#tbody-ent")
-																			.append(
-																					tr);
-																});
-
+				.ajax({
+					url: getUrl() + '/role/entitlements/by-menu?menus='
+						+ $("#parent_menu").val(),
+					success: function (result) {
+						$("#tbody-ent").html("");
+						$(result)
+							.each(
+								function (i, v) {
+									Object
+										.keys(v)
+										.forEach(
+											function (key) {
+												var tr = $("<tr/>");
+												var value = v[key];
+												var menuTd = $(
+													"<td/>")
+													.text(
+														key);
+												tr
+													.append(menuTd);
+												for (idx = 0; idx < value.length; idx++) {
+													var chk = $(
+														"<td/>")
+														.html(
+															"<input type='checkbox' name='ents' class='rowchk' value=" + value[idx][0] + ">");
+													tr
+														.append(chk);
+												}
+												$(
+													"#tbody-ent")
+													.append(
+														tr);
 											});
 
-							updateValues();
-						}
-					});
+								});
+
+						updateValues();
+					}
+				});
 		}
 
-		function updateValues() {
+		function updateValues () {
 			$.ajax({
-				url : getUrl() + '/role/entitlements/by-role?role='
-						+ $("#role").val(),
-				success : function(result) {
-					$(result.ents).each(function(i, v) {
-						$("input:checkbox[value='" + v + "']").each(function() {
+				url: getUrl() + '/role/entitlements/by-role?role='
+					+ $("#role").val(),
+				success: function (result) {
+					$(result.ents).each(function (i, v) {
+						$("input:checkbox[value='" + v + "']").each(function () {
 							$(this).attr('checked', true);
 						});
-					})
+					});
 				}
 			});
 		}
 
-		function selectAll() {
+		function selectAll () {
 			$("input:checkbox.rowchk").attr('checked', true);
 		}
 
-		function removeAll(){
+		function removeAll () {
 			$("input:checkbox.rowchk").attr('checked', false);
 		}
 
-		function save() {
+		function save () {
 			var entitlements = [];
-			$("input:checkbox[name=ents]:checked").each(function() {
+			$("input:checkbox[name=ents]:checked").each(function () {
 				entitlements.push($(this).val());
 			});
 
 			//save-role-entitlement
 			var countryData = {
-				"roleId" : $("#role").val(),
-				"ents" : entitlements
+				"roleId": $("#role").val(),
+				"ents": entitlements
 			};
 
 			$.ajax({
-				url : getUrl() + '/role/save-role-entitlement',
-				// url : 'http://localhost:5000/role/save-role-entitlement',
-				type : 'post',
-				dataType : 'json',
-				contentType : 'application/json',
-				data : JSON.stringify(countryData),
-				success : function(result) {
-					$("#tbody-ent").html("Privileges have been successfully saved.");
-				},
-
-				error: function (err) {
-					alert('Error adding priviledges. Please try again later');
-                }
-
+				url: getUrl() + '/role/save-role-entitlement',
+				type: 'post',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(countryData),
+				success: function (result) {
+					$("#tbody-ent").html("");
+				}
 			});
 		}
 	</script>

@@ -31,9 +31,6 @@ function loadStyle(href, callback) {
   }
 }
 
-function getUrl(){
-  return "https://server.cottonconnectelearning.com//";
-}
 
 function getUserName(){
   return "admin";

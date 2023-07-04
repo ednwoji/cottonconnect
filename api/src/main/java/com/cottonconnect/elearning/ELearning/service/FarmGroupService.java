@@ -8,7 +8,7 @@ import com.cottonconnect.elearning.ELearning.dto.TableResponse;
 public interface FarmGroupService {
 	FarmGroupDTO saveFarmGroup(FarmGroupDTO farmGroupDto, String userId);
 	
-	TableResponse getAllFarmGroups(Integer draw,Integer pageNo, Integer pageSize);
+	TableResponse getAllFarmGroups(Integer draw,Integer pageNo, Integer pageSize,String search);
 	
 	List<FarmGroupDTO> getFarmGroups();
 

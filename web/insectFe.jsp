@@ -41,7 +41,8 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Name of Insect</label> <input type="text" class="form-control" required id="name" name="name" oninput="validateInput('name')">
+											<label>Name of Insect</label> <input type="text"
+												class="form-control" required id="name" name="name">
 										</div>
 									</div>
 									<div class="col-md-4">
@@ -56,7 +57,8 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Identification</label>
-											<textarea maxlength="500" class="form-control" required name="identification" id="identification" oninput="validateInput('identification')"></textarea>
+											<textarea maxlength="500" class="form-control" required
+												name="identification" id="identification"></textarea>
 											(Max. 500 chars)
 										</div>
 									</div>
@@ -66,21 +68,23 @@
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Notes</label>
-											<textarea maxlength="500" class="form-control" required name="notes" id="notes" oninput="validateInput('notes')"></textarea>
+											<textarea maxlength="500" class="form-control" required
+												name="notes" id="notes"></textarea>
 											(Max. 500 chars)
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
 											<label>Symptoms & Remedy</label>
-											<textarea maxlength="500" class="form-control" required name="description" id="description" oninput="validateInput('description')"></textarea>
+											<textarea maxlength="500" class="form-control" required
+												name="description" id="description"></textarea>
 											(Max. 500 chars)
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload Image<b style="color: red">[.jpg, .png]</b> [Max size : Upto to 1MB]</label> 
-											<input type="file" name="file" accept="image/jpeg, image/png" class="form-control">
+											<label>Upload<b style="color: red">[.jpg, .png]</b> [Max size : Upto to 1MB]</label> <input
+												type="file" name="file" class="form-control">
 										</div>
 									</div>
 								</div>
@@ -88,20 +92,20 @@
 								<div class="row">
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload Image<b style="color: red">[.jpg, .png]</b> [Max size : Upto to 1MB]</label> 
-											<input type="file" name="file" accept="image/jpeg, image/png" class="form-control">
+											<label>Upload<b style="color: red">[.jpg, .png]</b> [Max size : Upto to 1MB]</label> <input
+												type="file" name="file" class="form-control">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload Document<b style="color: red">[.pdf, .xls, .pptx, .doc]</b> [Max size : Upto to 1MB]</label> 
-											<input type="file" name="file" accept=".pdf, .xls, .xlsx, .pptx, .doc, .docx" class="form-control">
+											<label>Upload<b style="color: red">[.pdf, .xls, .pptx, .doc]</b> [Max size : Upto to 1MB]</label> <input type="file" name="file"
+												class="form-control">
 										</div>
 									</div>
 									<div class="col-md-4">
 										<div class="form-group">
-											<label>Upload Document<b style="color: red">[.pdf, .xls, .doc, .docx]</b> [Max size : Upto to 1MB]</label> 
-											<input type="file" name="file" accept=".pdf, .xls, .xlsx, .pptx, .doc, .docx" class="form-control">
+											<label>Upload<b style="color: red">[.pdf, .xls, .doc, .docx]</b> [Max size : Upto to 1MB]</label> <input type="file" name="file"
+												class="form-control">
 										</div>
 									</div>
 								</div>
@@ -145,53 +149,14 @@
 			}
 		}
 
-		function validateInput(idTag) {
-  var textarea = document.getElementById(idTag);
-  var input = textarea.value;
-  var regex = /^[A-Za-z0-9\s]+$/;;
-  
-  if (!regex.test(input)) {
-    textarea.setCustomValidity("Only alphabets and numbers are allowed");
-  } else {
-    textarea.setCustomValidity("");
-  }
-}
-
-
 		$(document).ready(function() {
-
-
-			var currentUrl = window.location.href;
- 	 	console.log(currentUrl);
-
-		  if (currentUrl.indexOf('failed') !== -1) {
-			$('#add-form').prepend('<div class="alert alert-danger text-center border border-info">Uploaded Failed. Try again later</div>')
-				.find('.alert')
-				.fadeIn(300)
-				.delay(3000)
-				.fadeOut(300, function() {$(this).remove();});
-  			}
-
-			else if (currentUrl.indexOf('success') !== -1){
-
-				$('#add-form').prepend('<div class="alert alert-info text-center border border-info">Uploaded Successfully</div>')
-				.find('.alert')
-				.fadeIn(300)
-				.delay(3000)
-				.fadeOut(300, function() {$(this).remove();});
-  			}
-
-
-
-
-
 			$("#img-div").hide();
 			$("#menu-div").load("menu.html");
 			$("#menu-header").load("nav.html");
 			$("#page-footer").load("footer.html");
 			$("#add-form").attr("action", getUrl() + "/service/knowledge-center/save/");
 			
-			$("#redirectUrl").val(getHomeUrl() + '/insectFe.jsp');
+			$("#redirectUrl").val(getHomeUrl() + '/inspectListFe.jsp');
 
 
 			$.ajax({

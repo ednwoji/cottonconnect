@@ -10,21 +10,21 @@
 	<div class="form-group">
 		<label>Country <sup>*</sup></label> <select id="country"
 			required="required" multiple="multiple" name="countries"
-			onchange="populateBrand()" class="form-control select2-multiple"></select>
+			onchange="populateBrand()" class="form-control"></select>
 	</div>
 </div>
 
 <div class="col-md-4">
 	<div class="form-group">
 		<label>Brand</label> <select id="brand"
-			class="form-control select2-multiple" multiple="multiple"
+			class="form-control" multiple="multiple"
 			name="brands" required onchange="populateProgram()"></select>
 	</div>
 </div>
 <div class="col-md-4">
 	<div class="form-group">
 		<label>Program <sup>*</sup></label> <select id="program"
-			name="programs" required class="form-control select2-multiple"
+			name="programs" required class="form-control"
 			multiple="multiple" onchange="populatePartners()"></select>
 	</div>
 </div>
@@ -33,7 +33,7 @@
 	<div class="form-group">
 		<label>Local Partner <sup>*</sup></label> <select id="partner"
 			onchange="populateFarmGroup()" name="localPartners" required
-			multiple="multiple" class="form-control select2-multiple"></select>
+			multiple="multiple" class="form-control"></select>
 	</div>
 </div>
 
@@ -41,15 +41,15 @@
 	<div class="form-group">
 		<label>Farm Group <sup>*</sup></label> <select id="farmGroup"
 			multiple="multiple" onchange="populateLearners()" name="farmGroups"
-			required class="form-control select2-multiple"></select>
+			required class="form-control"></select>
 	</div>
 </div>
 
 <div class="col-md-4">
 	<div class="form-group">
-		<label>Learner Group <sup>*</sup></label> <select id="learners"
-			multiple="multiple" name="learners" required
-			class="form-control select2-multiple"></select>
+		<label>Learner Group</label> <select id="learners"
+			multiple="multiple" name="learners"
+			class="form-control"></select>
 	</div>
 </div>
 

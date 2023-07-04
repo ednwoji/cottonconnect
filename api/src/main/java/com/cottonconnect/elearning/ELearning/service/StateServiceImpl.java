@@ -65,11 +65,11 @@ public class StateServiceImpl implements StateService {
 	}
 
 	@Override
-	public TableResponse getAllStates(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getAllStates(Integer draw, Integer pageNo, Integer pageSize, String search) {
 		TableResponse response = null;
 		List<List<Object>> stateDtoList = new ArrayList<List<Object>>();
 		Pageable paging = PageRequest.of(pageNo, pageSize);
-		Page<State> statePaged = stateRepository.findAll(paging);
+		Page<State> statePaged = stateRepository.findAllWithPage(search.toLowerCase(),paging);
 		if (statePaged.hasContent()) {
 			List<State> stateList = statePaged.getContent();
 			stateDtoList = stateList.stream().map(state -> {

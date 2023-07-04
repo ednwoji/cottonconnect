@@ -50,7 +50,7 @@
 			<div class="row mb-4">
 				<div class="col-12 mb-4">
 					<div class="card">
-						<div class="card-body" id="form-body">
+						<div class="card-body">
 							<div class="row">
 								<input type="hidden" id="id">
 							</div>
@@ -247,30 +247,15 @@
         
         $.ajax({
             url: getUrl() + '/service/user/saveUser',
-			// url: 'http://localhost:5000/app/service/user/saveUser',
-
             type: 'post',
             dataType: 'json',
             contentType: 'application/json',
             data: JSON.stringify(countryData),
             success: function (data) {
-				console.log(data);
-				$('#form-body').prepend('<div class="alert alert-info text-center border border-info">'+data.message+'</div>')
-				.find('.alert')
-				.fadeIn(300)
-				.delay(5000)
-				.fadeOut(300, function() {$(this).remove();});
-	
+                window.location.href = "userList.jsp";
             },
-            error: function (xhr, status, error) {
-				var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'An error occurred';
-
-				$('#form-body').prepend('<div class="alert alert-info text-center border border-info">'+errorMessage+'</div>')
-				.find('.alert')
-				.fadeIn(300)
-				.delay(3000)
-				.fadeOut(300, function() {$(this).remove();});
-                // console.log(err);
+            error: function (err) {
+                console.log(err);
             }
         });
     }

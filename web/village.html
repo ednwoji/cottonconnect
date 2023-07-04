@@ -42,7 +42,7 @@
 								aria-hidden="true">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
-										<div class="modal-header" id="modalHeader">
+										<div class="modal-header">
 											<h5 class="modal-title">Add Village</h5>
 											<button type="button" class="close" data-dismiss="modal"
 												aria-label="Close">
@@ -185,8 +185,7 @@
         function populateTaluk() {
             var disitrict = $("#district").val();
             $.ajax({
-                url: getUrl() + '/location/taluk/getTaluksByDistrict?districtId=' + disitrict + '', 
-				success: function (result) {
+                url: getUrl() + '/location/taluk/getTaluksByDistrict?districtId=' + disitrict + '', success: function (result) {
                     $("#block").html('');
                     $("#block").append("<option value=''>Select</option>");
                     $(result).each(function (k, v) {
@@ -197,7 +196,6 @@
         }
 
         function submitForm() {
-			console.log('id is '+$("#id").val());
             if ($("#country").val() == "") {
                 alert("Please Select Country");
                 return;
@@ -221,23 +219,15 @@
             var talukData = { "code": $("#blockCode").val(), "name": $("#blockName").val(), "talukId": $("#block").val(), "id" : $("#id").val() };
             $.ajax({
                 url: getUrl() + '/location/village/saveVillage',
-				// url: 'http://localhost:5000/location/village/saveVillage',
                 type: 'post',
                 dataType: 'json',
                 contentType: 'application/json',
                 data: JSON.stringify(talukData),
                 success: function (data) {
-					console.log('Successful');
                     window.location.href = "village.html";
                 },
-                error: function (jqXHR, textStatus, errorThrown) {
-					$('#modalHeader').append('<div class="alert alert-danger text-center border border-info">Villages and states should be unique</div>')
-					.find('.alert')
-					.fadeIn(300)
-					.delay(3000)
-					.fadeOut(300, function() {$(this).remove();});
-
-
+                error: function (err) {
+                    console.log(err);
                 }
             });
         }

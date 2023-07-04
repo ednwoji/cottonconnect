@@ -95,6 +95,12 @@
 			}
 
 		}
+
+		
+		function editz(id) {
+			$("body").addClass("show-spinner");
+			window.location.href = "weatherBroadcastAdd.jsp?id=" + id;
+		}
 	</script>
 
 </body>

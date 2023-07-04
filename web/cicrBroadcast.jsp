@@ -98,6 +98,11 @@
 			}
 
 		}
+
+		function editz(id) {
+			$("body").addClass("show-spinner");
+			window.location.href = "cicrBroadcastAdd.jsp?id=" + id;
+		}
 	</script>
 
 </body>

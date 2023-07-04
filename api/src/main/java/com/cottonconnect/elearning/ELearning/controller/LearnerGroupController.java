@@ -28,9 +28,9 @@ public class LearnerGroupController {
 
 	@RequestMapping(value = "/farm-group/getAllLearners")
 	public ResponseEntity<TableResponse> getAllLearners(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse countryList = learnerGroupService.getAllLearners(draw, start, length);
+		TableResponse countryList = learnerGroupService.getAllLearners(draw, start, length, search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(countryList, HttpStatus.OK);
 		return response;
 	}

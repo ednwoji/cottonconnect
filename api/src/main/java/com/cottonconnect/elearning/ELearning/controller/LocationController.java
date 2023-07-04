@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cottonconnect.elearning.ELearning.dto.CountryDTO;
@@ -36,5 +37,5 @@ public class LocationController {
 		ResponseEntity<List<StateDTO>> response = new ResponseEntity<List<StateDTO>>(stateList, HttpStatus.OK);
 		return response;
 	}
-	
+
 }

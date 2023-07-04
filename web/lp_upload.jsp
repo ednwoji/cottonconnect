@@ -31,22 +31,22 @@
 
 							<div class="float-right">
 								<a target="_blank"
-									href=http://cottonconnectelearning.in:10000/templates/local_partner_template.xlsx
+									href=https://cotton-connect-images-dev.s3.ap-south-1.amazonaws.com/template/local_partner_template.xlsx
 									style="font-weight: bold;">Download template</a>
 							</div>
 
 							<div class="float-left">
-								<form action="http://cottonconnectelearning.in:10000/app/upload/lp" id="add-form" method="post" enctype="multipart/form-data">
-								<!-- <form action="http://localhost:5000/app/upload/lp" id="add-form" method="post" enctype="multipart/form-data"> -->
-
+								<form action=""
+								id="add-form"
+									method="post" enctype="multipart/form-data">
 									<input type="hidden" name="redirectUrl" id="redirectUrl">
 									<div class="row">
 										<jsp:include page="filter.jsp" />
 									</div>
 									<div class="row">
 										<div class="col-md-10">
-											<label>Upload Document(Using template above)</label>
-											<input type="file" class="form-control" name="file" accept=".xls,.xlsx" required>
+											<input type="file" class="form-control" name="file"
+												accept=".xls,.xlsx">
 										</div>
 										<div class="col-md-2">
 											<button class="btn btn-info">Upload</button>
@@ -83,34 +83,11 @@
 		$(document)
 				.ready(
 						function() {
-
-
-							var currentUrl = window.location.href; 	 	
-
-if (currentUrl.indexOf('failed') !== -1) {
-  $('#formInput').prepend('<div class="alert alert-danger text-center border border-info">Please use the correct template and ensure there are no duplicates</div>')
-	  .find('.alert')
-	  .fadeIn(300)
-	  .delay(3000)
-	  .fadeOut(300, function() {$(this).remove();});
-	}
-
-  else if (currentUrl.indexOf('success') !== -1){
-
-	  $('#formInput').prepend('<div class="alert alert-info text-center border border-info">Data uploaded successfully</div>')
-	  .find('.alert')
-	  .fadeIn(300)
-	  .delay(3000)
-	  .fadeOut(300, function() {$(this).remove();});
-	}
-
-
-
-
 							$("#menu-div").load("menu.html");
 							$("#menu-header").load("nav.html");
 							$("#page-footer").load("footer.html");
-							$("#redirectUrl").val(getHomeUrl() + "/lp_upload.jsp");
+							$("#redirectUrl").val(getHomeUrl() + "/farmer_upload.jsp");
+							$("#add-form").attr("action", getVideoUploadUrl() + "/upload/local-partner/");
 							$(".local-partner").hide();
 							$(".farm-group").hide();
 							$(".learner-group").hide();

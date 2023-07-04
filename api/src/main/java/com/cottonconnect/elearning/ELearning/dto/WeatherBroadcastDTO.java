@@ -6,12 +6,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class WeatherBroadcastDTO {
-       
-	private String redirectUrl;
-    
-	private Long country;
-    
-	private Long state;
+
+    private String redirectUrl;
+
+    private Long country;
+
+    private Long state;
 
     private Long district;
 
@@ -19,5 +19,12 @@ public class WeatherBroadcastDTO {
 
     private Long village;
 
+    private String videoUrl;
+
+    private String audioUrl;
+
+    private String documentUrl;
+
+    private Long id;
 
 }

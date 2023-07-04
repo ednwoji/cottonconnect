@@ -9,12 +9,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-import com.cottonconnect.elearning.ELearning.dto.*;
-import com.cottonconnect.elearning.ELearning.model.*;
-import com.cottonconnect.elearning.ELearning.repo.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
@@ -31,8 +32,43 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.cottonconnect.elearning.ELearning.dto.Document;
+import com.cottonconnect.elearning.ELearning.dto.FaqQueryDTO;
+import com.cottonconnect.elearning.ELearning.dto.UploadFarmerDTO;
+import com.cottonconnect.elearning.ELearning.dto.UploadFarmerExcelDTO;
 import com.cottonconnect.elearning.ELearning.exception.CustomException;
 import com.cottonconnect.elearning.ELearning.exception.FileStorageException;
+import com.cottonconnect.elearning.ELearning.model.Brand;
+import com.cottonconnect.elearning.ELearning.model.Country;
+import com.cottonconnect.elearning.ELearning.model.District;
+import com.cottonconnect.elearning.ELearning.model.FaqDocuments;
+import com.cottonconnect.elearning.ELearning.model.FaqQuery;
+import com.cottonconnect.elearning.ELearning.model.FaqQueryResponse;
+import com.cottonconnect.elearning.ELearning.model.FarmGroup;
+import com.cottonconnect.elearning.ELearning.model.Farmer;
+import com.cottonconnect.elearning.ELearning.model.KnowledgeCenter;
+import com.cottonconnect.elearning.ELearning.model.KnowledgeCenterImages;
+import com.cottonconnect.elearning.ELearning.model.LearnerGroup;
+import com.cottonconnect.elearning.ELearning.model.Programme;
+import com.cottonconnect.elearning.ELearning.model.State;
+import com.cottonconnect.elearning.ELearning.model.Taluk;
+import com.cottonconnect.elearning.ELearning.model.Video;
+import com.cottonconnect.elearning.ELearning.model.VideoDocuments;
+import com.cottonconnect.elearning.ELearning.model.Village;
+import com.cottonconnect.elearning.ELearning.repo.BrandRepository;
+import com.cottonconnect.elearning.ELearning.repo.CountryRepository;
+import com.cottonconnect.elearning.ELearning.repo.DistrictRepository;
+import com.cottonconnect.elearning.ELearning.repo.FaqDocumetsRepository;
+import com.cottonconnect.elearning.ELearning.repo.FaqResponseRepo;
+import com.cottonconnect.elearning.ELearning.repo.FarmGroupRepository;
+import com.cottonconnect.elearning.ELearning.repo.FarmerRepository;
+import com.cottonconnect.elearning.ELearning.repo.KnowledgeCenterRepo;
+import com.cottonconnect.elearning.ELearning.repo.KnowledgeCentreImagesRepo;
+import com.cottonconnect.elearning.ELearning.repo.LearnerGroupRepository;
+import com.cottonconnect.elearning.ELearning.repo.ProgrammeRepository;
+import com.cottonconnect.elearning.ELearning.repo.StateRepository;
+import com.cottonconnect.elearning.ELearning.repo.TalukRepository;
+import com.cottonconnect.elearning.ELearning.repo.VillageRepository;
 import com.cottonconnect.elearning.ELearning.service.UploadService;
 import com.jcabi.aspects.Cacheable;
 import com.utility.Constants;
@@ -102,13 +138,6 @@ public class UploadServiceImpl implements UploadService {
 
 	@Autowired
 	LearnerGroupRepository learnerGroupRepository;
-
-	@Autowired
-	LocalPartnerRepository localPartnerRepository;
-
-	@Value("${videos_upload_path}")
-	private String videos_upload_path;
-
 
 	@Override
 	public void init() {
@@ -366,164 +395,6 @@ public class UploadServiceImpl implements UploadService {
 		farmerRepo.saveAll(farmersList);
 	}
 
-	@Override
-	public void saveLpUploadFarmer(List<UploadLpExcelDTO> excelData, UploadLpDTO lPDto) throws CustomException {
-
-
-		List<LocalPartnerName> farmersList = new ArrayList<LocalPartnerName>();
-		LocalPartnerName farmer = new LocalPartnerName();
-
-		if (lPDto.getCountry() != null) {
-			Optional<Country> countryOpt = countryRepository.findById(lPDto.getCountry());
-			if (countryOpt.isPresent())
-				farmer.setCountry(countryOpt.get());
-		}
-
-
-		if (lPDto.getBrand() != null) {
-			Optional<Brand> brandOpt = brandRepository.findById(lPDto.getBrand());
-			if (brandOpt.isPresent())
-				farmer.setBrand(brandOpt.get());
-		}
-
-		for (UploadLpExcelDTO row : excelData) {
-			LocalPartnerName foundedLp = localPartnerRepository.findByName(row.getName());
-			if (foundedLp != null) {
-				throw new CustomException(row.getName() + " is Already Exists");
-			}
-			LocalPartnerName farmerTemp = new LocalPartnerName();
-			farmerTemp.setCountry(farmer.getCountry());
-			farmerTemp.setBrand(farmer.getBrand());
-			farmerTemp.setName(row.getName());
-			farmerTemp.setAddress(row.getAddress());
-			farmerTemp.setCreatedUser("upload");
-			farmerTemp.setUpdatedUser("upload");
-
-			farmersList.add(farmerTemp);
-		}
-		localPartnerRepository.saveAll(farmersList);
-
-	}
-
-	@Override
-	public void saveFgUploadFarmer(List<UploadFarmGroupExcelDTO> excelData, UploadFarmGroupDTO uploadFgDTO) throws CustomException {
-
-		List<FarmGroup> farmersList = new ArrayList<FarmGroup>();
-		FarmGroup farmer = new FarmGroup();
-
-		if (uploadFgDTO.getCountry() != null) {
-			Optional<Country> countryOpt = countryRepository.findById(uploadFgDTO.getCountry());
-			if (countryOpt.isPresent())
-				farmer.setCountry(countryOpt.get());
-		}
-
-
-		if (uploadFgDTO.getBrand() != null) {
-			Optional<Brand> brandOpt = brandRepository.findById(uploadFgDTO.getBrand());
-			if (brandOpt.isPresent())
-				farmer.setBrand(brandOpt.get());
-		}
-
-		if (uploadFgDTO.getLocalPartner() != null) {
-			Optional<LocalPartnerName> brandOpt = localPartnerRepository.findById(uploadFgDTO.getLocalPartner());
-			if (brandOpt.isPresent())
-				farmer.setLocalPartner(brandOpt.get());
-		}
-
-
-
-
-		if (uploadFgDTO.getProgram() != null) {
-			Optional<Programme> programOpt = programmeRepository.findById(uploadFgDTO.getProgram());
-			if (programOpt.isPresent())
-				farmer.setProgram(programOpt.get());
-		}
-
-
-		for (UploadFarmGroupExcelDTO row : excelData) {
-
-
-			FarmGroup farmerTemp = new FarmGroup();
-			farmerTemp.setCountry(farmer.getCountry());
-			farmerTemp.setBrand(farmer.getBrand());
-			farmerTemp.setProgram(farmer.getProgram());
-			farmerTemp.setNoOfFarmers(row.getNoOfFarmers());
-			farmerTemp.setAcreage(row.getAcreage());
-			farmerTemp.setName(row.getName());
-			farmerTemp.setEstYield(row.getYield());
-			farmerTemp.setTypez(row.getType());
-			farmerTemp.setLatitude(row.getLatitude());
-			farmerTemp.setLongitude(row.getLongitude());
-			farmerTemp.setLocalPartner(farmer.getLocalPartner());
-			farmerTemp.setCreatedUser("upload");
-			farmerTemp.setUpdatedUser("upload");
-			farmersList.add(farmerTemp);
-
-		}
-		farmGroupRepository.saveAll(farmersList);
-
-
-
-	}
-
-	@Override
-	public void saveLgUploadFarmer(List<UploadLgUploadExcelDTO> excelData, UploadLearnerGroupDTO uploadLgDTO) throws CustomException {
-
-
-		List<LearnerGroup> farmersList = new ArrayList<LearnerGroup>();
-		LearnerGroup farmer = new LearnerGroup();
-
-		if (uploadLgDTO.getCountry() != null) {
-			Optional<Country> countryOpt = countryRepository.findById(uploadLgDTO.getCountry());
-			if (countryOpt.isPresent())
-				farmer.setCountry(countryOpt.get());
-		}
-
-
-		if (uploadLgDTO.getBrand() != null) {
-			Optional<Brand> brandOpt = brandRepository.findById(uploadLgDTO.getBrand());
-			if (brandOpt.isPresent())
-				farmer.setBrand(brandOpt.get());
-		}
-
-		if (uploadLgDTO.getProgram() != null) {
-			Optional<Programme> programOpt = programmeRepository.findById(uploadLgDTO.getProgram());
-			if (programOpt.isPresent())
-				farmer.setProgramme(programOpt.get());
-		}
-
-		if (uploadLgDTO.getFarmGroup() != null) {
-			Optional<FarmGroup> farmerGroupOpt = farmGroupRepository.findById(uploadLgDTO.getFarmGroup());
-			if (farmerGroupOpt.isPresent())
-				farmer.setFarmGroup(farmerGroupOpt.get());
-		}
-
-		for (UploadLgUploadExcelDTO row : excelData) {
-//			Farmer foundedFarmer = farmerRepo.findByMobileNumber(row.getFarmerMobileNumber());
-//			if (foundedFarmer != null) {
-//				throw new CustomException(row.getFarmerMobileNumber() + " is Already Exists");
-//			}
-			LearnerGroup farmerTemp = new LearnerGroup();
-			farmerTemp.setCountry(farmer.getCountry());
-			farmerTemp.setBrand(farmer.getBrand());
-//			farmerTemp.setBrand(24L);
-			farmerTemp.setProgramme(farmer.getProgramme());
-			farmerTemp.setFarmGroup(farmer.getFarmGroup());
-			farmerTemp.setName(row.getName());
-			farmerTemp.setNoOfFarmers(row.getNoOfFarmers());
-			farmerTemp.setAcreage(row.getAcreage());
-			farmerTemp.setEstYield(row.getYield());
-			farmerTemp.setCreatedUser("upload");
-			farmerTemp.setUpdatedUser("upload");
-
-			farmersList.add(farmerTemp);
-		}
-		learnerGroupRepository.saveAll(farmersList);
-
-
-
-	}
-
 	@Cacheable(lifetime = 1, unit = TimeUnit.DAYS)
 	private AmazonS3 getS3Client () {
 		AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretkey);
@@ -575,23 +446,4 @@ public class UploadServiceImpl implements UploadService {
 		}
 	}
 
-
-
-	public String saveFileToCpanel(MultipartFile multipartFile) throws IOException {
-		String uploadDirectory = videos_upload_path;
-		String filename = generateUniqueFileName(multipartFile.getOriginalFilename());
-		File targetFile = new File(uploadDirectory + filename);
-
-		multipartFile.transferTo(targetFile);
-
-		String fullPath = "http://cottonconnectelearning.in:10000/videos/" + filename;
-
-		return fullPath;
-	}
-
-
-	private String generateUniqueFileName(String originalFilename) {
-		String extension = originalFilename.substring(originalFilename.lastIndexOf('.'));
-		return UUID.randomUUID().toString() + extension;
-	}
 }

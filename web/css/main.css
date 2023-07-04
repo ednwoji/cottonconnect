@@ -92,9 +92,3 @@ body.show-spinner::after{
 	text-align: center;
 	font-weight: bold;
 }
-
-
-#master-menu {
-  visibility: visible !important;
-  display: block;
-}

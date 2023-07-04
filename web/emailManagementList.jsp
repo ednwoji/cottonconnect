@@ -82,15 +82,12 @@
 							$("#menu-div").load("menu.html");
 							$("#menu-header").load("nav.html");
 							$("#page-footer").load("footer.html");
-							$("#redirectUrl")
-									.val(
-											"http://cottonconnectelearning.in:10000/emailManagementList.jsp");
+							$("#redirectUrl").val(getHomeUrl() +"/emailManagementList.jsp");
 
 							$('#country-table').DataTable({
 								"processing" : true,
 								"serverSide" : true,
 								"ajax" : getUrl() + '/email/getAllEmails/',
-								// "ajax" : 'http://localhost:5000/app/email/getAllEmails/',
 							});
 
 						});

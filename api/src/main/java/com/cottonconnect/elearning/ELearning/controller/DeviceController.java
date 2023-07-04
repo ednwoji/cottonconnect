@@ -34,18 +34,18 @@ public class DeviceController {
 
 	@RequestMapping(value = "/getAllDevices")
 	public ResponseEntity<TableResponse> getAllDevices(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse countryList = deviceService.getTableDevices(draw, start, length);
+		TableResponse countryList = deviceService.getTableDevices(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(countryList, HttpStatus.OK);
 		return response;
 	}
 
 	@RequestMapping(value = "/getAllUnRegister")
 	public ResponseEntity<TableResponse> getAllUnRegister(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse countryList = deviceService.getAllUnRegister(draw, start, length);
+		TableResponse countryList = deviceService.getAllUnRegister(draw, start, length,search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(countryList, HttpStatus.OK);
 		return response;
 	}

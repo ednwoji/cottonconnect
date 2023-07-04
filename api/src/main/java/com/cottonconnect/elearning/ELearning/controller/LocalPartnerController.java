@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +23,6 @@ import com.utility.WebUtils;
 
 @RestController
 @RequestMapping(value = "/master")
-@Slf4j
 public class LocalPartnerController {
 	@Autowired
 	LocalPartnerService localPartnerService;
@@ -61,7 +59,6 @@ public class LocalPartnerController {
 	@RequestMapping(value = "/partner/by-program")
 	public ResponseEntity<List<LocalPartnerNameDTO>> getPartnerByProgram(HttpServletRequest request,
 			@RequestParam("program") Long programId) {
-		log.info("Program ID is "+programId);
 		List<LocalPartnerNameDTO> partnerList = localPartnerService.getLocalPartner(programId);
 		ResponseEntity<List<LocalPartnerNameDTO>> response = new ResponseEntity<List<LocalPartnerNameDTO>>(partnerList,
 				HttpStatus.OK);
@@ -71,8 +68,6 @@ public class LocalPartnerController {
 	@RequestMapping(value = "/partner/by-programs")
 	public ResponseEntity<List<LocalPartnerNameDTO>> getPartnerByProgram(HttpServletRequest request,
 			@RequestParam("program") List<Long> programs) {
-
-		log.info("Program ID is "+programs);
 		List<LocalPartnerNameDTO> partnerList = localPartnerService.getLocalPartners(programs);
 		ResponseEntity<List<LocalPartnerNameDTO>> response = new ResponseEntity<List<LocalPartnerNameDTO>>(partnerList,
 				HttpStatus.OK);

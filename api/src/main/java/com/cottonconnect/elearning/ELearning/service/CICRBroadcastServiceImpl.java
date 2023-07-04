@@ -7,9 +7,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.cottonconnect.elearning.ELearning.dto.CICRBroadcastDTO;
 import com.cottonconnect.elearning.ELearning.dto.TableResponse;
@@ -96,6 +93,23 @@ public class CICRBroadcastServiceImpl implements CICRBroadcastService {
 			}
 		}
 
+		if (cicrBroadcastDTO.getId() != null) {
+			cicrBroadcast.setId(cicrBroadcastDTO.getId());
+			Optional<CICRBroadcast> foundCICRBroadcast = cicrBroadcastRepository.findById(cicrBroadcastDTO.getId());
+			if (foundCICRBroadcast.isPresent()) {
+				cicrBroadcast.setIsActive(foundCICRBroadcast.get().getIsActive());
+				cicrBroadcast.setCreateAt(foundCICRBroadcast.get().getCreateAt());
+				cicrBroadcast.setIsDeleted(foundCICRBroadcast.get().getIsDeleted());
+				cicrBroadcast.setVideoUrl(foundCICRBroadcast.get().getVideoUrl());
+				cicrBroadcast.setAudioUrl(foundCICRBroadcast.get().getAudioUrl());
+				cicrBroadcast.setDocumentUrl(foundCICRBroadcast.get().getDocumentUrl());
+			}
+		} else {
+			cicrBroadcast.setIsActive(true);
+			cicrBroadcast.setCreateAt(new Date());
+			cicrBroadcast.setIsDeleted(false);
+		}
+
 		if (videoUrl != null) {
 			cicrBroadcast.setVideoUrl(videoUrl);
 		}
@@ -106,9 +120,6 @@ public class CICRBroadcastServiceImpl implements CICRBroadcastService {
 			cicrBroadcast.setDocumentUrl(documentUrl);
 		}
 
-		cicrBroadcast.setIsActive(true);
-		cicrBroadcast.setCreateAt(new Date());
-		cicrBroadcast.setIsDeleted(false);
 		cicrBroadcastRepository.save(cicrBroadcast);
 
 		return null;
@@ -116,13 +127,11 @@ public class CICRBroadcastServiceImpl implements CICRBroadcastService {
 
 	@Override
 	public TableResponse getAllRecords() {
-		TableResponse response = null;
 		List<List<Object>> cicrBroadcastDtoList = new ArrayList<List<Object>>();
 		List<CICRBroadcast> cicrBroadcastPaged = cicrBroadcastRepository.findAll();
 
 		cicrBroadcastDtoList = cicrBroadcastPaged.stream().map(broadcast -> {
 			List<Object> cicrBroadcastObjList = new ArrayList<>();
-
 
 			cicrBroadcastObjList.add(broadcast.getCountry().getName());
 			cicrBroadcastObjList.add(broadcast.getState().getName());
@@ -140,7 +149,8 @@ public class CICRBroadcastServiceImpl implements CICRBroadcastService {
 					.add("<a class='detail' target='_blank' href='" + broadcast.getDocumentUrl() + "'> View </a>");
 
 			cicrBroadcastObjList
-					.add("</button> <button class='btn btn-danger btn-sm simple-icon-trash' onclick=deletez('"
+					.add("<button class='btn btn-success btn-sm simple-icon-pencil'onclick=editz(" + broadcast.getId()
+							+ ")></button> <button class='btn btn-danger btn-sm simple-icon-trash' onclick=deletez('"
 							+ broadcast.getId() + "')></button>");
 			return cicrBroadcastObjList;
 		}).collect(Collectors.toList());
@@ -154,5 +164,23 @@ public class CICRBroadcastServiceImpl implements CICRBroadcastService {
 		if (cicrBroadcast.isPresent()) {
 			cicrBroadcastRepository.delete(cicrBroadcast.get());
 		}
+	}
+
+	@Override
+	public CICRBroadcastDTO findById(Long id) {
+		CICRBroadcastDTO cicrBroadcast = new CICRBroadcastDTO();
+		Optional<CICRBroadcast> cicrBroadcastOpt = cicrBroadcastRepository.findById(id);
+		if (cicrBroadcastOpt.isPresent()) {
+			cicrBroadcast.setCountry(cicrBroadcastOpt.get().getCountry().getId());
+			cicrBroadcast.setState(cicrBroadcastOpt.get().getState().getId());
+			cicrBroadcast.setDistrict(cicrBroadcastOpt.get().getDistrict().getId());
+			cicrBroadcast.setTaluk(cicrBroadcastOpt.get().getTaluk().getId());
+			cicrBroadcast.setVillage(cicrBroadcastOpt.get().getVillage().getId());
+			cicrBroadcast.setVideoUrl(cicrBroadcastOpt.get().getVideoUrl());
+			cicrBroadcast.setAudioUrl(cicrBroadcastOpt.get().getAudioUrl());
+			cicrBroadcast.setDocumentUrl(cicrBroadcastOpt.get().getDocumentUrl());
+		}
+
+		return cicrBroadcast;
 	}
 }

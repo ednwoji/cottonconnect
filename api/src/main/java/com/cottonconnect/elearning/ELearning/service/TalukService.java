@@ -10,7 +10,7 @@ public interface TalukService {
 	
 	TalukDTO findById(Long id);
 	
-	TableResponse getAllTaluks(Integer draw, Integer pageNo, Integer pageSize);
+	TableResponse getAllTaluks(Integer draw, Integer pageNo, Integer pageSize,String search);
 
 	List<TalukDTO> getTaluks(Long districtId);
 

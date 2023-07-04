@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.cottonconnect.elearning.ELearning.model.*;
-import com.cottonconnect.elearning.ELearning.repo.*;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,10 +14,24 @@ import org.springframework.util.StringUtils;
 
 import com.cottonconnect.elearning.ELearning.dto.EmailDTO;
 import com.cottonconnect.elearning.ELearning.dto.TableResponse;
+import com.cottonconnect.elearning.ELearning.model.Brand;
+import com.cottonconnect.elearning.ELearning.model.Country;
+import com.cottonconnect.elearning.ELearning.model.Email;
+import com.cottonconnect.elearning.ELearning.model.EmailList;
+import com.cottonconnect.elearning.ELearning.model.FarmGroup;
+import com.cottonconnect.elearning.ELearning.model.KnowledgeCenter;
+import com.cottonconnect.elearning.ELearning.model.LearnerGroup;
+import com.cottonconnect.elearning.ELearning.model.Programme;
+import com.cottonconnect.elearning.ELearning.repo.BrandRepository;
+import com.cottonconnect.elearning.ELearning.repo.CountryRepository;
+import com.cottonconnect.elearning.ELearning.repo.EmailListRepository;
+import com.cottonconnect.elearning.ELearning.repo.EmailRepository;
+import com.cottonconnect.elearning.ELearning.repo.FarmGroupRepository;
+import com.cottonconnect.elearning.ELearning.repo.LearnerGroupRepository;
+import com.cottonconnect.elearning.ELearning.repo.ProgrammeRepository;
 import com.cottonconnect.elearning.ELearning.repo.page.EmailPagedRepository;
 
 @Service
-@Slf4j
 public class EmailServiceImpl implements EmailService {
 
 	@Autowired
@@ -40,26 +51,18 @@ public class EmailServiceImpl implements EmailService {
 	@Autowired
 	private EmailListRepository emailListRepository;
 
-	@Autowired
-	private EmailListNewRepository emailListNewRepository;
-
 	@Override
 	public Email save(EmailDTO emailDTO) {
 		Email email = new Email();
-		Email_list_new emailNew = new Email_list_new();
-
 		if (emailDTO.getId() != null) {
-			log.info("I am here now");
 			email.setId(emailDTO.getId());
-//			List<EmailList> emailList = emailListRepository.findByEmailId(emailDTO.getId());
-//			if (emailList != null) {
-//				log.info("deleting now");
-//				emailListRepository.deleteAll(emailList);
-//			}
+			List<EmailList> emailList = emailListRepository.findByEmailIdId(emailDTO.getId());
+			if (emailList != null) {
+				emailListRepository.deleteAll(emailList);
+			}
 		}
 
 		if (emailDTO.getCountry() != null) {
-			log.info("Checking country:::::::");
 			Optional<Country> countryOpt = countryRepository.findById(emailDTO.getCountry());
 			if (countryOpt.isPresent()) {
 				email.setCountry(countryOpt.get());
@@ -67,8 +70,6 @@ public class EmailServiceImpl implements EmailService {
 		}
 
 		if (emailDTO.getBrand() != null) {
-			log.info("Checking Brand:::::::");
-
 			Optional<Brand> brandOpt = brandRepository.findById(emailDTO.getBrand());
 			if (brandOpt.isPresent()) {
 				email.setBrand(brandOpt.get());
@@ -76,32 +77,25 @@ public class EmailServiceImpl implements EmailService {
 		}
 
 		if (emailDTO.getLearners() != null) {
-			log.info("Checking Learners:::::::");
-
 			email.setLearnerGroups(learnerGroupRepository.findByIdIn(emailDTO.getLearners()));
 		}
 
 		if (emailDTO.getPrograms() != null) {
-			log.info("Checking Programs:::::::");
 			List<Programme> programList = programmeRepository.findByIdIn(emailDTO.getPrograms());
 			email.setProgrammes(programList);
 		}
 
 		if (emailDTO.getFarmGroups() != null) {
-			log.info("Checking Farm Groups:::::::");
 			List<FarmGroup> farmGroupList = farmGroupRepository.findByIdIn(emailDTO.getFarmGroups());
 			email.setFarmGroups(farmGroupList);
 		}
 
 		if (emailDTO.getLearners() != null) {
-			log.info("Checking Learners:::::::");
 			List<LearnerGroup> learnerGroupList = learnerGroupRepository.findByIdIn(emailDTO.getLearners());
 			email.setLearnerGroups(learnerGroupList);
 		}
 
 		if (emailDTO.getEmails() != null) {
-			log.info("Getting Email List:::::::");
-
 			List<EmailList> emailList = emailDTO.getEmails().stream().filter(e1 -> !StringUtils.isEmpty(e1)).map(el -> {
 				EmailList eList = new EmailList();
 				eList.setEmail(el);
@@ -112,26 +106,14 @@ public class EmailServiceImpl implements EmailService {
 			email.setEmailLists(emailList);
 		}
 
-		Email savedEmail = emailRepository.save(email);
-
-		emailNew.setEmail_id(savedEmail.getId());
-
-		List<String> emailList = emailDTO.getEmails();
-		String emailString = String.join(",", emailList);
-		emailNew.setEmailAddress(emailString);
-
-
-
-		emailListNewRepository.save(emailNew);
-		email.setEmailings(emailString);
-
-//		emailListRepository.saveAll(email.getEmailLists());
+		emailRepository.save(email);
+		emailListRepository.saveAll(email.getEmailLists());
 
 		return email;
 	}
 
 	@Override
-	public TableResponse getEmails(Integer draw, Integer pageNo, Integer pageSize) {
+	public TableResponse getEmails(Integer draw, Integer pageNo, Integer pageSize,String search) {
 		TableResponse response = null;
 		List<List<Object>> emailDtoList = new ArrayList<List<Object>>();
 		pageNo = pageNo / pageSize;

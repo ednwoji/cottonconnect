@@ -12,6 +12,6 @@ import com.cottonconnect.elearning.ELearning.model.UserOnline;
 public interface UserOnlineRepository extends JpaRepository<UserOnline, Long>{
 	UserOnline findByMobileNo(String mobileNo);
 	
-	@Query(value = "SELECT COUNT(u.id) FROM user_online u where u.last_updated_date BETWEEN :startDate AND :endDate", nativeQuery = true)
+	@Query(value = "SELECT COUNT(u.id) FROM UserOnline u where u.lastUpdatedDate BETWEEN :startDate AND :endDate")
 	Long getOnlineUsers(Date startDate, Date endDate);
 }

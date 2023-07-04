@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +22,6 @@ import com.utility.WebUtils;
 
 @RestController
 @RequestMapping(value = "/master")
-@Slf4j
 public class FarmGroupController {
 	@Autowired
 	FarmGroupService farmGroupService;
@@ -57,8 +55,6 @@ public class FarmGroupController {
 	@RequestMapping(value = "/farm-group/partners")
 	public ResponseEntity<List<FarmGroupDTO>> getFarmerGroupByPartner(HttpServletRequest request,
 			@RequestParam("partners") List<Long> partners ) {
-
-		log.info("Partners are "+partners);
 		List<FarmGroupDTO> farmGroupList = farmGroupService.getFarmGroupByPartners(partners);
 		ResponseEntity<List<FarmGroupDTO>> response = new ResponseEntity<List<FarmGroupDTO>>(farmGroupList,
 				HttpStatus.OK);
@@ -67,9 +63,9 @@ public class FarmGroupController {
 
 	@RequestMapping(value = "/farm-group/getAllFarmGroup")
 	public ResponseEntity<TableResponse> getAllFarmGroup(@RequestParam(name = "draw") Integer draw,
-			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length) {
+			@RequestParam(defaultValue = "0") Integer start, @RequestParam(defaultValue = "10") Integer length,@RequestParam(name = "search[value]") String search) {
 
-		TableResponse countryList = farmGroupService.getAllFarmGroups(draw, start, length);
+		TableResponse countryList = farmGroupService.getAllFarmGroups(draw, start, length, search);
 		ResponseEntity<TableResponse> response = new ResponseEntity<TableResponse>(countryList, HttpStatus.OK);
 		return response;
 	}
